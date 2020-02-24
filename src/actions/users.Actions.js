@@ -1,12 +1,19 @@
 import axios from "axios";
 export const LOG_IN = "LOG_IN";
-
+export const SIGN_UP = "SIGN_UP";
 
 export const setLogin = data => {
   return {
     type: LOG_IN,
     payload: data
   };
+};
+
+export const setSignup = data => {
+    return {
+        type: SIGN_UP,
+        payload: data
+    };
 };
 
 export const login = (values) => dispatch => {
@@ -25,5 +32,19 @@ export const login = (values) => dispatch => {
 
     }).catch(error =>{
         console.log(error)
+    });
+};
+
+export const signup = (values) => dispatch => {
+    return axios({
+        method: "POST",
+        url: "https://music-byte.herokuapp.com/users/register",
+        data: values
+    }).then(response => {
+        console.log("this is response data signup", response.data);
+        dispatch(setSignup(response.data.data));
+        // history.push("/login")
+    }).catch(error => {
+        console.log(error);
     });
 };
