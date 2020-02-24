@@ -8,8 +8,39 @@ body {
   justify-content: center;
 }
 
+.UserButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+}
+
+.UserButton button {
+  background: none;
+  border: none;
+  color: white;
+  width: 11.5rem;
+  border: 2px solid #ff5721;
+  border-radius: 15px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.UserButton button:hover {
+  background: none;
+  border: none;
+  color: white;
+  width: 11.5rem;
+  border: 2px solid #ff9800;
+  background: #ff9800;
+  border-radius: 15px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
 .FakeCards {
-  width: 55vh;
+  width: 45vh;
+  margin-top: -35px;
+  padding: 0;
 }
 
 .CardData {
@@ -30,11 +61,11 @@ body {
 }
 
 .InterestButton i {
-  margin-top: 15px;
+  margin-top: 3vh;
   padding-top: 5px;
   border: 2px solid;
   border-radius: 25px;
-  width: 40vh;
+  width: 17rem;
   color: #3e51b5;
   transition: 0.5s;
 }
@@ -42,7 +73,9 @@ body {
 .InterestButton i:hover {
   border: 2px solid;
   border-radius: 25 px;
-  width: 50vh;
-  color: #e91e63;
+  width: 22.5rem;
+  color: white;
+  background-color: #e91e63;
+  border-color: #e91e63;
   transition: 0.5s;
 }

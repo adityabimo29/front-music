@@ -11,7 +11,13 @@ export default class Main extends Component {
       <div>
         <Container fluid>
           <Row>
-            <Col xl className='MainContainer'>
+            <Col className='UserButton'>
+              <button>Profile</button>
+              <button>Log Out</button>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg className='MainContainer'>
               <Carousel className='FakeCards'>
                 <Carousel.Item>
                   <img className='d-block w-100' src={pic1} alt='John Snow' />
@@ -38,7 +44,7 @@ export default class Main extends Component {
             </Col>
           </Row>
           <Row>
-            <Col xl className='InterestButton'>
+            <Col lg className='InterestButton'>
               <button>
                 <i class='fa fa-check-square-o fa-4x' aria-hidden='true'></i>
               </button>
