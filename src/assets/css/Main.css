@@ -1,0 +1,18 @@
+body {
+  background-color: #202020 !important;
+}
+
+.MainContainer {
+  margin-top: 5vh;
+}
+
+.FakeCards {
+  width: 55vh;
+}
+
+.CardData {
+  background-color: #202020;
+  opacity: 0.75;
+  left: 0 !important;
+  right: 0 !important;
+}
