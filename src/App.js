@@ -1,20 +1,13 @@
 import React from 'react';
-import './App.css';
-import { connect } from 'react-redux';
+// import Profile from './pages/Profile';
+// import Main from './pages/Main';
+import Login from './pages/Login'
 
-
-function App(props) {
+export default function App() {
   return (
-    <div className="App">
-      <h1>{props.test}</h1>
+    <div>
+      {/* <Main /> */}
+      <Login />
     </div>
   );
 }
-
-const mapStateToProps = state => {
-  return{
-    test:state.users.test
-  }
-}
-
-export default  connect(mapStateToProps)(App);
