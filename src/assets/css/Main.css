@@ -2,90 +2,43 @@ body {
   background-color: #202020 !important;
 }
 
-.LogoContainer {
+/* .MainContainer {
+  display: flex;
+  justify-content: space-evenly;
+} */
+
+.Cards {
+  margin-top: 7vh;
+  margin-left: 46.5vh;
+  margin-right: 50vh;
+  padding-bottom: 2vh;
+  width: 40vh;
+  text-align: center;
+}
+
+.ButtonContainer {
+  margin-top: 2vh;
   display: flex;
   justify-content: center;
 }
 
-.MainLogo {
-  margin-top: 1vh;
-  width: 25rem;
-}
-
-.MainContainer {
-  margin-top: 5vh;
-  display: flex;
-  justify-content: center;
-}
-
-.UserButton {
-  display: flex;
-  justify-content: center;
-}
-
-.UserButton button {
+.ButtonContainer button {
   background: none;
   border: none;
-  color: white;
-  width: 11.5rem;
-  border: 2px solid #3e51b5;
+  color: #3f51b5;
+  border: 3px solid #3f51b5;
+  padding: 0.5rem 7rem;
   border-radius: 15px;
-  margin-left: 3px;
-  margin-right: 3px;
-}
-
-.UserButton button:hover {
-  background: none;
-  border: none;
-  color: white;
-  width: 11.5rem;
-  border: 2px solid #e91e63;
-  background: #e91e63;
-  border-radius: 15px;
-  margin-left: 3px;
-  margin-right: 3px;
   transition: 0.5s;
 }
 
-.FakeCards {
-  width: 45vh;
-  margin-top: -35px;
-  padding: 0;
-}
-
-.CardData {
-  background-color: #202020;
-  opacity: 0.75;
-  left: 0 !important;
-  right: 0 !important;
-}
-
-.InterestButton {
-  display: flex;
-  justify-content: center;
-}
-
-.InterestButton button {
+.ButtonContainer button:hover {
   background: none;
   border: none;
-}
-
-.InterestButton i {
-  margin-top: 1.5vh;
-  padding-top: 5px;
-  border: 2px solid;
-  border-radius: 25px;
-  width: 17rem;
-  color: #3e51b5;
-  transition: 0.5s;
-}
-
-.InterestButton i:hover {
-  border: 2px solid;
-  border-radius: 25 px;
-  width: 22.5rem;
   color: white;
+  border: 3px solid #e91e63;
   background-color: #e91e63;
-  border-color: #e91e63;
-  transition: 1s;
+  padding: 0.5rem 9rem;
+  border-radius: 15px;
+  transition: 0.5s;
 }

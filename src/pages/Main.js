@@ -1,58 +1,81 @@
 import React, { Component } from 'react';
 import '../assets/css/Main.css';
-import { Container, Row, Col, Carousel } from 'react-bootstrap';
-import Logo from '../assets/images/logo.png';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Swiper, Navigation, Pagination } from 'swiper/js/swiper.esm';
+import ReactIdSwiperCustom from 'react-id-swiper/lib/ReactIdSwiper.custom';
+// import Logo from '../assets/images/logo.png';
 import pic1 from '../assets/images/01.jpg';
 import pic2 from '../assets/images/02.jpg';
 import pic3 from '../assets/images/03.jpg';
 
 export default class Main extends Component {
   render() {
+    const params = {
+      // Provide Swiper class as props
+      Swiper,
+      // Add modules you need
+      modules: [Navigation, Pagination],
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      spaceBetween: 30
+    };
     return (
       <div>
-        <Container fluid>
+        <Container className='MainContainer'>
           <Row>
-            <Col className='LogoContainer'>
-              <img src={Logo} alt='Music Byte Logo' className='MainLogo' />
-            </Col>
+            <ReactIdSwiperCustom {...params}>
+              <Col xl>
+                <Card className='Cards'>
+                  <Card.Img variant='top' src={pic1} />
+                  <Card.Body>
+                    <Card.Title>John Snow</Card.Title>
+                    <Card.Text>
+                      Rock
+                      <br />
+                      Guitarist
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col xl>
+                <Card className='Cards'>
+                  <Card.Img variant='top' src={pic2} />
+                  <Card.Body>
+                    <Card.Title>Ygritte</Card.Title>
+                    <Card.Text>
+                      Jazz
+                      <br />
+                      Singer
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col xl>
+                <Card className='Cards'>
+                  <Card.Img variant='top' src={pic3} />
+                  <Card.Body>
+                    <Card.Title>Arya Stark</Card.Title>
+                    <Card.Text>
+                      Rock
+                      <br />
+                      Bassist
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </ReactIdSwiperCustom>
           </Row>
           <Row>
-            <Col className='UserButton'>
-              <button>Profile</button>
-              <button>Log Out</button>
-            </Col>
-          </Row>
-          <Row>
-            <Col lg className='MainContainer'>
-              <Carousel className='FakeCards'>
-                <Carousel.Item>
-                  <img className='d-block w-100' src={pic1} alt='John Snow' />
-                  <Carousel.Caption className='CardData'>
-                    <h3>John Snow</h3>
-                    <p>Role: Guitarist</p>
-                  </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img className='d-block w-100' src={pic2} alt='Ygritte' />
-                  <Carousel.Caption className='CardData'>
-                    <h3>Ygritte</h3>
-                    <p>Role: Singer</p>
-                  </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img className='d-block w-100' src={pic3} alt='Arya Stark' />
-                  <Carousel.Caption className='CardData'>
-                    <h3>Arya Stark</h3>
-                    <p>Role: Drummer</p>
-                  </Carousel.Caption>
-                </Carousel.Item>
-              </Carousel>
-            </Col>
-          </Row>
-          <Row>
-            <Col lg className='InterestButton'>
+            <Col className='ButtonContainer'>
               <button>
-                <i class='fa fa-check-square-o fa-4x' aria-hidden='true'></i>
+                <i class='fa fa-thumbs-o-up fa-3x' aria-hidden='true'></i>
               </button>
             </Col>
           </Row>
