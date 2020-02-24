@@ -2,6 +2,16 @@ body {
   background-color: #202020 !important;
 }
 
+.LogoContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.MainLogo {
+  margin-top: 1vh;
+  width: 25rem;
+}
+
 .MainContainer {
   margin-top: 5vh;
   display: flex;
@@ -11,7 +21,6 @@ body {
 .UserButton {
   display: flex;
   justify-content: center;
-  margin-top: 10vh;
 }
 
 .UserButton button {
@@ -19,7 +28,7 @@ body {
   border: none;
   color: white;
   width: 11.5rem;
-  border: 2px solid #ff5721;
+  border: 2px solid #3e51b5;
   border-radius: 15px;
   margin-left: 3px;
   margin-right: 3px;
@@ -30,11 +39,12 @@ body {
   border: none;
   color: white;
   width: 11.5rem;
-  border: 2px solid #ff9800;
-  background: #ff9800;
+  border: 2px solid #e91e63;
+  background: #e91e63;
   border-radius: 15px;
   margin-left: 3px;
   margin-right: 3px;
+  transition: 0.5s;
 }
 
 .FakeCards {
@@ -61,7 +71,7 @@ body {
 }
 
 .InterestButton i {
-  margin-top: 3vh;
+  margin-top: 1.5vh;
   padding-top: 5px;
   border: 2px solid;
   border-radius: 25px;
@@ -77,5 +87,5 @@ body {
   color: white;
   background-color: #e91e63;
   border-color: #e91e63;
-  transition: 0.5s;
+  transition: 1s;
 }

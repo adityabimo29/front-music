@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../assets/css/Main.css';
 import { Container, Row, Col, Carousel } from 'react-bootstrap';
+import Logo from '../assets/images/logo.png';
 import pic1 from '../assets/images/01.jpg';
 import pic2 from '../assets/images/02.jpg';
 import pic3 from '../assets/images/03.jpg';
@@ -10,6 +11,11 @@ export default class Main extends Component {
     return (
       <div>
         <Container fluid>
+          <Row>
+            <Col className='LogoContainer'>
+              <img src={Logo} alt='Music Byte Logo' className='MainLogo' />
+            </Col>
+          </Row>
           <Row>
             <Col className='UserButton'>
               <button>Profile</button>
