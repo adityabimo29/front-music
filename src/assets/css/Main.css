@@ -4,6 +4,8 @@ body {
 
 .MainContainer {
   margin-top: 5vh;
+  display: flex;
+  justify-content: center;
 }
 
 .FakeCards {
@@ -15,4 +17,32 @@ body {
   opacity: 0.75;
   left: 0 !important;
   right: 0 !important;
+}
+
+.InterestButton {
+  display: flex;
+  justify-content: center;
+}
+
+.InterestButton button {
+  background: none;
+  border: none;
+}
+
+.InterestButton i {
+  margin-top: 15px;
+  padding-top: 5px;
+  border: 2px solid;
+  border-radius: 25px;
+  width: 40vh;
+  color: #3e51b5;
+  transition: 0.5s;
+}
+
+.InterestButton i:hover {
+  border: 2px solid;
+  border-radius: 25 px;
+  width: 50vh;
+  color: #e91e63;
+  transition: 0.5s;
 }

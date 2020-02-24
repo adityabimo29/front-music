@@ -9,9 +9,9 @@ export default class Main extends Component {
   render() {
     return (
       <div>
-        <Container fluid className='MainContainer'>
+        <Container fluid>
           <Row>
-            <Col xl={{ offset: 4 }}>
+            <Col xl className='MainContainer'>
               <Carousel className='FakeCards'>
                 <Carousel.Item>
                   <img className='d-block w-100' src={pic1} alt='John Snow' />
@@ -35,6 +35,13 @@ export default class Main extends Component {
                   </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>
+            </Col>
+          </Row>
+          <Row>
+            <Col xl className='InterestButton'>
+              <button>
+                <i class='fa fa-check-square-o fa-4x' aria-hidden='true'></i>
+              </button>
             </Col>
           </Row>
         </Container>
