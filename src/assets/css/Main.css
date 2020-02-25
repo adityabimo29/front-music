@@ -1,5 +1,5 @@
 body {
-  background-color: #202020 !important;
+  background-color: #131316 !important;
 }
 
 /* .MainContainer {
@@ -9,11 +9,13 @@ body {
 
 .Cards {
   margin-top: 7vh;
-  margin-left: 46.5vh;
-  margin-right: 50vh;
   padding-bottom: 2vh;
   width: 40vh;
   text-align: center;
+}
+
+.CardImages {
+  height: 50vh;
 }
 
 .ButtonContainer {

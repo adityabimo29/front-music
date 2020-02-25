@@ -36,7 +36,7 @@ export default class Main extends Component {
           <Row>
             <Swiper {...params}>
               <Card className='Cards'>
-                <Card.Img variant='top' src={pic1} />
+                <Card.Img variant='top' src={pic1} className='CardImages' />
                 <Card.Body>
                   <Card.Title>John Snow</Card.Title>
                   <Card.Text>
@@ -47,7 +47,7 @@ export default class Main extends Component {
                 </Card.Body>
               </Card>
               <Card className='Cards'>
-                <Card.Img variant='top' src={pic2} />
+                <Card.Img variant='top' src={pic2} className='CardImages' />
                 <Card.Body>
                   <Card.Title>Ygritte</Card.Title>
                   <Card.Text>
@@ -58,7 +58,7 @@ export default class Main extends Component {
                 </Card.Body>
               </Card>
               <Card className='Cards'>
-                <Card.Img variant='top' src={pic3} />
+                <Card.Img variant='top' src={pic3} className='CardImages' />
                 <Card.Body>
                   <Card.Title>Arya Stark</Card.Title>
                   <Card.Text>
