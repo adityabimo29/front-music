@@ -28,10 +28,41 @@
   color: #61dafb;
 }
 
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.myPage {
+  background-image: url('./assets/img/mainpage.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  -webkit-filter: sepia(70%);
+  /* Safari 6.0 - 9.0 */
+  filter: sepia(70%);
+}
+
+.myContact {
+  background-image: url('./assets/img/contactUsSame.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  /* -webkit-filter: sepia(70%);
+  /* Safari 6.0 - 9.0 */
+  /* filter: sepia(70%); */
+
+}
+
+.MyAbout {
+  background-color: black;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
