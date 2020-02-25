@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
+import '../assets/css/Profile.css';
 
-export default function Profile() {
-  return (
-    <div>
-      <h1>Halaman Profile And Search</h1>
-    </div>
-  );
+export default class Profile extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Profile</h1>
+      </div>
+    );
+  }
 }
