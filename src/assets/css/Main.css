@@ -2,16 +2,29 @@ body {
   background-color: #131316 !important;
 }
 
+.MainBG {
+  background-image: url(../images/main-background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* .MainContainer {
   display: flex;
   justify-content: space-evenly;
 } */
 
 .Cards {
-  margin-top: 7vh;
+  color: white;
+  margin-top: 3vh;
   padding-bottom: 2vh;
   width: 40vh;
   text-align: center;
+}
+
+.CardName {
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 .CardImages {
@@ -20,6 +33,7 @@ body {
 
 .ButtonContainer {
   margin-top: 2vh;
+  margin-bottom: 2vh;
   display: flex;
   justify-content: center;
 }
@@ -27,9 +41,10 @@ body {
 .ButtonContainer button {
   background: none;
   border: none;
-  color: #3f51b5;
-  border: 3px solid #3f51b5;
-  padding: 0.5rem 7rem;
+  color: #999999;
+  border: 3px solid #0f346d;
+  background-color: #0f346d;
+  padding: 0.5rem 6rem;
   border-radius: 15px;
   transition: 0.5s;
 }
@@ -38,8 +53,8 @@ body {
   background: none;
   border: none;
   color: white;
-  border: 3px solid #e91e63;
-  background-color: #e91e63;
+  border: 3px solid #0279ff;
+  background-color: #0279ff;
   padding: 0.5rem 9rem;
   border-radius: 15px;
   transition: 0.5s;

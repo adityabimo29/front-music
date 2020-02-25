@@ -9,6 +9,7 @@ import pic3 from '../assets/images/03.jpg';
 
 export default class Main extends Component {
   render() {
+    // VARIABLE FOR LIBRARY REACT SWIPER JS
     const params = {
       effect: 'coverflow',
       grabCursor: true,
@@ -32,39 +33,39 @@ export default class Main extends Component {
 
     return (
       <div>
-        <Container className='MainContainer'>
+        <Container fluid className='MainContainer MainBG'>
           <Row>
             <Swiper {...params}>
-              <Card className='Cards'>
+              <Card bg='dark' className='Cards'>
                 <Card.Img variant='top' src={pic1} className='CardImages' />
                 <Card.Body>
-                  <Card.Title>John Snow</Card.Title>
+                  <Card.Title className='CardName'>John Snow</Card.Title>
                   <Card.Text>
-                    Rock
+                    Music : Rock
                     <br />
-                    Guitarist
+                    Role : Guitarist
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card className='Cards'>
+              <Card bg='dark' className='Cards'>
                 <Card.Img variant='top' src={pic2} className='CardImages' />
                 <Card.Body>
-                  <Card.Title>Ygritte</Card.Title>
+                  <Card.Title className='CardName'>Ygritte</Card.Title>
                   <Card.Text>
-                    Jazz
+                    Music : Jazz
                     <br />
-                    Singer
+                    Role : Singer
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card className='Cards'>
+              <Card bg='dark' className='Cards'>
                 <Card.Img variant='top' src={pic3} className='CardImages' />
                 <Card.Body>
-                  <Card.Title>Arya Stark</Card.Title>
+                  <Card.Title className='CardName'>Arya Stark</Card.Title>
                   <Card.Text>
-                    Rock
+                    Music : Rock
                     <br />
-                    Bassist
+                    Role : Bassist
                   </Card.Text>
                 </Card.Body>
               </Card>

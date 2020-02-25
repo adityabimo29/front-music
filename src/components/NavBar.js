@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import Nav from 'react-bootstrap/Nav';
 // import Navbar from 'react-bootstrap/Navbar';
 // import Form from 'react-bootstrap/Form';
-import { Col, Row, Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import mylogo from '../assets/img/guitar.png';
 
 import { Link } from 'react-router-dom';
@@ -15,6 +15,7 @@ export default function NavBar() {
       <Navbar
         expand='lg'
         bg='dark'
+        variant='dark'
         style={{ color: 'white', paddingTop: '5px' }}
       >
         <Navbar.Brand href='/'>
