@@ -6,12 +6,14 @@ function Elementor() {
   return (
     <div>
       <Row>
-        <Col className='MyBCKCOL' lg={12}>
+        <Col className='MyBCKCOUNT' lg={12}>
           <content
             style={{
-              color: '#ffffff',
-              fontFamily: 'Poppins, Sans-serif',
-              fontSize: '3rem',
+              //   color: '#ffffff',
+              color: 'yellow',
+              fontFamily: '  Poppins, Sans-serif',
+              //   fontFamily: 'Alfa Slab One',
+              fontSize: '3.5rem',
               fontWeight: '600',
               marginTop: '150px',
               display: 'grid',

@@ -1,12 +1,12 @@
 import React from 'react';
 import AboutUs from '../components/AboutUs';
-import CountUs from '../components/CountUs';
+import Elementor from '../components/Elementor';
 import Testimoni from '../components/Testimoni';
 export default function About() {
   return (
     <div>
       <AboutUs />
-      <CountUs />
+      <Elementor />
       <Testimoni />
     </div>
   );

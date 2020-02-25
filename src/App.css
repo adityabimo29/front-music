@@ -58,6 +58,13 @@
   background-color: black;
 }
 
+.MyBCKCOUNT {
+  background-image: url('./assets/img/elementor1.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -14,8 +14,10 @@ import { Link } from 'react-router-dom';
 import mainlogo from '../assets/img/blog_logo2.png';
 import '../App.css';
 import LandingPage from '../components/landingPage';
+import { isLogin } from '../actions';
 import { connect } from 'react-redux';
-const MyNavBar = props => {
+
+const MyNavBarX = props => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -23,7 +25,7 @@ const MyNavBar = props => {
   // tag={Link}
   //                     to='/Register'
   // const flagLogin = false;
-
+  console.log(props);
   return (
     <div>
       <Row>
@@ -32,11 +34,10 @@ const MyNavBar = props => {
             <Navbar
               className='MyNav'
               style={{
-                backgroundColor: 'black',
-                color: 'white',
+                backgroundColor: 'dark',
                 height: '129px',
                 justifyContent: 'center',
-
+                color: 'white',
                 fontFamily: 'Poppins, Sans-serif',
                 fontSize: '18px',
                 fontWeight: 'bold'
@@ -158,4 +159,4 @@ const MyNavBar = props => {
     </div>
   );
 };
-export default MyNavBar;
+export default MyNavBarX;
