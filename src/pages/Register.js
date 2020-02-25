@@ -1,22 +1,22 @@
-import React from "react";
-import "../assets/css/Signup.css";
+import React from 'react';
+import '../assets/css/Signup.css';
 //React Bootstrap
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 //
-import { Formik } from "formik";
-import { signup } from "../actions";
-import { connect } from "react-redux";
+import { Formik } from 'formik';
+import { signup } from '../actions';
+import { connect } from 'react-redux';
 // import { withRouter } from "react-router-dom";
 
 function Signup(props) {
 
   return (
     <div>
-      <Container className="signup-container">
+      <Container className='signup-container'>
         <Row>
           <Col>
             <Formik
@@ -34,11 +34,11 @@ function Signup(props) {
               validate={values => {
                 const errors = {};
                 if (!values.email) {
-                  errors.email = "Email Required";
+                  errors.email = 'Email Required';
                 } else if (
                   !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
                 ) {
-                  errors.email = "Invalid email address";
+                  errors.email = 'Invalid email address';
                 }
                 return errors;
               }}
