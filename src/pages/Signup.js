@@ -21,14 +21,14 @@ function Signup(props) {
           <Col>
             <Formik
               initialValues={{
-                firstname: "",
-                lastname: "",
+                first_name: "",
+                last_name: "",
                 email: "",
                 password: "",
                 instrument: "",
                 genre: "",
                 experience: "",
-                url: "",
+                link_video: "",
                 about: "",
               }}
               validate={values => {
@@ -57,25 +57,25 @@ function Signup(props) {
               }) => (
                 <Form onSubmit={handleSubmit}>
                   <Form.Row>
-                    <Form.Group as={Col} controlId="firstname">
+                    <Form.Group as={Col} controlId="first_name">
                       <Form.Label>Firstname</Form.Label>
                       <Form.Control
                         type="text"
-                        name="firstname"
+                        name="first_name"
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.firstname}
+                        value={values.first_name}
                         placeholder="Firstname"
                       />
                     </Form.Group>
-                    <Form.Group as={Col} controlId="lastname">
+                    <Form.Group as={Col} controlId="last_name">
                       <Form.Label>Lastname</Form.Label>
                       <Form.Control
                         type="text"
-                        name="lastname"
+                        name="last_name"
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.lastname}
+                        value={values.last_name}
                         placeholder="Lastname"
                       />
                     </Form.Group>
@@ -154,14 +154,14 @@ function Signup(props) {
                     </Form.Group>
                   </Form.Row>
 
-                  <Form.Group controlId="url">
+                  <Form.Group controlId="link_video">
                     <Form.Label>Link Video</Form.Label>
                     <Form.Control
                       type="url"
-                      name="url"
+                      name="link_video"
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      value={values.url}
+                      value={values.link_video}
                       placeholder="https://example.com"
                     />
                   </Form.Group>
