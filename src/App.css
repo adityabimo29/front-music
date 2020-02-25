@@ -34,7 +34,7 @@
 }
 
 .myPage {
-  background-image: url('./assets/img/mainpage.jpeg');
+  background-image: url('./assets/images/imainpage.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -44,7 +44,7 @@
 }
 
 .myContact {
-  background-image: url('./assets/img/contactUsSame.jpg');
+  background-image: url('./assets/images/icontactUsSame.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -59,7 +59,7 @@
 }
 
 .MyBCKCOUNT {
-  background-image: url('./assets/img/elementor1.jpeg');
+  background-image: url('./assets/images/ielementor1.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 50vh;

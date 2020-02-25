@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import '../App.css';
 import { Link } from 'react-router-dom';
+import { Autoplay } from 'swiper/js/swiper.esm';
 export default function Home() {
   return (
     <div className='myPage'>
@@ -17,11 +18,22 @@ export default function Home() {
             lets coloborate to find your partner <br />
             making famouse band music in the future
           </h4>
-          <Button>LOGIN</Button>
-          <span>
-            {' '}
-            <Button style={{ marginLeft: '10px' }}>SIGNUP</Button>
-          </span>
+          <div
+            style={{
+              alignItems: 'center',
+              textAlign: 'center',
+              marginLeft: 'auto',
+              marginRight: 'auto'
+            }}
+          >
+            <Button style={{ backgroundColor: '#0d47a1', textAlign: 'center' }}>
+              LOGIN
+            </Button>
+            <span>
+              {' '}
+              <Button style={{ marginLeft: '10px' }}>SIGNUP</Button>
+            </span>
+          </div>
         </Col>
       </Row>
     </div>

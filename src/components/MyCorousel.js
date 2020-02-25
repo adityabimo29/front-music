@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import image1 from '../assets/img/corousel1.jpeg';
-import image2 from '../assets/img/corousel2.jpeg';
-import image3 from '../assets/img/corousel3.jpeg';
-import image4 from '../assets/img/corousel4.jpeg';
+import image1 from '../assets/images/icorousel1.jpeg';
+import image2 from '../assets/images/icorousel2.jpeg';
+import image3 from '../assets/images/icorousel3.jpeg';
+import image4 from '../assets/images/icorousel4.jpeg';
 // import 'react-responsive-carousel/lib/styles/carousel.min.css';
 // var Carousel = require('react-responsive-carousel').Carousel;
 import { Carousel } from 'react-bootstrap';
