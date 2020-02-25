@@ -1,22 +1,22 @@
-import React from 'react';
-import '../assets/css/Signup.css';
-//React Bootstrap
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import React from "react";
 //
-import { Formik } from 'formik';
-import { signup } from '../actions';
-import { connect } from 'react-redux';
-// import { withRouter } from "react-router-dom";
+import { Formik } from "formik";
+import { signup } from "../actions";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import "../assets/css/Signup.css";
+//React Bootstrap
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
-function Signup(props) {
 
+function Register(props) {
   return (
     <div>
-      <Container className='signup-container'>
+      <Container className="signup-container">
         <Row>
           <Col>
             <Formik
@@ -29,22 +29,22 @@ function Signup(props) {
                 genre: "",
                 experience: "",
                 link_video: "",
-                about: "",
+                about: ""
               }}
               validate={values => {
                 const errors = {};
                 if (!values.email) {
-                  errors.email = 'Email Required';
+                  errors.email = "Email Required";
                 } else if (
                   !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
                 ) {
-                  errors.email = 'Invalid email address';
+                  errors.email = "Invalid email address";
                 }
                 return errors;
               }}
               onSubmit={(values, actions) => {
-                        props.signup(values);
-                    }}
+                props.signup(values, props.history);
+              }}
             >
               {({
                 values,
@@ -197,8 +197,8 @@ function Signup(props) {
 
 const mapDispatchToProps = dispatch => {
   return {
-    signup: values => dispatch(signup(values))
+      signup: (values, history) => dispatch(signup(values, history))
   };
 };
 
-export default connect(null, mapDispatchToProps)(Signup);
+export default withRouter(connect(null, mapDispatchToProps)(Register));
