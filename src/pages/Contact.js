@@ -14,68 +14,46 @@ export default function Contact() {
     <div className='myContact'>
       <Row>
         <Col xs={12} md={6}>
-          <p
-            style={{
-              fontSize: '50px',
-              color: 'white',
-              fontFamily: 'Alfa Slab One',
-              marginTop: '20px'
-            }}
-          >
+          <p className='p1Contact'>
             Get in Touch <br /> with Us
           </p>
-          <p
-            style={{
-              color: 'green',
-              fontSize: '24px',
-              fontStyle: 'italic',
-              fontFamily:
-                'montserrat,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Arial,sans-serif'
-            }}
-          >
-            Feel free to send us a message to book a table or ask us a question.
+          <p className='p2Contact'>
+            Feel free to send us a message <br />
+            to book a table or ask us a question.
           </p>
           <Row>
-            <Col style={{ color: '#FF1493' }} xs={{ span: 3, offset: 1 }}>
-              <p style={{ textAlign: 'right' }}>
+            <Col className='p2styleColor' xs={{ span: 3, offset: 1 }}>
+              <p className='pAlignContact'>
                 <i class='fas fa-phone fa-3'></i>
               </p>
-              <p style={{ textAlign: 'right' }}>
+              <p className='pAlignContact'>
                 <i class='fas fa-location-arrow fa-3'></i>
               </p>
-              <p style={{ textAlign: 'right' }}>
+              <p className='pAlignContact'>
                 <i class='far fa-envelope fa-3'></i>
               </p>
             </Col>
-            <Col style={{ color: 'white' }} xs={8}>
-              <p style={{ textAlign: 'left' }}>+1 800 123 1234</p>
-              <p style={{ textAlign: 'left' }}>
-                652 Main Road, Apt 12 New York, USA
+            <Col className='pColor' xs={8}>
+              <p className='pAlignment'>+62 21 1234567</p>
+              <p className='pAlignment'>
+                Impact Byte at Go Works Office ,<br />
+                Kemang Raya 10,South Jakarta
               </p>
-              <p style={{ textAlign: 'left' }}>info@demolink.org</p>
+              <p className='pAlignment'>info@impactbyte.com</p>
             </Col>
           </Row>
         </Col>
         <Col xs={12} md={6}>
-          <p
-            style={{
-              color: '#FF1493',
-              fontSize: '24px',
-              fontStyle: 'italic',
-              fontFamily:
-                'montserrat,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Arial,sans-serif'
-            }}
-          >
-            Contact Us :
-          </p>
-          <Form style={{ background: 'none', borderColor: 'grey' }}>
+          <p className='pContactUs'>Contact Us :</p>
+          <Form className='bgContactUs'>
             <Row style={{ marginTop: '50px' }}>
               <Col xs={6}>
                 <Form.Group controlId='formName1'>
                   <Form.Control
-                    style={{ background: 'none' }}
+                    className='bgContactUs'
                     type='text'
                     placeholder='Your Name'
+                    style={{ background: 'none' }}
                   />
                 </Form.Group>
               </Col>
@@ -85,9 +63,10 @@ export default function Contact() {
                   controlId='formName2'
                 >
                   <Form.Control
-                    style={{ background: 'none' }}
+                    className='bgContactUs'
                     type='text'
                     placeholder='Your SureName'
+                    style={{ background: 'none' }}
                   />
                 </Form.Group>
               </Col>
@@ -97,9 +76,10 @@ export default function Contact() {
               <Col xs={6}>
                 <Form.Group controlId='formName3'>
                   <Form.Control
-                    style={{ background: 'none' }}
+                    className='bgContactUs'
                     type='text'
                     placeholder='Your Phone'
+                    style={{ background: 'none' }}
                   />
                 </Form.Group>
               </Col>
@@ -109,25 +89,22 @@ export default function Contact() {
                   controlId='formName4'
                 >
                   <Form.Control
-                    style={{ background: 'none' }}
+                    className='bgContactUs'
                     type='email'
                     placeholder='Your Email'
+                    style={{ background: 'none' }}
                   />
                 </Form.Group>
               </Col>
             </Row>
 
-            <Row>
+            <Row style={{ paddingBottom: '20px' }}>
               <Col xs={12}>
                 <InputGroup>
                   <FormControl
                     as='textarea'
                     placeholder='Write Here'
-                    style={{
-                      height: '300px',
-                      marginRight: '8px',
-                      background: 'none'
-                    }}
+                    style={{ background: 'none' }}
                   />
                 </InputGroup>
               </Col>
