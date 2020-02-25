@@ -25,8 +25,8 @@ function Register(props) {
                 last_name: "",
                 email: "",
                 password: "",
-                instrument: "",
-                genre: "",
+                id_instrument: "",
+                id_genre: "",
                 experience: "",
                 link_video: "",
                 about: ""
@@ -43,6 +43,7 @@ function Register(props) {
                 return errors;
               }}
               onSubmit={(values, actions) => {
+              console.log(values)
                 props.signup(values, props.history);
               }}
             >
@@ -106,53 +107,72 @@ function Register(props) {
                     </Form.Group>
                   </Form.Row>
 
-                  <Form.Group controlId="instrument">
+                  <Form.Group controlId="id_instrument">
                     <Form.Label>Instrument</Form.Label>
                     <Form.Control
                       as="select"
-                      type="text"
-                      name="instrument"
+                      name="id_instrument"
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      value={values.instrument}
+                      // value={values.id_instrument}
                     >
-                      <option>Guitarist</option>
-                      <option>Keyboardist</option>
-                      <option>Bassist</option>
-                      <option>Drummer</option>
-                      <option>Singer</option>
-                      <option>Other</option>
+                      <option >select...</option>
+                      <option value={1}>Guitarist</option>
+                      <option value={2}>Keyboardist</option>
+                      <option value={3}>Bassist</option>
+                      <option value={4}>Drummer</option>
+                      <option value={5}>Singer</option>
+                      <option value={6}>Other</option>
                     </Form.Control>
                   </Form.Group>
 
-                  <Form.Row>
-                    <Form.Group as={Col} controlId="genre">
-                      <Form.Label>Genre</Form.Label>
-                      <Form.Control
-                        as="select"
-                        name="genre"
+                  <Form.Group>
+                    <Form.Label >Genre</Form.Label>
+                    <Col>
+                      <Form.Check
+                        type="radio"
+                        inline
+                        label="Pop"
+                        name="id_genre"
+                        id="Pop"
+                        value={1}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.genre}
-                      >
-                        <option>Pop</option>
-                        <option>Jazz</option>
-                        <option>Rock</option>
-                      </Form.Control>
-                    </Form.Group>
-
-                    <Form.Group as={Col} controlId="experience">
-                      <Form.Label>Experience</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="experience"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.experience}
-                        placeholder="Experience"
                       />
-                    </Form.Group>
-                  </Form.Row>
+                      <Form.Check
+                        type="radio"
+                        inline
+                        label="Jazz"
+                        name="id_genre"
+                        id="Jazz"
+                        value={2}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                      <Form.Check
+                        type="radio"
+                        inline
+                        label="Rock"
+                        name="id_genre"
+                        id="Rock"
+                        value={3}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </Col>
+                  </Form.Group>
+
+                  <Form.Group controlId="experience">
+                    <Form.Label>Experience</Form.Label>
+                    <Form.Control
+                      type="number"
+                      name="experience"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.experience}
+                      placeholder="Experience in years"
+                    />
+                  </Form.Group>
 
                   <Form.Group controlId="link_video">
                     <Form.Label>Link Video</Form.Label>
@@ -197,7 +217,7 @@ function Register(props) {
 
 const mapDispatchToProps = dispatch => {
   return {
-      signup: (values, history) => dispatch(signup(values, history))
+    signup: (values, history) => dispatch(signup(values, history))
   };
 };
 
