@@ -66,6 +66,7 @@ const MyNavBarX = props => {
                     <NavItem className='MyNav'>
                       <NavLink tag={Link} to='/home'>
                         HOME
+                        
                       </NavLink>
                     </NavItem>
                     <NavItem className='MyNav'>
