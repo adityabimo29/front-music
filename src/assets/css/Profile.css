@@ -23,12 +23,14 @@
   color: #e91e63;
   font-weight: 800;
   background-color: #17171e;
+  padding: 0 5%;
 }
 
 .ProfileArticle {
   font-weight: 600;
   color: white;
   background-color: #17171e;
+  padding: 0 5%;
 }
 
 .RecruitContainer {
@@ -51,6 +53,7 @@
   border: none;
   background: none;
   color: white;
+  font-weight: 800;
   padding: 8px 100px;
   border: 2px solid white;
   border-radius: 20px;
@@ -69,4 +72,13 @@
   color: white;
   overflow: auto;
   background-color: #17171e;
+}
+
+.PostComment {
+  color: white;
+}
+
+.PostButton {
+  font-weight: 600;
+  margin-top: 1vh;
 }
