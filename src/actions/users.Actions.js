@@ -9,20 +9,6 @@ export const setSignup = data => {
   };
 };
 
-export const isLogin = () => dispatch => {
-  const token = localStorage.getItem('token'); //islogin get toke n jika ada token
-  // dia ubah status state jika true
-  if (token) {
-    dispatch(
-      setLogin({
-        isLogin: true
-      })
-    );
-  } else {
-    dispatch(setLogin());
-  }
-};
-
 export const setLogin = data => {
   return {
     type: LOG_IN,
@@ -41,13 +27,13 @@ export const login = (values, history) => dispatch => {
         console.log('token', response.data.token);
 
         localStorage.setItem('token', response.data.token);
-        dispatch(isLogin()); //dispact sebuah fungsi isLogin
-        history.push('/Main');
+        dispatch(setLogin(values)); //dispact sebuah fungsi isLogin
+        history.push('/Profile');
       }
     })
     .catch(error => {
       console.log(error);
-      alert('Please to SignUp because not register ');
+      alert('Email or Password Wrong! ');
     });
 };
 

@@ -17,8 +17,7 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <Profile />
-      {/* <Switch>
+      <Switch>
         <Route exact path='/'>
           <Home />
           <Contact />
@@ -35,10 +34,6 @@ function App() {
           <Profile />
         </Route>
 
-        <Route exact path='/main'>
-          <Main />
-        </Route>
-
         <Route exact path='/blog'>
           <Blog />
           <Footer />
@@ -52,7 +47,8 @@ function App() {
         <Route path='/detailPage/:id'>
           <DetailPage />
         </Route>
-      </Switch> */}
+      </Switch>{' '}
+      */}
       <Footer />
     </Router>
   );
