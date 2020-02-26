@@ -20,7 +20,7 @@ export default function Home() {
             </Button>
             <span>
               {' '}
-              <Button className=' bg-danger text-white'>
+              <Button style={{ backgroundColor: '#EC5252', color: 'White' }}>
                 <Link to={'/register'}>SIGNUP</Link>
               </Button>
             </span>

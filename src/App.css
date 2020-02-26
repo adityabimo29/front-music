@@ -13,6 +13,15 @@
   }
 }
 
+
+.NavHv {
+  background: #343A40;
+}
+
+.NavHv:hover {
+  background: #FF1493
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -71,7 +80,19 @@
   min-height: 100vh;
   /* -webkit-filter: sepia(80%);
   /* Safari 6.0 - 9.0 */
-  /* filter: sepia(70%); */
+  /* filter: brightness(0.2); */
+
+}
+
+.myPage_overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.003);
+  z-index: 2;
+
 }
 
 .myContact {
