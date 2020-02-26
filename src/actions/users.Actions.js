@@ -27,8 +27,8 @@ export const login = (values, history) => dispatch => {
         console.log('token', response.data.token);
 
         localStorage.setItem('token', response.data.token);
-        dispatch(setLogin(values)); //dispact sebuah fungsi isLogin
-        history.push('/Profile');
+        dispatch(setLogin(values));
+        history.push('/profile');
       }
     })
     .catch(error => {
