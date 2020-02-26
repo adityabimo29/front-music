@@ -8,7 +8,6 @@ import Contact from './pages/Contact';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Main from './pages/Main';
 import Blog from './pages/Blog';
 import Home from './pages/Home';
 import DetailPage from './DetailPages/DetailPage';
@@ -36,7 +35,6 @@ function App() {
 
         <Route exact path='/blog'>
           <Blog />
-          <Footer />
         </Route>
         <Route exact path='/login'>
           <Login />
@@ -48,7 +46,6 @@ function App() {
           <DetailPage />
         </Route>
       </Switch>{' '}
-      */}
       <Footer />
     </Router>
   );

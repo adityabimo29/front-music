@@ -16,23 +16,25 @@ import { Formik } from 'formik';
 
 function Login(props) {
   return (
-    <div>
+    <div className='loginBg'>
       <Container className='login-container'>
         <Row>
           <Col>
+            <h1>Login</h1>
+
             <Formik
               initialValues={{ email: '', password: '' }}
-              validate={values => {
-                const errors = {};
-                if (!values.email) {
-                  errors.email = 'Required';
-                } else if (
-                  !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                ) {
-                  errors.email = 'Invalid email address';
-                }
-                return errors;
-              }}
+              // validate={values => {
+              //   const errors = {};
+              //   if (!values.email) {
+              //     errors.email = "Required";
+              //   } else if (
+              //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+              //   ) {
+              //     errors.email = "Invalid email address";
+              //   }
+              //   return errors;
+              // }}
               onSubmit={(values, actions) => {
                 props.login(values, props.history);
               }}
@@ -49,10 +51,8 @@ function Login(props) {
               }) => (
                 <Form onSubmit={handleSubmit}>
                   <Form.Group controlId='formBasicEmail'>
-                    <Form.Label className='login-label'>
-                      Email address
-                    </Form.Label>
                     <Form.Control
+                      required
                       type='email'
                       name='email'
                       placeholder='Enter email'
@@ -64,8 +64,8 @@ function Login(props) {
                   </Form.Group>
 
                   <Form.Group controlId='formBasicPassword'>
-                    <Form.Label className='login-label'>Password</Form.Label>
                     <Form.Control
+                      required
                       type='password'
                       name='password'
                       placeholder='Password'

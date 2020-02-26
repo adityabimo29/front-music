@@ -9,13 +9,6 @@ export const setSignup = data => {
   };
 };
 
-export const setLogin = data => {
-  return {
-    type: LOG_IN,
-    payload: data
-  };
-};
-
 export const login = (values, history) => dispatch => {
   return axios({
     method: 'POST',
@@ -33,7 +26,7 @@ export const login = (values, history) => dispatch => {
     })
     .catch(error => {
       console.log(error);
-      alert('Email or Password Wrong! ');
+      alert('Email or Password is wrong.');
     });
 };
 
@@ -46,11 +39,10 @@ export const signup = (values, history) => dispatch => {
     .then(response => {
       console.log('this is response data signup', response.data);
       dispatch(setSignup(response.data.data));
-      alert(' Register Successfull');
+
       history.push('/login');
     })
     .catch(error => {
       console.log(error);
-      alert('Please repeat to SignUp');
     });
 };
