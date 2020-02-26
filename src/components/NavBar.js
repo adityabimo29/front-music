@@ -8,14 +8,18 @@ import { Nav, Navbar } from 'react-bootstrap';
 import mylogo from '../assets/images/iguitar.png';
 import '../App.css';
 import { Link } from 'react-router-dom';
-import { isLogin } from '../actions';
+import { Login } from '../actions';
 import { connect } from 'react-redux';
+
+function myAlert() {
+  alert('Please to register first!');
+}
 
 const NavBar = props => {
   console.log(props);
   return (
     <div>
-      {props.login ? (
+      {props.Login ? (
         <Navbar
           bg='dark'
           expand='lg'
@@ -61,7 +65,7 @@ const NavBar = props => {
               </Nav.Link>
               <Nav.Link
                 as={Link}
-                to='/profile'
+                to='/'
                 className='NavHv'
                 style={{ color: 'white' }}
               >
@@ -70,7 +74,7 @@ const NavBar = props => {
 
               <Nav.Link
                 as={Link}
-                to='/register'
+                to='/Login'
                 className='NavHv'
                 style={{ color: 'white' }}
               >
@@ -137,16 +141,6 @@ const NavBar = props => {
                 CONTACT
               </Nav.Link>
 
-              {/*main */}
-              <Nav.Link
-                as={Link}
-                to='/main'
-                className='NavHv'
-                style={{ color: 'white' }}
-              >
-                PROFILE
-              </Nav.Link>
-
               {/*login */}
 
               <Nav.Link
@@ -161,7 +155,7 @@ const NavBar = props => {
               {/* register*/}
               <Nav.Link
                 as={Link}
-                to='/login'
+                to='/register'
                 className='NavHv'
                 style={{ color: 'white' }}
               >
@@ -177,7 +171,7 @@ const NavBar = props => {
 };
 const mapStateToProps = ({ users }) => {
   return {
-    login: users
+    Login: users
   };
 };
 
