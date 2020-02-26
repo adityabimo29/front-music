@@ -57,8 +57,8 @@ function Register(props) {
                 isSubmitting
               }) => (
                 <Form onSubmit={handleSubmit}>
-                  <Form.Row>
-                    <Form.Group as={Col} controlId="first_name">
+                  <Row>
+                    <Col xs={12} md={6} controlId="first_name">
                       <Form.Label className="reg-label">Firstname</Form.Label>
                       <Form.Control
                         type="text"
@@ -68,8 +68,8 @@ function Register(props) {
                         value={values.first_name}
                         placeholder="Firstname"
                       />
-                    </Form.Group>
-                    <Form.Group as={Col} controlId="last_name">
+                    </Col>
+                    <Col xs={12} md={6} controlId="last_name">
                       <Form.Label className="reg-label">Lastname</Form.Label>
                       <Form.Control
                         type="text"
@@ -79,11 +79,11 @@ function Register(props) {
                         value={values.last_name}
                         placeholder="Lastname"
                       />
-                    </Form.Group>
-                  </Form.Row>
+                    </Col>
+                  </Row>
 
                   <Form.Row>
-                    <Form.Group as={Col} controlId="email">
+                    <Form.Group as={Col} xs={12} md={5} controlId="email">
                       <Form.Label className="reg-label">Email</Form.Label>
                       <Form.Control
                         type="email"
@@ -94,7 +94,7 @@ function Register(props) {
                         placeholder="Enter email"
                       />
                     </Form.Group>
-                    <Form.Group as={Col} controlId="password">
+                    <Form.Group as={Col} xs={12} md={{ span: 5, offset: 2 }} controlId="password">
                       <Form.Label className="reg-label">Password</Form.Label>
                       <Form.Control
                         type="password"

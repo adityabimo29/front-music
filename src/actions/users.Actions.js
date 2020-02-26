@@ -29,12 +29,11 @@ export const login = (values, history) => dispatch => {
         localStorage.setItem("token", response.data.token);
         dispatch(setLogin(values));
         history.push("/profile");
-      } else {
-        alert("Email or Password is wrong.");
-      }
+      } 
     })
     .catch(error => {
       console.log(error);
+      alert("Email or Password is wrong.");
     });
 };
 
