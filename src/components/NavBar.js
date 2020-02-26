@@ -61,20 +61,22 @@ const NavBar = props => {
               </Nav.Link>
               <Nav.Link
                 as={Link}
-                to='/main'
+                to='/profile'
                 className='NavHv'
                 style={{ color: 'white' }}
               >
                 PROFILE
               </Nav.Link>
+
               <Nav.Link
                 as={Link}
-                to='/'
+                to='/register'
                 className='NavHv'
                 style={{ color: 'white' }}
               >
                 LOGIN
               </Nav.Link>
+
               <Nav.Link
                 as={Link}
                 to='/register'
@@ -83,7 +85,6 @@ const NavBar = props => {
               >
                 REGISTER
               </Nav.Link>
-              {/* <Link as={Link} to="/contacts">CONTACTS</Link> */}
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -115,6 +116,8 @@ const NavBar = props => {
               >
                 HOME
               </Nav.Link>
+
+              {/*about */}
               <Nav.Link
                 as={Link}
                 to='/about'
@@ -123,6 +126,8 @@ const NavBar = props => {
               >
                 ABOUT
               </Nav.Link>
+
+              {/*contact */}
               <Nav.Link
                 as={Link}
                 to='/contact'
@@ -131,6 +136,8 @@ const NavBar = props => {
               >
                 CONTACT
               </Nav.Link>
+
+              {/*main */}
               <Nav.Link
                 as={Link}
                 to='/main'
@@ -139,17 +146,22 @@ const NavBar = props => {
               >
                 PROFILE
               </Nav.Link>
+
+              {/*login */}
+
               <Nav.Link
                 as={Link}
-                to='/login'
+                to='/Login'
                 className='NavHv'
                 style={{ color: 'white' }}
               >
                 LOGIN
               </Nav.Link>
+
+              {/* register*/}
               <Nav.Link
                 as={Link}
-                to='/register'
+                to='/login'
                 className='NavHv'
                 style={{ color: 'white' }}
               >

@@ -1,49 +1,48 @@
-import React from "react";
+import React from 'react';
 //
-import { Formik } from "formik";
-import { signup } from "../actions";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
-import "../assets/css/Signup.css";
+import { Formik } from 'formik';
+import { signup } from '../actions';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import '../assets/css/Signup.css';
 //React Bootstrap
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 function Register(props) {
   return (
     <div>
-      <Container className="signup-container">
+      <Container className='signup-container'>
         <Row>
           <Col>
             <Formik
               initialValues={{
-                first_name: "",
-                last_name: "",
-                email: "",
-                password: "",
-                id_instrument: "",
-                id_genre: "",
-                experience: "",
-                link_video: "",
-                about: ""
+                first_name: '',
+                last_name: '',
+                email: '',
+                password: '',
+                id_instrument: '',
+                id_genre: '',
+                experience: '',
+                link_video: '',
+                about: ''
               }}
               validate={values => {
                 const errors = {};
                 if (!values.email) {
-                  errors.email = "Email Required";
+                  errors.email = 'Email Required';
                 } else if (
                   !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
                 ) {
-                  errors.email = "Invalid email address";
+                  errors.email = 'Invalid email address';
                 }
                 return errors;
               }}
               onSubmit={(values, actions) => {
-              console.log(values)
+                console.log(values);
                 props.signup(values, props.history);
               }}
             >
@@ -58,65 +57,65 @@ function Register(props) {
               }) => (
                 <Form onSubmit={handleSubmit}>
                   <Form.Row>
-                    <Form.Group as={Col} controlId="first_name">
+                    <Form.Group as={Col} controlId='first_name'>
                       <Form.Label>Firstname</Form.Label>
                       <Form.Control
-                        type="text"
-                        name="first_name"
+                        type='text'
+                        name='first_name'
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.first_name}
-                        placeholder="Firstname"
+                        placeholder='Firstname'
                       />
                     </Form.Group>
-                    <Form.Group as={Col} controlId="last_name">
+                    <Form.Group as={Col} controlId='last_name'>
                       <Form.Label>Lastname</Form.Label>
                       <Form.Control
-                        type="text"
-                        name="last_name"
+                        type='text'
+                        name='last_name'
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.last_name}
-                        placeholder="Lastname"
+                        placeholder='Lastname'
                       />
                     </Form.Group>
                   </Form.Row>
 
                   <Form.Row>
-                    <Form.Group as={Col} controlId="email">
+                    <Form.Group as={Col} controlId='email'>
                       <Form.Label>Email</Form.Label>
                       <Form.Control
-                        type="email"
-                        name="email"
+                        type='email'
+                        name='email'
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.email}
-                        placeholder="Enter email"
+                        placeholder='Enter email'
                       />
                     </Form.Group>
-                    <Form.Group as={Col} controlId="password">
+                    <Form.Group as={Col} controlId='password'>
                       <Form.Label>Password</Form.Label>
                       <Form.Control
-                        type="password"
-                        name="password"
+                        type='password'
+                        name='password'
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.password}
-                        placeholder="Password"
+                        placeholder='Password'
                       />
                     </Form.Group>
                   </Form.Row>
 
-                  <Form.Group controlId="id_instrument">
+                  <Form.Group controlId='id_instrument'>
                     <Form.Label>Instrument</Form.Label>
                     <Form.Control
-                      as="select"
-                      name="id_instrument"
+                      as='select'
+                      name='id_instrument'
                       onChange={handleChange}
                       onBlur={handleBlur}
                       // value={values.id_instrument}
                     >
-                      <option >select...</option>
+                      <option>select...</option>
                       <option value={1}>Guitarist</option>
                       <option value={2}>Keyboardist</option>
                       <option value={3}>Bassist</option>
@@ -127,34 +126,34 @@ function Register(props) {
                   </Form.Group>
 
                   <Form.Group>
-                    <Form.Label >Genre</Form.Label>
+                    <Form.Label>Genre</Form.Label>
                     <Col>
                       <Form.Check
-                        type="radio"
+                        type='radio'
                         inline
-                        label="Pop"
-                        name="id_genre"
-                        id="Pop"
+                        label='Pop'
+                        name='id_genre'
+                        id='Pop'
                         value={1}
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
                       <Form.Check
-                        type="radio"
+                        type='radio'
                         inline
-                        label="Jazz"
-                        name="id_genre"
-                        id="Jazz"
+                        label='Jazz'
+                        name='id_genre'
+                        id='Jazz'
                         value={2}
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
                       <Form.Check
-                        type="radio"
+                        type='radio'
                         inline
-                        label="Rock"
-                        name="id_genre"
-                        id="Rock"
+                        label='Rock'
+                        name='id_genre'
+                        id='Rock'
                         value={3}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -162,36 +161,36 @@ function Register(props) {
                     </Col>
                   </Form.Group>
 
-                  <Form.Group controlId="experience">
+                  <Form.Group controlId='experience'>
                     <Form.Label>Experience</Form.Label>
                     <Form.Control
-                      type="number"
-                      name="experience"
+                      type='number'
+                      name='experience'
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.experience}
-                      placeholder="Experience in years"
+                      placeholder='Experience in years'
                     />
                   </Form.Group>
 
-                  <Form.Group controlId="link_video">
+                  <Form.Group controlId='link_video'>
                     <Form.Label>Link Video</Form.Label>
                     <Form.Control
-                      type="url"
-                      name="link_video"
+                      type='url'
+                      name='link_video'
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.link_video}
-                      placeholder="https://example.com"
+                      placeholder='https://example.com'
                     />
                   </Form.Group>
 
-                  <Form.Group controlId="about">
+                  <Form.Group controlId='about'>
                     <Form.Label>About</Form.Label>
                     <Form.Control
-                      as="textarea"
-                      rows="3"
-                      name="about"
+                      as='textarea'
+                      rows='3'
+                      name='about'
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.about}
@@ -199,8 +198,8 @@ function Register(props) {
                   </Form.Group>
 
                   <Button
-                    variant="primary"
-                    type="submit"
+                    variant='primary'
+                    type='submit'
                     disabled={isSubmitting}
                   >
                     Sign Up
