@@ -13,8 +13,14 @@ export default function NavBar() {
   return (
     <div>
       <Navbar
+<<<<<<< HEAD
         bg='dark'
         expand='lg'
+=======
+        expand='lg'
+        bg='dark'
+        variant='dark'
+>>>>>>> 692d6b04e0b77dc8ce26241eeb417e600fb60cb1
         style={{ color: 'white', paddingTop: '5px' }}
       >
         <Navbar.Brand href='/'>
@@ -31,6 +37,7 @@ export default function NavBar() {
             className='mr-auto ml-auto navFont'
             style={{ color: 'white !important' }}
           >
+<<<<<<< HEAD
             <Nav.Link
               as={Link}
               to='/'
@@ -77,6 +84,24 @@ export default function NavBar() {
               className='NavHv'
               style={{ color: 'white' }}
             >
+=======
+            <Nav.Link as={Link} to='/' style={{ color: 'white' }}>
+              HOME
+            </Nav.Link>
+            <Nav.Link as={Link} to='/about' style={{ color: 'white' }}>
+              ABOUT
+            </Nav.Link>
+            <Nav.Link as={Link} to='/contact' style={{ color: 'white' }}>
+              CONTACT
+            </Nav.Link>
+            <Nav.Link as={Link} to='/gallery' style={{ color: 'white' }}>
+              GALLERY
+            </Nav.Link>
+            <Nav.Link as={Link} to='/login' style={{ color: 'white' }}>
+              LOGIN
+            </Nav.Link>
+            <Nav.Link as={Link} to='/register' style={{ color: 'white' }}>
+>>>>>>> 692d6b04e0b77dc8ce26241eeb417e600fb60cb1
               REGISTER
             </Nav.Link>
             {/* <Link as={Link} to="/contacts">CONTACTS</Link> */}
