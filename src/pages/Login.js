@@ -1,5 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
+//Utilities
+import { Formik } from "formik";
+import { login } from "../actions";
+import { withRouter } from "react-router-dom";
 //React Bootstrap
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -8,9 +12,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 //STYLE
 import "../assets/css/Login.css";
-//Utilities
-import { Formik } from "formik";
-import { login } from "../actions";
 
 function Login(props) {
   return (
@@ -31,8 +32,8 @@ function Login(props) {
                 }
                 return errors;
               }}
-              onSubmit={values => {
-                props.login(values);
+              onSubmit={(values, actions) => {
+                props.login(values, props.history);
               }}
             >
               {({
@@ -77,7 +78,11 @@ function Login(props) {
                   <Form.Group controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                   </Form.Group>
-                  <Button variant="primary" type="submit" disabled={isSubmitting}>
+                  <Button
+                    variant="primary"
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
                     Submit
                   </Button>
                 </Form>
@@ -90,13 +95,12 @@ function Login(props) {
   );
 }
 
-
 const mapDispatchToProps = dispatch => {
-    return {
-      login: values => {
-        dispatch(login(values));
-      }
-    };
+  return {
+    login: (values, history) => {
+      dispatch(login(values, history));
+    }
+  };
 };
 
-export default connect(null,mapDispatchToProps)(Login);
+export default withRouter(connect(null, mapDispatchToProps)(Login));
