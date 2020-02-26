@@ -13,6 +13,14 @@
   }
 }
 
+.MyDark {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03), url('./assets/images/imainpage.jpeg'));
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
 
 .NavHv {
   background: #343A40;
@@ -77,10 +85,19 @@
   background-image: url('./assets/images/imainpage.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-image: cover;
   min-height: 100vh;
   /* -webkit-filter: sepia(80%);
   /* Safari 6.0 - 9.0 */
-  /* filter: brightness(0.2); */
+
+
+}
+
+.darken {
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.692)),
+    url('./assets/images/imainpage.jpeg');
 
 }
 
@@ -112,7 +129,10 @@
 }
 
 .MyBCKCOUNT {
-  background-image: url('./assets/images/ielementor1.jpeg');
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.692)),
+    url('./assets/images/ielementor1.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 50vh;

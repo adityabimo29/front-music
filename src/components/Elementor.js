@@ -10,7 +10,7 @@ function Elementor() {
           <content
             style={{
               //   color: '#ffffff',
-              color: 'yellow',
+              color: 'white',
               fontFamily: '  Poppins, Sans-serif',
               //   fontFamily: 'Alfa Slab One',
               fontSize: '3.5rem',

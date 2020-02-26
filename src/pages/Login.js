@@ -1,33 +1,33 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 //React Bootstrap
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 //STYLE
-import "../assets/css/Login.css";
+import '../assets/css/Login.css';
 //Utilities
-import { Formik } from "formik";
-import { login } from "../actions";
+import { Formik } from 'formik';
+import { login } from '../actions';
 
 function Login(props) {
   return (
     <div>
-      <Container className="login-container">
+      <Container className='login-container'>
         <Row>
           <Col>
             <Formik
-              initialValues={{ email: "", password: "" }}
+              initialValues={{ email: '', password: '' }}
               validate={values => {
                 const errors = {};
                 if (!values.email) {
-                  errors.email = "Required";
+                  errors.email = 'Required';
                 } else if (
                   !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
                 ) {
-                  errors.email = "Invalid email address";
+                  errors.email = 'Invalid email address';
                 }
                 return errors;
               }}
@@ -46,14 +46,14 @@ function Login(props) {
                 /* and other goodies */
               }) => (
                 <Form onSubmit={handleSubmit}>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Label className="login-label">
+                  <Form.Group controlId='formBasicEmail'>
+                    <Form.Label className='login-label'>
                       Email address
                     </Form.Label>
                     <Form.Control
-                      type="email"
-                      name="email"
-                      placeholder="Enter email"
+                      type='email'
+                      name='email'
+                      placeholder='Enter email'
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.email}
@@ -61,12 +61,12 @@ function Login(props) {
                     {errors.email && touched.email && errors.email}
                   </Form.Group>
 
-                  <Form.Group controlId="formBasicPassword">
-                    <Form.Label className="login-label">Password</Form.Label>
+                  <Form.Group controlId='formBasicPassword'>
+                    <Form.Label className='login-label'>Password</Form.Label>
                     <Form.Control
-                      type="password"
-                      name="password"
-                      placeholder="Password"
+                      type='password'
+                      name='password'
+                      placeholder='Password'
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.password}
@@ -74,10 +74,14 @@ function Login(props) {
                     {errors.password && touched.password && errors.password}
                   </Form.Group>
 
-                  <Form.Group controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                  <Form.Group controlId='formBasicCheckbox'>
+                    <Form.Check type='checkbox' label='Check me out' />
                   </Form.Group>
-                  <Button variant="primary" type="submit" disabled={isSubmitting}>
+                  <Button
+                    variant='primary'
+                    type='submit'
+                    disabled={isSubmitting}
+                  >
                     Submit
                   </Button>
                 </Form>
@@ -90,13 +94,12 @@ function Login(props) {
   );
 }
 
-
 const mapDispatchToProps = dispatch => {
-    return {
-      login: values => {
-        dispatch(login(values));
-      }
-    };
+  return {
+    login: values => {
+      dispatch(login(values));
+    }
+  };
 };
 
-export default connect(null,mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(Login);

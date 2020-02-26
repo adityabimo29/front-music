@@ -2,10 +2,13 @@ import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import '../App.css';
 import { Link } from 'react-router-dom';
+import AboutUs from '../components/AboutUs';
+import Elementor from '../components/Elementor';
+import Testimoni from '../components/Testimoni';
 // import { Autoplay } from 'swiper/js/swiper.esm';
 export default function Home() {
   return (
-    <div className='myPage'>
+    <div className='myPage darken'>
       <Row>
         <Col xs={12} md={12}>
           <h1 className='h1Home'>welcome to music Byte</h1>
@@ -27,6 +30,9 @@ export default function Home() {
           </div>
         </Col>
       </Row>
+      <Row>AboutUs</Row>
+      <Row>Elementor</Row>
+      <Row>Testimoni</Row>
     </div>
   );
 }

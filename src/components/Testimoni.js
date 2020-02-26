@@ -20,156 +20,90 @@ export default function Testimoni() {
         </Col>
       </Row>
       <Row>
-        <Col xs={12} md={6}>
+        <Col xs={12} md={1}></Col>
+        <Col xs={12} md={10}>
           <Carousel>
-            <Carousel.Item>
-              <Card style={{ margin: '20px', width: '36rem' }}>
-                <content>
+            <Carousel.Item className='bg-white'>
+              <Card>
+                <Card.Body style={{ width: '850px' }}>
                   <Card.Img
                     variant='top'
                     style={{
                       borderRadius: '50%',
                       height: '200px',
                       width: '200px',
-                      marginLeft: '200px',
-                      marginTop: '20px',
-                      padding: '15px'
-                    }}
-                    src={imageCard1}
-                  />
-                </content>
-                <Card.Body>
-                  <Card.Text style={{ fontStyle: 'italic' }}>
-                    " i am happy with this application as iam recruiter ,iam
-                    easily"
-                    <br />
-                    "Find skillful freelance musicians "
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-              ;
-            </Carousel.Item>
-
-            <Carousel.Item>
-              <Card style={{ margin: '20px', width: '36rem' }}>
-                <Card.Img
-                  variant='top'
-                  style={{
-                    borderRadius: '50%',
-                    height: '200px',
-                    width: '200px',
-                    marginLeft: '200px',
-                    marginTop: '20px',
-                    padding: '15px'
-                  }}
-                  src={imageCard2}
-                />
-                <Card.Body>
-                  <Card.Text style={{ fontStyle: 'italic' }}>
-                    "Music Byte definitly good application and mediator to{' '}
-                    <br />" " me it is have been benefit as indie musicians"
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-              ;
-            </Carousel.Item>
-            <Carousel.Item>
-              <Card style={{ margin: '20px', width: '36rem' }}>
-                <Card.Img
-                  variant='top'
-                  style={{
-                    borderRadius: '50%',
-                    height: '200px',
-                    width: '200px',
-                    marginLeft: '200px',
-                    marginTop: '20px',
-                    padding: '15px'
-                  }}
-                  src={imageCard3}
-                />
-                <Card.Body>
-                  <Card.Text style={{ fontStyle: 'italic' }}>
-                    "easily to find some one ,colobaration jaming in music,i
-                    like it !"
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-              ;
-            </Carousel.Item>
-          </Carousel>
-        </Col>
-        {/*sebelah kanan */}
-        <Col xs={12} md={6}>
-          <Carousel>
-            <Carousel.Item>
-              <Card style={{ margin: '20px', width: '36rem' }}>
-                <content>
-                  <Card.Img
-                    variant='top'
-                    style={{
-                      borderRadius: '50%',
-                      height: '200px',
-                      width: '200px',
-                      marginLeft: '200px',
+                      marginLeft: '400px',
                       marginTop: '20px',
                       padding: '15px'
                     }}
                     src={imageCard4}
                   />
-                </content>
-                <Card.Body>
-                  <Card.Text style={{ margin: '20px', fontStyle: 'italic' }}>
+                  <Card.Text
+                    style={{
+                      marginLeft: '30px',
+                      textAlign: 'center',
+                      fontStyle: 'italic'
+                    }}
+                  >
                     " i am happy with this application as iam recruiter ,iam
-                    easily"
-                    <br />
-                    "Find skillful freelance musicians "
+                    easily Find skillful freelance musicians "
                   </Card.Text>
                 </Card.Body>
               </Card>
               ;
             </Carousel.Item>
 
-            <Carousel.Item>
-              <Card style={{ margin: '20px', width: '36rem' }}>
+            <Carousel.Item className='bg-white'>
+              <Card style={{ width: '850px' }}>
                 <Card.Img
                   variant='top'
                   style={{
                     borderRadius: '50%',
                     height: '200px',
                     width: '200px',
-                    marginLeft: '200px',
+                    marginLeft: '400px',
                     marginTop: '20px',
                     padding: '15px'
                   }}
                   src={imageCard5}
                 />
                 <Card.Body>
-                  <Card.Text style={{ fontStyle: 'italic' }}>
-                    "Music Byte definitly good application and mediator to{' '}
-                    <br />" " me it is have been benefit as indie musicians"
+                  <Card.Text
+                    style={{
+                      marginLeft: '30px',
+                      textAlign: 'center',
+                      fontStyle: 'italic'
+                    }}
+                  >
+                    "Music Byte definitly good application and mediator to me it
+                    is have been benefit as indie musicians"
                   </Card.Text>
                 </Card.Body>
               </Card>
               ;
             </Carousel.Item>
-            <Carousel.Item>
-              <Card
-                style={{ borderLine: 'none', margin: '20px', width: '36rem' }}
-              >
+            <Carousel.Item className='bg-white'>
+              <Card style={{ width: '850px' }}>
                 <Card.Img
                   variant='top'
                   style={{
                     borderRadius: '50%',
                     height: '200px',
                     width: '200px',
-                    marginLeft: '200px',
+                    marginLeft: '400px',
                     marginTop: '20px',
                     padding: '15px'
                   }}
                   src={imageCard6}
                 />
                 <Card.Body>
-                  <Card.Text style={{ fontStyle: 'italic' }}>
+                  <Card.Text
+                    style={{
+                      marginLeft: '30px',
+                      textAlign: 'center',
+                      fontStyle: 'italic'
+                    }}
+                  >
                     "easily to find some one ,colobaration jaming in music,i
                     like it !"
                   </Card.Text>
@@ -179,6 +113,7 @@ export default function Testimoni() {
             </Carousel.Item>
           </Carousel>
         </Col>
+        <Col xs={12} md={1}></Col>
       </Row>{' '}
     </div>
   );
