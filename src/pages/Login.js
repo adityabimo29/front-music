@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 //Utilities
 import { login } from '../actions';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 //React Bootstrap
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';

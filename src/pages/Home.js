@@ -2,9 +2,9 @@ import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import '../App.css';
 import { Link } from 'react-router-dom';
-import AboutUs from '../components/AboutUs';
-import Elementor from '../components/Elementor';
-import Testimoni from '../components/Testimoni';
+// import AboutUs from '../components/AboutUs';
+// import Elementor from '../components/Elementor';
+// import Testimoni from '../components/Testimoni';
 // import { Autoplay } from 'swiper/js/swiper.esm';
 export default function Home() {
   return (

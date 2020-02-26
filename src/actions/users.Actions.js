@@ -1,6 +1,8 @@
 import axios from 'axios';
+import History from '../history';
 export const LOG_IN = 'LOG_IN';
 export const SIGN_UP = 'SIGN_UP';
+export const SET_LOGOUT = 'SET_LOGOUT';
 
 export const setSignup = data => {
   return {
@@ -8,7 +10,19 @@ export const setSignup = data => {
     payload: data
   };
 };
+export const setLogin = data => {
+  return {
+    type: LOG_IN,
+    payload: data
+  };
+};
 
+// logout
+export const logout = () => {
+  return {
+    type: SET_LOGOUT
+  };
+};
 export const login = (values, history) => dispatch => {
   return axios({
     method: 'POST',
@@ -21,7 +35,7 @@ export const login = (values, history) => dispatch => {
 
         localStorage.setItem('token', response.data.token);
         dispatch(setLogin(values));
-        history.push('/profile');
+        History.push('/profile');
       }
     })
     .catch(error => {
@@ -40,7 +54,7 @@ export const signup = (values, history) => dispatch => {
       console.log('this is response data signup', response.data);
       dispatch(setSignup(response.data.data));
 
-      history.push('/login');
+      History.push('/login');
     })
     .catch(error => {
       console.log(error);

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, Button, Row, Col } from 'react-bootstrap';
 import { Carousel } from 'react-bootstrap';
-import imageCard1 from '../assets/images/imageCard1.jpeg';
-import imageCard2 from '../assets/images/imageCard2.jpeg';
-import imageCard3 from '../assets/images/imgCardGuitaris1.jpg';
+// import imageCard1 from '../assets/images/imageCard1.jpeg';
+// import imageCard2 from '../assets/images/imageCard2.jpeg';
+// import imageCard3 from '../assets/images/imgCardGuitaris1.jpg';
 //kanan
 import imageCard4 from '../assets/images/imgVocalist.jpeg';
 import imageCard5 from '../assets/images/imgvocalist1.jpg';
