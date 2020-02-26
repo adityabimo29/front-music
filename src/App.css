@@ -13,6 +13,15 @@
   }
 }
 
+
+.NavHv {
+  background: #343A40;
+}
+
+.NavHv:hover {
+  background: #FF1493
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -33,24 +42,68 @@
   padding: 0px;
 }
 
+/* start inline home */
+.h1Home {
+  text-align: center;
+  margin-top: 350px;
+  color: white
+}
+
+.h4Home {
+
+  text-align: center;
+  color: 'white'
+
+}
+
+.divHome {
+
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btnHome {
+
+  background-color: white;
+  text-align: center;
+  color: 'white'
+
+}
+
+/* end inline home /////////////////////////////////*/
 .myPage {
-  background-image: url('./assets/img/mainpage.jpeg');
+  background-image: url('./assets/images/imainpage.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
-  -webkit-filter: sepia(70%);
+  /* -webkit-filter: sepia(80%);
   /* Safari 6.0 - 9.0 */
-  filter: sepia(70%);
+  /* filter: brightness(0.2); */
+
+}
+
+.myPage_overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.003);
+  z-index: 2;
+
 }
 
 .myContact {
-  background-image: url('./assets/img/contactUsSame.jpg');
+  background-image: url('./assets/images/icontactUsSame.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
   /* -webkit-filter: sepia(70%);
   /* Safari 6.0 - 9.0 */
   /* filter: sepia(70%); */
+  padding-bottom: 20px;
 
 }
 
@@ -59,11 +112,134 @@
 }
 
 .MyBCKCOUNT {
-  background-image: url('./assets/img/elementor1.jpeg');
+  background-image: url('./assets/images/ielementor1.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 50vh;
 }
+
+
+/* Footer ////////////////////*/
+.MyFooter {
+  color: #fffac8;
+  background-color: black;
+
+}
+
+.pFooter {
+
+  font-weight: bold;
+  text-align: left;
+  font-size: 24px;
+  margin-left: 35px;
+  font-family: lato, sanserif
+}
+
+.p2Footer {
+  margin-left: 35px;
+}
+
+.divFooter {
+  height: 250px;
+  background-color: black;
+  padding-top: 18px;
+}
+
+.divStyleFooter {
+
+  font-size: 14px;
+  font-family: 'lato,sanserif';
+  display: grid;
+  grid: 25% 75%;
+
+}
+
+.divSubcribes {
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 5px;
+
+}
+
+.inputFormFooter {
+
+  font-family: lato, sanserif;
+  font-size: 12px
+}
+
+.btnFooter {
+
+  font-family: lato, sanserif;
+  background-color: red;
+  color: white;
+}
+
+.p1Contact {
+  font-size: 50px;
+  color: white;
+  font-family: Alfa Slab One;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.p2Contact {
+
+  color: green;
+  font-size: 24px;
+  font-style: italic;
+  font-family: montserrat, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Arial, sans-serif;
+  text-align: center;
+}
+
+.p2styleColor {
+
+  color: #FF1493;
+
+}
+
+.pAlignContact {
+  text-align: right;
+}
+
+.pAlignment {
+  text-align: left;
+}
+
+.pContactUs {
+
+  color: #FF1493;
+  font-size: 24px;
+  font-style: italic;
+  font-family: montserrat, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Arial, sans-serif;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.bgContactUs {
+  background-color: none;
+}
+
+.bgContactUsTextArea {
+
+  height: 300px;
+  margin-right: 8px;
+  background: none;
+
+}
+
+.pColor {
+  color: white
+}
+
+/* end footer */
+
+/* Contact Syte */
+
+
+
+
+/* End COntact Style */
 
 @keyframes App-logo-spin {
   from {
