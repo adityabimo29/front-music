@@ -15,7 +15,7 @@ import Button from "react-bootstrap/Button";
 
 function Register(props) {
   return (
-    <div>
+    <div className="registerBg">
       <Container className="signup-container">
         <Row>
           <Col>
@@ -59,7 +59,7 @@ function Register(props) {
                 <Form onSubmit={handleSubmit}>
                   <Form.Row>
                     <Form.Group as={Col} controlId="first_name">
-                      <Form.Label>Firstname</Form.Label>
+                      <Form.Label className="reg-label">Firstname</Form.Label>
                       <Form.Control
                         type="text"
                         name="first_name"
@@ -70,7 +70,7 @@ function Register(props) {
                       />
                     </Form.Group>
                     <Form.Group as={Col} controlId="last_name">
-                      <Form.Label>Lastname</Form.Label>
+                      <Form.Label className="reg-label">Lastname</Form.Label>
                       <Form.Control
                         type="text"
                         name="last_name"
@@ -84,7 +84,7 @@ function Register(props) {
 
                   <Form.Row>
                     <Form.Group as={Col} controlId="email">
-                      <Form.Label>Email</Form.Label>
+                      <Form.Label className="reg-label">Email</Form.Label>
                       <Form.Control
                         type="email"
                         name="email"
@@ -95,7 +95,7 @@ function Register(props) {
                       />
                     </Form.Group>
                     <Form.Group as={Col} controlId="password">
-                      <Form.Label>Password</Form.Label>
+                      <Form.Label className="reg-label">Password</Form.Label>
                       <Form.Control
                         type="password"
                         name="password"
@@ -108,7 +108,7 @@ function Register(props) {
                   </Form.Row>
 
                   <Form.Group controlId="id_instrument">
-                    <Form.Label>Instrument</Form.Label>
+                     <Form.Label className="reg-label">Instrument</Form.Label>
                     <Form.Control
                       as="select"
                       name="id_instrument"
@@ -127,7 +127,7 @@ function Register(props) {
                   </Form.Group>
 
                   <Form.Group>
-                    <Form.Label >Genre</Form.Label>
+                    <Form.Label className="reg-label">Genre</Form.Label>
                     <Col>
                       <Form.Check
                         type="radio"
@@ -163,7 +163,7 @@ function Register(props) {
                   </Form.Group>
 
                   <Form.Group controlId="experience">
-                    <Form.Label>Experience</Form.Label>
+                    <Form.Label className="reg-label">Experience</Form.Label>
                     <Form.Control
                       type="number"
                       name="experience"
@@ -175,7 +175,7 @@ function Register(props) {
                   </Form.Group>
 
                   <Form.Group controlId="link_video">
-                    <Form.Label>Link Video</Form.Label>
+                    <Form.Label className="reg-label">Link Video</Form.Label>
                     <Form.Control
                       type="url"
                       name="link_video"
@@ -187,7 +187,7 @@ function Register(props) {
                   </Form.Group>
 
                   <Form.Group controlId="about">
-                    <Form.Label>About</Form.Label>
+                    <Form.Label className="reg-label">About</Form.Label>
                     <Form.Control
                       as="textarea"
                       rows="3"

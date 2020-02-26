@@ -15,7 +15,7 @@ import "../assets/css/Login.css";
 
 function Login(props) {
   return (
-    <div>
+    <div className="loginBg">
       <Container className="login-container">
         <Row>
           <Col>

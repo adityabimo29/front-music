@@ -1,9 +1,27 @@
-.signup-container{
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    background-color: brown;
-    max-width: 100vh;
+.registerBg {
+  margin: 0;
+  background-image: url("../images/icontactUsSame.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+
+  
+  
+
+}
+
+.signup-container {
+  display: flex;
+  margin: auto;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  /* background-color: brown; */
+  /* min-width: 50vw; */
+}
+
+.reg-label{
+    color: antiquewhite;
 }
