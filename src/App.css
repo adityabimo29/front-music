@@ -13,6 +13,62 @@
   }
 }
 
+.hexagon {
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background: url("./assets/images/imgvocalist1.jpg") no-repeat;
+  background-size: cover;
+  margin: 10px auto;
+  height: 200px;
+  width: 200px;
+}
+
+.divxAgon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)
+}
+
+/* .myHexagon {
+  position: relative;
+  width: 300px;
+  height: 73px;
+  background: url('./assets/imageCard1.jpg');
+
+}
+
+.myHexagon::before,
+.myHexagon::after {
+  content: absolute;
+  width: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+
+}
+
+.myHexagon::before {
+  bottom: 99.9%;
+  border-bottom: 86px solid lightblue
+}
+
+.myHexagon::after {
+  top: 100%;
+} */
+
+.MyDark {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03), url('./assets/images/imainpage.jpeg'));
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
+
+.NavHv {
+  background: #343A40;
+}
+
+.NavHv:hover {
+  background: #FF1493
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -33,37 +89,156 @@
   padding: 0px;
 }
 
-.myPage {
-  background-image: url('./assets/img/mainpage.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  -webkit-filter: sepia(70%);
-  /* Safari 6.0 - 9.0 */
-  filter: sepia(70%);
-}
 
 .myContact {
-  background-image: url('./assets/img/contactUsSame.jpg');
+  background-image: url('./assets/images/icontactUsSame.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
   /* -webkit-filter: sepia(70%);
   /* Safari 6.0 - 9.0 */
   /* filter: sepia(70%); */
+  padding-bottom: 20px;
 
 }
 
-.MyAbout {
-  background-color: black;
-}
 
 .MyBCKCOUNT {
-  background-image: url('./assets/img/elementor1.jpeg');
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.692)),
+    url('./assets/images/ielementor1.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 50vh;
 }
+
+
+/* Footer ////////////////////*/
+.MyFooter {
+  color: #fffac8;
+  background-color: black;
+
+}
+
+
+
+
+
+.pFooter {
+
+  font-weight: bold;
+  text-align: left;
+  font-size: 24px;
+  margin-left: 35px;
+  font-family: lato, sanserif
+}
+
+.p2Footer {
+  margin-left: 35px;
+}
+
+.divFooter {
+  height: 250px;
+  background-color: black;
+  padding-top: 18px;
+}
+
+.divStyleFooter {
+
+  font-size: 14px;
+  font-family: 'lato,sanserif';
+  display: grid;
+  grid: 25% 75%;
+
+}
+
+.divSubcribes {
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 5px;
+
+}
+
+.inputFormFooter {
+
+  font-family: lato, sanserif;
+  font-size: 12px
+}
+
+.btnFooter {
+
+  font-family: lato, sanserif;
+  background-color: red;
+  color: white;
+}
+
+.p1Contact {
+  font-size: 50px;
+  color: white;
+  font-family: Alfa Slab One;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.p2Contact {
+
+  color: green;
+  font-size: 24px;
+  font-style: italic;
+  font-family: montserrat, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Arial, sans-serif;
+  text-align: center;
+}
+
+.p2styleColor {
+
+  color: #FF1493;
+
+}
+
+.pAlignContact {
+  text-align: right;
+}
+
+.pAlignment {
+  text-align: left;
+}
+
+.pContactUs {
+
+  color: #FF1493;
+  font-size: 24px;
+  font-style: italic;
+  font-family: montserrat, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Arial, sans-serif;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.bgContactUs {
+  background-color: none;
+}
+
+.bgContactUsTextArea {
+
+  height: 300px;
+  margin-right: 8px;
+  background: none;
+
+}
+
+.pColor {
+  color: white
+}
+
+/* end footer */
+
+/* Contact Syte */
+
+
+
+
+/* End COntact Style */
 
 @keyframes App-logo-spin {
   from {
