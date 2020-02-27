@@ -1,0 +1,17 @@
+.MyAbout {
+    background-color: black;
+    font-family: Roboto Slab
+}
+
+body {
+    background-color: black;
+    font-family: Roboto Slab
+}
+
+.Judul {
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    font-family: 'Alfa Slab One';
+
+}

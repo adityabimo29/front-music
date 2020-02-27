@@ -1,24 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import MyCorousel from '../components/MyCorousel';
 import '../App.css';
 export default function AboutUs() {
   return (
-    <div className='MyAbout'>
+    <Fragment className='MyAbout'>
       <Row>
         <Col>
-          <p
-            style={{
-              textAlign: 'center',
-              color: 'white',
-              fontSize: '34px',
-              fontStyle: 'italic',
-              fontFamily: 'Alfa Slab One'
-            }}
-          >
-            {' '}
-            ABOUT US
-          </p>
+          <p className='Judul'> ABOUT US</p>
         </Col>
       </Row>
       <Row>
@@ -61,6 +50,6 @@ export default function AboutUs() {
           <MyCorousel />
         </Col>
       </Row>
-    </div>
+    </Fragment>
   );
 }

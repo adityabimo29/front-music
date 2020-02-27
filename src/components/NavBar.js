@@ -23,124 +23,109 @@ const NavBar = props => {
   };
 
   return (
-    <Fragment style={{ fontFamily: 'Roboto Slab' }}>
-      <Navbar
-        bg='dark'
-        expand='lg'
-        style={{ color: 'white', paddingTop: '5px' }}
-      >
-        <Row>
-          <Col xs={12} md={3}>
-            {' '}
-            <Navbar.Brand>
-              <img
-                src={mylogo}
-                style={{ background: 'none', height: '60px', width: '40px' }}
-                className='logoNav'
-                alt='Gambar 1'
-              />
-            </Navbar.Brand>
-          </Col>
-          <Col xs={12} md={9}>
-            {' '}
-            <Navbar.Toggle
-              style={{ marginLeft: '250px' }}
-              aria-controls='basic-navbar-nav'
-            />
-            <Navbar.Collapse id='basic-navbar-nav'>
-              <Nav
-                style={{
-                  paddingTop: '20px',
-                  marginLeft: '235px',
-                  color: 'white !important'
-                }}
-              >
+    <div style={{ fontFamily: 'Roboto Slab' }}>
+      <Navbar bg='dark' expand='lg' style={{ color: 'white' }}>
+        {' '}
+        <Navbar.Brand>
+          <img
+            src={mylogo}
+            style={{ background: 'none', height: '60px', width: '40px' }}
+            className='logoNav'
+            alt='Gambar 1'
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls='basic-navbar-nav' />
+        <Navbar.Collapse id='basic-navbar-nav'>
+          <Nav
+            style={{
+              paddingTop: '20px',
+              color: 'white !important'
+            }}
+          >
+            <Nav.Link
+              as={Link}
+              to='/'
+              className='NavHv'
+              style={{ color: 'white' }}
+            >
+              HOME
+            </Nav.Link>
+            {props.isLogged ? (
+              <Fragment>
                 <Nav.Link
                   as={Link}
-                  to='/'
+                  to='/about'
                   className='NavHv'
                   style={{ color: 'white' }}
                 >
-                  HOME
+                  ABOUT
                 </Nav.Link>
-                {props.isLogged ? (
-                  <Fragment>
-                    <Nav.Link
-                      as={Link}
-                      to='/about'
-                      className='NavHv'
-                      style={{ color: 'white' }}
-                    >
-                      ABOUT
-                    </Nav.Link>
 
-                    <Nav.Link
-                      as={Link}
-                      to='/profile'
-                      className='NavHv'
-                      style={{ color: 'white' }}
-                    >
-                      PROFILE
-                    </Nav.Link>
-                    <Nav.Link
-                      as={Link}
-                      to='/contact'
-                      className='NavHv'
-                      style={{ color: 'white' }}
-                    >
-                      CONTACT
-                    </Nav.Link>
-                    <Nav.Link
-                      className='NavHv'
-                      style={{ color: 'white' }}
-                      onClick={handleLogout}
-                    >
-                      LOGOUT
-                    </Nav.Link>
-                  </Fragment>
-                ) : (
-                  <Fragment>
-                    <Nav.Link
-                      as={Link}
-                      to='/about'
-                      className='NavHv'
-                      style={{ color: 'white' }}
-                    >
-                      ABOUT
-                    </Nav.Link>
-                    <Nav.Link
-                      as={Link}
-                      to='/contact'
-                      className='NavHv'
-                      style={{ color: 'white' }}
-                    >
-                      CONTACT
-                    </Nav.Link>
-                    <Nav.Link
-                      as={Link}
-                      to='/login'
-                      className='NavHv'
-                      style={{ color: 'white' }}
-                    >
-                      LOGIN
-                    </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to='/profile'
+                  className='NavHv'
+                  style={{ color: 'white' }}
+                >
+                  PROFILE
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to='/contact'
+                  className='NavHv'
+                  style={{ color: 'white' }}
+                >
+                  CONTACT
+                </Nav.Link>
+                <Nav.Link
+                  className='NavHv'
+                  style={{ color: 'white' }}
+                  onClick={handleLogout}
+                >
+                  LOGOUT
+                </Nav.Link>
+              </Fragment>
+            ) : (
+              <Fragment>
+                <Nav.Link
+                  as={Link}
+                  to='/about'
+                  className='NavHv'
+                  style={{ color: 'white' }}
+                >
+                  ABOUT
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to='/contact'
+                  className='NavHv'
+                  style={{ color: 'white' }}
+                >
+                  CONTACT
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to='/login'
+                  className='NavHv'
+                  style={{ color: 'white' }}
+                >
+                  LOGIN
+                </Nav.Link>
 
-                    <Nav.Link
-                      as={Link}
-                      to='/register'
-                      className='NavHv'
-                      style={{ color: 'white' }}
-                    >
-                      REGISTER
-                    </Nav.Link>
-                  </Fragment>
-                )}
-              </Nav>
-            </Navbar.Collapse>
-          </Col>
-        </Row>
+                <Nav.Link
+                  as={Link}
+                  to='/register'
+                  className='NavHv'
+                  style={{ color: 'white' }}
+                >
+                  REGISTER
+                </Nav.Link>
+              </Fragment>
+            )}
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
-    </Fragment>
+    </div>
   );
 };
 //mohon navbarnya dipakai ya  sudah benar logicnya
