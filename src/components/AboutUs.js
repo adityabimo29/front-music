@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import MyCorousel from '../components/MyCorousel';
 import '../App.css';
 export default function AboutUs() {
   return (
-    <Fragment className='MyAbout'>
+    <div className='MyAbout'>
       <Row>
         <Col>
           <p className='Judul'> ABOUT US</p>
@@ -50,6 +50,6 @@ export default function AboutUs() {
           <MyCorousel />
         </Col>
       </Row>
-    </Fragment>
+    </div>
   );
 }

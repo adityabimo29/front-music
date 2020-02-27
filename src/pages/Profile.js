@@ -56,6 +56,7 @@ export default class Profile extends Component {
               <Row>
                 <Col>
                   <iframe
+                    title='media-youtube'
                     width='100%'
                     height='315'
                     src={`https://www.youtube.com/embed/vxkl0kKXnHY`}

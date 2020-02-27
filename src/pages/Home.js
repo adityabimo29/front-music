@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Row, Col, Button, Container } from 'react-bootstrap';
 import '../assets/css/Home.css';
 import { Link } from 'react-router-dom';

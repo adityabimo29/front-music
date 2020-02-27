@@ -11,7 +11,7 @@ export default function MeetTeam() {
       <Container fluid>
         <Row>
           <Col xs={12} md={12}>
-            <p
+            <div
               style={{
                 textAlign: 'center',
                 fontFamily: 'Roboto Slab',
@@ -20,7 +20,7 @@ export default function MeetTeam() {
               }}
             >
               <h1>MEET OUR TEAM</h1>
-            </p>
+            </div>
           </Col>
         </Row>
         <Row>
@@ -33,9 +33,9 @@ export default function MeetTeam() {
           >
             <Col md={3} xs={12}>
               {/*akhir */}
-              <div class='flipBox'>
-                <div class='flipBoxInner'>
-                  <div class='flipBoxFront'>
+              <div className='flipBox'>
+                <div className='flipBoxInner'>
+                  <div className='flipBoxFront'>
                     {/* awal  */}
                     <Card style={{ marginLeft: '20px', width: '18rem' }}>
                       <Card.Body>
@@ -56,7 +56,7 @@ export default function MeetTeam() {
                     </Card>
                     {/*akhir */}
                   </div>
-                  <div class='flipBoxBack'>
+                  <div className='flipBoxBack'>
                     {/* awal  */}
                     <Card style={{ marginLeft: '20px', width: '18rem' }}>
                       <Card.Body>
@@ -78,17 +78,17 @@ export default function MeetTeam() {
                           }}
                         >
                           <div className='MyCol3'>
-                            <i class='fab fa-facebook fa-2x'></i>
+                            <i className='fab fa-facebook fa-2x'></i>
                           </div>
                           <div className='MyCol2'>
-                            <i class='fab fa-instagram-square fa-2x'></i>
+                            <i className='fab fa-instagram-square fa-2x'></i>
                           </div>
 
                           <div className='MyCol'>
-                            <i class='fab fa-linkedin fa-2x'></i>
+                            <i className='fab fa-linkedin fa-2x'></i>
                           </div>
                           <div className='MyCol4'>
-                            <i class='fab fa-twitter fa-2x'></i>
+                            <i className='fab fa-twitter fa-2x'></i>
                           </div>
                         </div>
                         {/* <Button variant='primary'>Go somewhere</Button> */}
@@ -102,9 +102,9 @@ export default function MeetTeam() {
             {/*end 1*/}
             {/* start2*/}
             <Col md={3} xs={12}>
-              <div class='flipBox'>
-                <div class='flipBoxInner'>
-                  <div class='flipBoxFront'>
+              <div className='flipBox'>
+                <div className='flipBoxInner'>
+                  <div className='flipBoxFront'>
                     {/* awal  */}
                     <Card style={{ width: '18rem' }}>
                       <Card.Body>
@@ -125,7 +125,7 @@ export default function MeetTeam() {
                     </Card>
                     {/*akhir */}
                   </div>
-                  <div class='flipBoxBack'>
+                  <div className='flipBoxBack'>
                     {/* awal  */}
                     <Card style={{ width: '18rem' }}>
                       <Card.Body>
@@ -147,17 +147,17 @@ export default function MeetTeam() {
                           }}
                         >
                           <div className='MyCol3'>
-                            <i class='fab fa-facebook fa-2x'></i>
+                            <i className='fab fa-facebook fa-2x'></i>
                           </div>
                           <div className='MyCol2'>
-                            <i class='fab fa-instagram-square fa-2x'></i>
+                            <i className='fab fa-instagram-square fa-2x'></i>
                           </div>
 
                           <div className='MyCol'>
-                            <i class='fab fa-linkedin fa-2x'></i>
+                            <i className='fab fa-linkedin fa-2x'></i>
                           </div>
                           <div className='MyCol4'>
-                            <i class='fab fa-twitter fa-2x'></i>
+                            <i className='fab fa-twitter fa-2x'></i>
                           </div>
                         </div>
                         {/* <Button variant='primary'>Go somewhere</Button> */}
@@ -170,9 +170,9 @@ export default function MeetTeam() {
             {/* end 2*/}
             {/* start3*/}
             <Col md={3} xs={12}>
-              <div class='flipBox'>
-                <div class='flipBoxInner'>
-                  <div class='flipBoxFront'>
+              <div className='flipBox'>
+                <div className='flipBoxInner'>
+                  <div className='flipBoxFront'>
                     {/* awal  */}
                     <Card style={{ width: '18rem' }}>
                       <Card.Body>
@@ -193,7 +193,7 @@ export default function MeetTeam() {
                     </Card>
                     {/*akhir */}
                   </div>
-                  <div class='flipBoxBack'>
+                  <div className='flipBoxBack'>
                     {/* awal  */}
                     <Card style={{ width: '18rem' }}>
                       <Card.Body>
@@ -215,17 +215,17 @@ export default function MeetTeam() {
                           }}
                         >
                           <div className='MyCol3'>
-                            <i class='fab fa-facebook fa-2x'></i>
+                            <i className='fab fa-facebook fa-2x'></i>
                           </div>
                           <div className='MyCol2'>
-                            <i class='fab fa-instagram-square fa-2x'></i>
+                            <i className='fab fa-instagram-square fa-2x'></i>
                           </div>
 
                           <div className='MyCol'>
-                            <i class='fab fa-linkedin fa-2x'></i>
+                            <i className='fab fa-linkedin fa-2x'></i>
                           </div>
                           <div className='MyCol4'>
-                            <i class='fab fa-twitter fa-2x'></i>
+                            <i className='fab fa-twitter fa-2x'></i>
                           </div>
                         </div>
                         {/* <Button variant='primary'>Go somewhere</Button> */}
@@ -238,9 +238,9 @@ export default function MeetTeam() {
             {/* end3*/}
             {/* start4*/}
             <Col md={3} xs={12}>
-              <div class='flipBox'>
-                <div class='flipBoxInner'>
-                  <div class='flipBoxFront'>
+              <div className='flipBox'>
+                <div className='flipBoxInner'>
+                  <div className='flipBoxFront'>
                     {/* awal  */}
                     <Card style={{ width: '18rem' }}>
                       <Card.Body>
@@ -261,7 +261,7 @@ export default function MeetTeam() {
                     </Card>
                     {/*akhir */}
                   </div>
-                  <div class='flipBoxBack'>
+                  <div className='flipBoxBack'>
                     {/* awal  */}
                     <Card style={{ width: '18rem' }}>
                       <Card.Body>
@@ -283,17 +283,17 @@ export default function MeetTeam() {
                           }}
                         >
                           <div className='MyCol3'>
-                            <i class='fab fa-facebook fa-2x'></i>
+                            <i className='fab fa-facebook fa-2x'></i>
                           </div>
                           <div className='MyCol2'>
-                            <i class='fab fa-instagram-square fa-2x'></i>
+                            <i className='fab fa-instagram-square fa-2x'></i>
                           </div>
 
                           <div className='MyCol'>
-                            <i class='fab fa-linkedin fa-2x'></i>
+                            <i className='fab fa-linkedin fa-2x'></i>
                           </div>
                           <div className='MyCol4'>
-                            <i class='fab fa-twitter fa-2x'></i>
+                            <i className='fab fa-twitter fa-2x'></i>
                           </div>
                         </div>
                         {/* <Button variant='primary'>Go somewhere</Button> */}

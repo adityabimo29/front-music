@@ -1,17 +1,11 @@
 import React, { Fragment } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//  import from 'react-bootstrap/Button';
-// import Nav from 'react-bootstrap/Nav';
-// import Navbar from 'react-bootstrap/Navbar';
-// import Form from 'react-bootstrap/Form';
-import { Nav, Navbar, Row, Col } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import mylogo from '../assets/images/iguitar.png';
 import '../App.css';
 import { Link } from 'react-router-dom';
-// import { isLogged } from '../actions';
 import { connect } from 'react-redux';
 import { logout } from '../actions/users.Actions';
-// import { isLogged } from '../reducers/users.Reducers';
 import { withRouter } from 'react-router';
 const NavBar = props => {
   // console.log(props);

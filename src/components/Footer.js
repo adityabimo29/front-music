@@ -51,7 +51,7 @@ function MyFooter() {
           </p>
 
           <div className='divSubcribes'>
-            <p>
+            <div>
               {' '}
               <Form>
                 <FormGroup>
@@ -64,10 +64,10 @@ function MyFooter() {
                   />
                 </FormGroup>
               </Form>
-            </p>
-            <p>
+            </div>
+            <div>
               <Button className='btnFooter'>SUBCSCRIBE</Button>
-            </p>
+            </div>
           </div>
         </Col>
       </Row>
