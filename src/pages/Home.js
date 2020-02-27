@@ -11,29 +11,48 @@ export default function Home() {
     <div className='myPage darken'>
       <Row>
         <Col xs={12} md={12}>
-          <h1 className='h1Home'>welcome to music Byte</h1>
+          <p className='h1Home'>welcome to music Byte</p>
           <br />
-          <h4 className='h4Home'>
+          <p className='h4Home'>
             lets coloborate to find your partner <br />
             making famouse band music in the future
-          </h4>
+          </p>
           {/* <div className='divHome'> */}
 
-          <button style={{ backgroundColor: 'red', text: 'white' }}>
-            <Link style={{ text: 'white' }} to={'/login'}>
-              LOGIN
-            </Link>
-          </button>
-          <span>
-            {' '}
-            <Button style={{ backgroundColor: 'red', color: 'White' }}>
-              <Link style={{ text: 'white' }} to={'/register'}>
-                SIGNUP
+          <content style={{ marginLeft: '450px' }}>
+            <Button
+              style={{
+                borderRadius: '10%',
+                backgroundColor: 'red',
+                text: 'white'
+              }}
+            >
+              <Link
+                style={{
+                  borderRadius: '10%',
+                  backgroundColor: 'none',
+                  text: 'white'
+                }}
+                to={'/login'}
+              >
+                LOGIN
               </Link>
             </Button>
-          </span>
-
-          {/* </div> */}
+            <span>
+              {' '}
+              <Button
+                style={{
+                  borderRadius: '10%',
+                  backgroundColor: 'red',
+                  color: 'white'
+                }}
+              >
+                <Link style={{ color: 'none' }} to={'/register'}>
+                  SIGNUP
+                </Link>
+              </Button>
+            </span>
+          </content>
         </Col>
       </Row>
       <Row>AboutUs</Row>

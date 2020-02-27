@@ -1,20 +1,40 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 a {
     color: white;
     text-decoration: none;
-    background-color: red;
+    background-color: none;
+}
+
+body {
+    font-family: 'Roboto Slab';
 }
 
 .h1Home {
     text-align: center;
-    margin-top: 350px;
-    color: white
+    margin-top: 200px;
+    color: white;
+    font-family: 'Roboto Slab';
+    font-size: 3rem;
 }
 
 .h4Home {
 
     text-align: center;
-    color: 'white'
+    color: 'white';
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Roboto Slab';
+    font-size: 1.5rem;
 
+}
+
+.h4Home:hover {
+    color: 'green';
+    font-family: 'Roboto Slab';
 }
 
 .divHome {
@@ -23,13 +43,15 @@ a {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Roboto Slab';
 }
 
 .btnHome {
 
     background-color: red;
     text-align: center;
-    color: 'white'
+    color: 'white';
+    font-family: 'Roboto Slab';
 
 }
 
