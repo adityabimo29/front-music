@@ -23,19 +23,19 @@ export const logout = () => {
     type: SET_LOGOUT
   };
 };
-export const login = (values, history) => dispatch => {
+export const login = (values, history) => (dispatch, getState) => {
   return axios({
     method: 'POST',
     url: 'https://music-byte.herokuapp.com/users/login',
     data: values
   })
     .then(response => {
-      if (response.status === 200) {
-        console.log('token', response.data.token);
+      console.log(response);
 
+      if (response.status === 200) {
         localStorage.setItem('token', response.data.token);
         dispatch(setLogin(values));
-        History.push('/profile');
+        history.push('/profile');
       }
     })
     .catch(error => {

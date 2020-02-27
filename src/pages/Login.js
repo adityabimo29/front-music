@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 //Utilities
 import { login } from '../actions';
-// import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 //React Bootstrap
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -95,13 +95,13 @@ function Login(props) {
     </div>
   );
 }
-
+//butuh tambahan history supaya bisa login without refresh
 const mapDispatchToProps = dispatch => {
   return {
-    login: values => {
-      dispatch(login(values));
+    login: (values, history) => {
+      dispatch(login(values, history));
     }
   };
 };
 
-export default connect(null, mapDispatchToProps)(Login);
+export default withRouter(connect(null, mapDispatchToProps)(Login));

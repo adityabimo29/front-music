@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
-import '../App.css';
+import '../assets/css/Home.css';
 import { Link } from 'react-router-dom';
 // import AboutUs from '../components/AboutUs';
 // import Elementor from '../components/Elementor';
@@ -17,17 +17,23 @@ export default function Home() {
             lets coloborate to find your partner <br />
             making famouse band music in the future
           </h4>
-          <div className='divHome'>
-            <Button className=' bg-danger text-white'>
-              <Link to={'/login'}>LOGIN</Link>
+          {/* <div className='divHome'> */}
+
+          <button style={{ backgroundColor: 'red', text: 'white' }}>
+            <Link style={{ text: 'white' }} to={'/login'}>
+              LOGIN
+            </Link>
+          </button>
+          <span>
+            {' '}
+            <Button style={{ backgroundColor: 'red', color: 'White' }}>
+              <Link style={{ text: 'white' }} to={'/register'}>
+                SIGNUP
+              </Link>
             </Button>
-            <span>
-              {' '}
-              <Button style={{ backgroundColor: '#EC5252', color: 'White' }}>
-                <Link to={'/register'}>SIGNUP</Link>
-              </Button>
-            </span>
-          </div>
+          </span>
+
+          {/* </div> */}
         </Col>
       </Row>
       <Row>AboutUs</Row>

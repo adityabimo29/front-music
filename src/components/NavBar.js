@@ -29,25 +29,22 @@ const NavBar = props => {
         expand='lg'
         style={{ color: 'white', paddingTop: '5px' }}
       >
-        <Navbar.Brand href='/'>
+        <Navbar.Brand>
           <img
             src={mylogo}
-            style={{ height: '60px', width: '40px' }}
+            style={{ background: 'none', height: '60px', width: '40px' }}
             className='logoNav'
             alt='Gambar 1'
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
-          <Nav
-            className='mr-auto ml-auto navFont'
-            style={{ color: 'white !important' }}
-          >
+          <Nav className=' navFont' style={{ color: 'white !important' }}>
             <Nav.Link
               as={Link}
               to='/'
               className='NavHv'
-              style={{ color: 'white' }}
+              style={{ marginLeft: '350px', color: 'white' }}
             >
               HOME
             </Nav.Link>
