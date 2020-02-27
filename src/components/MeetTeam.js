@@ -10,13 +10,12 @@ export default function MeetTeam() {
           <p
             style={{
               textAlign: 'center',
-              color: 'white',
               fontSize: '34px',
               fontStyle: 'italic',
-              fontFamily: 'Alfa Slab One'
+              fontFamily: 'Alfa Slab One,roman,robot'
             }}
           >
-            MEET OUR TEAM
+            <h1>MEET OUR TEAM</h1>
           </p>
         </Col>
       </Row>
