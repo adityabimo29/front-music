@@ -1,7 +1,7 @@
 .flipBox {
     background-color: transparent;
     width: 18rem;
-    /* height: 200px; */
+    /* height: 100px; */
     /* border: 1px solid #f1f1f1; */
     perspective: 1000px;
 
@@ -61,4 +61,9 @@
     background-color: transparent;
     color: black;
     transform: rotateY(180deg);
+}
+
+body {
+    margin-bottom: 200px;
+    min-height: 200vh;
 }
