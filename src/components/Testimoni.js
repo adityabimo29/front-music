@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button, Row, Col } from 'react-bootstrap';
+import { Card, Row, Col } from 'react-bootstrap';
 import { Carousel } from 'react-bootstrap';
 // import imageCard1 from '../assets/images/imageCard1.jpeg';
 // import imageCard2 from '../assets/images/imageCard2.jpeg';
@@ -8,7 +8,7 @@ import { Carousel } from 'react-bootstrap';
 import imageCard4 from '../assets/images/imgVocalist.jpeg';
 import imageCard5 from '../assets/images/imgvocalist1.jpg';
 import imageCard6 from '../assets/images/imgCardVocalist2.jpg';
-import { link } from 'react-router-dom';
+// import { link } from 'react-router-dom';
 export default function Testimoni() {
   return (
     <div className='bg-dark'>

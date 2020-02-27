@@ -11,7 +11,6 @@ import Blog from './pages/Blog';
 import Home from './pages/Home';
 import DetailPage from './DetailPages/DetailPage';
 import Profile from './pages/Profile';
-import { withRouter } from 'react-router';
 
 function App() {
   return (

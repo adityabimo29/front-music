@@ -13,6 +13,45 @@
   }
 }
 
+.hexagon {
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background: url("./assets/images/imgvocalist1.jpg") no-repeat;
+  background-size: cover;
+  margin: 10px auto;
+  height: 200px;
+  width: 200px;
+}
+
+.divxAgon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)
+}
+
+/* .myHexagon {
+  position: relative;
+  width: 300px;
+  height: 73px;
+  background: url('./assets/imageCard1.jpg');
+
+}
+
+.myHexagon::before,
+.myHexagon::after {
+  content: absolute;
+  width: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+
+}
+
+.myHexagon::before {
+  bottom: 99.9%;
+  border-bottom: 86px solid lightblue
+}
+
+.myHexagon::after {
+  top: 100%;
+} */
+
 .MyDark {
   background-image: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03), url('./assets/images/imainpage.jpeg'));
   background-repeat: no-repeat;
@@ -145,6 +184,10 @@
   background-color: black;
 
 }
+
+
+
+
 
 .pFooter {
 

@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 // import { isLogged } from '../actions';
 import { connect } from 'react-redux';
 import { logout } from '../actions/users.Actions';
-import { isLogged } from '../reducers/users.Reducers';
+// import { isLogged } from '../reducers/users.Reducers';
 import { withRouter } from 'react-router';
 const NavBar = props => {
   // console.log(props);

@@ -8,7 +8,7 @@ import {
   InputGroup,
   FormControl
 } from 'react-bootstrap';
-import { withRouter } from 'react-router-dom';
+
 export default function Contact() {
   return (
     <div className='myContact'>
