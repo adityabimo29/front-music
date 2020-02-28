@@ -1,17 +1,19 @@
-.MyAbout {
-    background-color: black;
-    font-family: Roboto Slab
+.AboutContainer {
+  /* background-color: black; */
 }
 
-body {
-    background-color: black;
-    font-family: Roboto Slab
+.AboutTitle p {
+  text-align: center;
+  color: white;
+  font-size: 5vh;
 }
 
-.Judul {
-    text-align: center;
-    color: white;
-    font-size: 3rem;
-    font-family: 'Alfa Slab One';
+.AboutArticle {
+  background-color: #263238;
+  color: white;
+  font-size: 2.5vh;
+}
 
+.AboutArticle p {
+  padding: 5px 0;
 }

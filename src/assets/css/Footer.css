@@ -1,0 +1,17 @@
+.Footer {
+  background-color: transparent;
+  padding-top: 2vh;
+  color: white;
+}
+
+.OfficeHours p {
+  font-weight: bold;
+  text-align: left;
+  font-family: lato, sanserif;
+}
+
+.OfficeHeader,
+.TouchHeader {
+  font-weight: bold;
+  font-size: 3vh;
+}

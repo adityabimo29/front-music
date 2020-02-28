@@ -12,7 +12,7 @@ body {
 
 .loginBg {
   margin: 0;
-  background-image: url("../images/icontactUsSame.jpg");
+  background-image: url('../images/icontactUsSame.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -40,8 +40,8 @@ body {
   /* text-align: center; */
 }
 
-.login-container input[type="email"],
-.login-container input[type="password"] {
+.login-container input[type='email'],
+.login-container input[type='password'] {
   border: 0;
   background: none;
   display: block;
@@ -56,13 +56,13 @@ body {
   transition: 0.25s;
 }
 
-.login-container input[type="email"]:focus,
-.login-container input[type="password"]:focus {
+.login-container input[type='email']:focus,
+.login-container input[type='password']:focus {
   width: 320px;
   border-color: #2ecc71;
 }
 
-.login-container button[type="submit"] {
+.login-container button[type='submit'] {
   border: 0;
   background: none;
   display: block;
@@ -77,6 +77,6 @@ body {
   cursor: pointer;
 }
 
-.login-container button[type="submit"]:hover {
+.login-container button[type='submit']:hover {
   background: #2ecc71;
 }

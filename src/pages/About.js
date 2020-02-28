@@ -8,9 +8,9 @@ export default function About() {
   return (
     <div>
       <AboutUs />
-      <Elementor />
+      {/* <Elementor />
       <Testimoni />
-      <MeetTeam />
+      <MeetTeam /> */}
     </div>
   );
 }
