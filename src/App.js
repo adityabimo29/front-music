@@ -16,8 +16,7 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <About />
-      {/* <Switch>
+      <Switch>
         <Route exact path='/'>
           <Home />
           <About />
@@ -47,7 +46,7 @@ function App() {
         <Route path='/detailPage/:id'>
           <DetailPage />
         </Route>
-      </Switch> */}
+      </Switch>
       <Footer />
     </Router>
   );
