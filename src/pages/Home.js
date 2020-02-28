@@ -1,68 +1,34 @@
 import React from 'react';
-import { Row, Col, Button, Container } from 'react-bootstrap';
 import '../assets/css/Home.css';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 // import { Autoplay } from 'swiper/js/swiper.esm';
 export default function Home() {
   return (
-    <div className='myPage darken'>
-      <Container fluid>
-        <Row>
-          <Col xs={12} md={12}>
-            <p className='h1Home'>welcome to music Byte</p>
-            <br />
-
-            <div className='h4Home'>
-              lets coloborate to find your partner <br />
-              making famouse band music in the future
-            </div>
-            {/* <div className='divHome'> */}
-          </Col>
-        </Row>
-        <Row>
-          <Col
-            md={12}
-            xs={12}
-            style={{ display: 'flex', justifyContent: 'center' }}
-          >
-            <content style={{ paddingBottom: '100px' }}>
-              <Button
-                style={{
-                  width: '150px',
-                  borderRadius: '5%',
-                  backgroundColor: 'red',
-                  text: 'white'
-                }}
-              >
-                <Link
-                  style={{
-                    backgroundColor: 'none',
-                    text: 'white'
-                  }}
-                  to={'/login'}
-                >
-                  LOGIN
-                </Link>
+    <div>
+      <Container fluid className='HomeContainer'>
+        <Col xl={{ span: 5, offset: 4 }} className='WelcomeMain'>
+          <Row>
+            <Col xl>
+              <h1>Welcome to Music Byte</h1>
+              <p>
+                Lets colaborate to find your partner making famous band music in
+                the future
+              </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col xl>
+              <Button variant='outline-info' className='SignIn'>
+                <Link to='/login'>Sign In</Link>
               </Button>
-              <span>
-                <Button
-                  style={{
-                    marginLeft: '30px',
-                    width: '150px',
-                    borderRadius: '5%',
-                    backgroundColor: 'red',
-                    color: 'white'
-                  }}
-                >
-                  <Link style={{ color: 'none' }} to={'/register'}>
-                    SIGNUP
-                  </Link>
-                </Button>
-              </span>
-            </content>
-          </Col>
-        </Row>
+              <Button variant='outline-info' className='SignUp'>
+                <Link to='/register'>Sign Up</Link>
+              </Button>
+            </Col>
+          </Row>
+        </Col>
       </Container>
     </div>
   );
