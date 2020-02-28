@@ -32,6 +32,7 @@ const NavBar = props => {
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav
             style={{
+              fontFamily: 'Roboto Slab',
               paddingTop: '20px',
               color: 'white !important'
             }}
@@ -62,6 +63,15 @@ const NavBar = props => {
                   style={{ color: 'white' }}
                 >
                   PROFILE
+                </Nav.Link>
+
+                <Nav.Link
+                  as={Link}
+                  to='/main'
+                  className='NavHv'
+                  style={{ color: 'white' }}
+                >
+                  MAIN
                 </Nav.Link>
                 <Nav.Link
                   as={Link}
