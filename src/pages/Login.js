@@ -1,28 +1,29 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 //Utilities
-import { Formik } from "formik";
-import { login } from "../actions";
-import { withRouter } from "react-router-dom";
+import { login } from '../actions';
+import { withRouter } from 'react-router-dom';
 //React Bootstrap
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 //STYLE
-import "../assets/css/Login.css";
+import '../assets/css/Login.css';
+//Utilities
+import { Formik } from 'formik';
 
 function Login(props) {
   return (
-    <div className="loginBg">
-      <Container className="login-container">
+    <div className='loginBg'>
+      <Container className='login-container'>
         <Row>
           <Col>
             <h1>Login</h1>
 
             <Formik
-              initialValues={{ email: "", password: "" }}
+              initialValues={{ email: '', password: '' }}
               // validate={values => {
               //   const errors = {};
               //   if (!values.email) {
@@ -49,12 +50,12 @@ function Login(props) {
                 /* and other goodies */
               }) => (
                 <Form onSubmit={handleSubmit}>
-                  <Form.Group controlId="formBasicEmail">
+                  <Form.Group controlId='formBasicEmail'>
                     <Form.Control
                       required
-                      type="email"
-                      name="email"
-                      placeholder="Enter email"
+                      type='email'
+                      name='email'
+                      placeholder='Enter email'
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.email}
@@ -62,12 +63,12 @@ function Login(props) {
                     {errors.email && touched.email && errors.email}
                   </Form.Group>
 
-                  <Form.Group controlId="formBasicPassword">
+                  <Form.Group controlId='formBasicPassword'>
                     <Form.Control
                       required
-                      type="password"
-                      name="password"
-                      placeholder="Password"
+                      type='password'
+                      name='password'
+                      placeholder='Password'
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.password}
@@ -79,8 +80,8 @@ function Login(props) {
                     <Form.Check type="checkbox" label="Check me out" />
                   </Form.Group> */}
                   <Button
-                    variant="primary"
-                    type="submit"
+                    variant='primary'
+                    type='submit'
                     disabled={isSubmitting}
                   >
                     Submit
@@ -94,7 +95,7 @@ function Login(props) {
     </div>
   );
 }
-
+//butuh tambahan history supaya bisa login without refresh
 const mapDispatchToProps = dispatch => {
   return {
     login: (values, history) => {

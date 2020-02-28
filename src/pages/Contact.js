@@ -8,7 +8,7 @@ import {
   InputGroup,
   FormControl
 } from 'react-bootstrap';
-import { withRouter } from 'react-router-dom';
+
 export default function Contact() {
   return (
     <div className='myContact'>
@@ -24,13 +24,13 @@ export default function Contact() {
           <Row>
             <Col className='p2styleColor' xs={{ span: 3, offset: 1 }}>
               <p className='pAlignContact'>
-                <i class='fas fa-phone fa-3'></i>
+                <i className='fas fa-phone fa-3'></i>
               </p>
               <p className='pAlignContact'>
-                <i class='fas fa-location-arrow fa-3'></i>
+                <i className='fas fa-location-arrow fa-3'></i>
               </p>
               <p className='pAlignContact'>
-                <i class='far fa-envelope fa-3'></i>
+                <i className='far fa-envelope fa-3'></i>
               </p>
             </Col>
             <Col className='pColor' xs={8}>

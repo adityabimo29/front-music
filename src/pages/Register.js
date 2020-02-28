@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 // material ui
 // import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -93,6 +93,7 @@ const SignupSchema = Yup.object().shape({
     .required("Required")
 });
 
+
 function Register(props) {
   const classes = useStyles();
 
@@ -107,15 +108,15 @@ function Register(props) {
             </Typography>
             <Formik
               initialValues={{
-                first_name: "",
-                last_name: "",
-                email: "",
-                password: "",
-                id_instrument: "",
-                id_genre: "",
-                experience: "",
-                link_video: "",
-                about: ""
+                first_name: '',
+                last_name: '',
+                email: '',
+                password: '',
+                id_instrument: '',
+                id_genre: '',
+                experience: '',
+                link_video: '',
+                about: ''
               }}
               validationSchema={SignupSchema}
               onSubmit={(values, actions) => {

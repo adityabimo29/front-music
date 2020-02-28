@@ -6,6 +6,9 @@
     text-align: left;
     
 } */
+body {
+  color: 'white';
+}
 
 .loginBg {
   margin: 0;

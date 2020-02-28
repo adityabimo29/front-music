@@ -7,18 +7,7 @@ export default function AboutUs() {
     <div className='MyAbout'>
       <Row>
         <Col>
-          <p
-            style={{
-              textAlign: 'center',
-              color: 'white',
-              fontSize: '34px',
-              fontStyle: 'italic',
-              fontFamily: 'Alfa Slab One'
-            }}
-          >
-            {' '}
-            ABOUT US
-          </p>
+          <p className='Judul'> ABOUT US</p>
         </Col>
       </Row>
       <Row>
