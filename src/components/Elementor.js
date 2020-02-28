@@ -1,6 +1,6 @@
 import React from 'react';
 import CountUp from 'react-countup';
-import { Row, Col } from 'reactstrap';
+import { Row, Col } from 'react-bootstrap';
 import '../App.css';
 import { Container } from 'react-bootstrap';
 function Elementor() {

@@ -16,7 +16,6 @@ import Main from './pages/Main';
 function App() {
   return (
     <Router>
-      <Header />
       <Switch>
         <Route exact path='/'>
           <Home />
@@ -46,7 +45,6 @@ function App() {
           <DetailPage />
         </Route>
       </Switch>
-      <Footer />
     </Router>
   );
 }

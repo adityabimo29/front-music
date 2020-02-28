@@ -3,8 +3,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 92vh;
-  max-height: 100vh;
+  min-height: 100vh;
 }
 
 @media screen and (max-width: 768px) {
@@ -16,8 +15,25 @@
 }
 
 .WelcomeMain {
-  padding-top: 20vh;
+  padding-top: 30vh;
   color: white;
+}
+
+.MusicByteLogo {
+  width: 35vh;
+}
+
+.SignContainer {
+  padding: 3vh 2vh !important;
+  background-color: rgba(17, 17, 22, 0.5);
+}
+
+.SignLogoContainer,
+.SignTitleContainer,
+.SignButtonContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .SignIn,
@@ -31,5 +47,9 @@
   font-weight: 800;
   text-decoration: none;
   text-transform: uppercase;
-  margin: 10px 30px;
+  margin: 10px 20px;
+}
+
+.Copyright {
+  text-align: center;
 }

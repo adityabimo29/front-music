@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
-import mylogo from '../assets/images/iguitar.png';
 import '../assets/css/Header.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -18,7 +17,7 @@ const Header = props => {
 
   return (
     <div>
-      <Navbar bg='dark' expand='lg'>
+      <Navbar bg='dark' variant='dark' expand='lg' fixed='top'>
         <Navbar.Brand>
           <img src={Logo} className='HeaderLogo' alt='Music Byte' />
         </Navbar.Brand>
