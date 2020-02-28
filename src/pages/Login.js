@@ -75,9 +75,9 @@ function Login(props) {
                     {errors.password && touched.password && errors.password}
                   </Form.Group>
 
-                  <Form.Group controlId="formBasicCheckbox">
+                  {/* <Form.Group controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
-                  </Form.Group>
+                  </Form.Group> */}
                   <Button
                     variant="primary"
                     type="submit"

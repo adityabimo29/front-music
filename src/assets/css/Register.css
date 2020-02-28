@@ -1,0 +1,11 @@
+.registerBg {
+  margin: 0;
+  background-image: url("../images/icontactUsSame.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
