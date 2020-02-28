@@ -29,8 +29,10 @@
   margin-top: 2vh !important;
 }
 
-.SignInOption {
-  margin-top: 1vh;
+.SignInOption,
+.SignInOption p {
+  margin-top: 0.5vh;
+  text-shadow: 2px 2px 10px #111116;
 }
 
 .SignInOptionLink:hover {

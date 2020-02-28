@@ -3,10 +3,7 @@ import '../assets/css/Register.css';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -16,10 +13,11 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
+import Button from 'react-bootstrap/Button';
 import { Formik } from 'formik';
 import { signup } from '../actions';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import * as Yup from 'yup';
 
 const useStyles = makeStyles(theme => ({
@@ -72,89 +70,90 @@ function Register(props) {
 
   return (
     <div>
-      <Container maxWidth='sm' className='RegisterContainer'>
-        <ThemeProvider theme={color}>
-          <CssBaseline />
-          <div className={classes.paper}>
-            <Typography component='h1' variant='h5'>
-              Sign up
-            </Typography>
-            <Formik
-              initialValues={{
-                first_name: '',
-                last_name: '',
-                email: '',
-                password: '',
-                id_instrument: '',
-                id_genre: '',
-                experience: '',
-                link_video: '',
-                about: ''
-              }}
-              validationSchema={SignupSchema}
-              onSubmit={(values, actions) => {
-                // console.log(values.id_genre)
-                console.log('Values Register', {
-                  ...values,
-                  id_genre: parseInt(values.id_genre)
-                });
-                props.signup(
-                  { ...values, id_genre: parseInt(values.id_genre) },
-                  props.history
-                );
-              }}
-            >
-              {({
-                values,
-                errors,
-                touched,
-                handleChange,
-                handleBlur,
-                handleSubmit,
-                isSubmitting
-              }) => (
-                <form
-                  onSubmit={handleSubmit}
-                  autoComplete='off'
-                  className={classes.form}
-                >
-                  <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6}>
-                      <TextField
-                        className={classes.root}
-                        InputProps={{
-                          className: classes.input
-                        }}
-                        required
-                        type='text'
-                        name='first_name'
-                        id='first_name'
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.first_name}
-                        fullWidth
-                        label='First Name'
-                        autoFocus
-                      />{' '}
-                      {errors.first_name && touched.first_name ? (
-                        <div>{errors.first_name}</div>
-                      ) : null}
-                    </Grid>
+      <Container maxWidth='xl' className='SignUpContainer'>
+        <Grid container justify='center' alignItems='center' direction='column'>
+          <ThemeProvider theme={color}>
+            <div className={classes.paper}>
+              <Formik
+                initialValues={{
+                  first_name: '',
+                  last_name: '',
+                  email: '',
+                  password: '',
+                  id_instrument: '',
+                  id_genre: '',
+                  experience: '',
+                  link_video: '',
+                  about: ''
+                }}
+                validationSchema={SignupSchema}
+                onSubmit={(values, actions) => {
+                  console.log('Values Register', {
+                    ...values,
+                    id_genre: parseInt(values.id_genre)
+                  });
+                  props.signup(
+                    { ...values, id_genre: parseInt(values.id_genre) },
+                    props.history
+                  );
+                }}
+              >
+                {({
+                  values,
+                  errors,
+                  touched,
+                  handleChange,
+                  handleSubmit,
+                  isSubmitting
+                }) => (
+                  <form
+                    onSubmit={handleSubmit}
+                    autoComplete='off'
+                    className={classes.form}
+                  >
+                    <Grid
+                      container
+                      justify='center'
+                      alignItems='center'
+                      direction='column'
+                      className='SignUpForm'
+                    >
+                      <h1>Sign Up</h1>
 
-                    <Grid item xs={12} sm={6}>
-                      <TextField
-                        fullWidth
-                        type='text'
-                        name='last_name'
-                        id='last_name'
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.last_name}
-                        label='Last Name'
-                      />
-                    </Grid>
+                      <Grid container direction='row'>
+                        <Grid xl className='FirstName'>
+                          <TextField
+                            fullWidth
+                            className={classes.root}
+                            InputProps={{
+                              className: classes.input
+                            }}
+                            required
+                            type='text'
+                            name='first_name'
+                            id='first_name'
+                            onChange={handleChange}
+                            value={values.first_name}
+                            label='First Name'
+                          />
+                          {errors.first_name && touched.first_name ? (
+                            <div>{errors.first_name}</div>
+                          ) : null}
+                        </Grid>
 
-                    <Grid item xs={12} sm={6}>
+                        <Grid xl className='LastName'>
+                          <TextField
+                            fullWidth
+                            type='text'
+                            name='last_name'
+                            id='last_name'
+                            onChange={handleChange}
+                            value={values.last_name}
+                            label='Last Name'
+                          />
+                        </Grid>
+                      </Grid>
+
                       <TextField
                         required
                         fullWidth
@@ -162,16 +161,14 @@ function Register(props) {
                         name='email'
                         id='email'
                         onChange={handleChange}
-                        onBlur={handleBlur}
                         value={values.email}
                         label='Email Address'
-                      />{' '}
+                        className='TextField'
+                      />
                       {errors.email && touched.email ? (
                         <div>{errors.email}</div>
                       ) : null}
-                    </Grid>
 
-                    <Grid item xs={12} sm={6}>
                       <TextField
                         required
                         fullWidth
@@ -179,29 +176,29 @@ function Register(props) {
                         type='password'
                         id='password'
                         onChange={handleChange}
-                        onBlur={handleBlur}
                         value={values.password}
                         label='Password'
-                      />{' '}
+                        className='TextField'
+                      />
                       {errors.password && touched.password ? (
                         <div>{errors.password}</div>
                       ) : null}
-                    </Grid>
 
-                    <Grid item xs={12}>
                       <FormControl
                         required
                         fullWidth
                         className={classes.formControl}
                       >
-                        <InputLabel id='demo-simple-select-required-label'>
+                        <InputLabel
+                          id='demo-simple-select-required-label'
+                          className='TextField'
+                        >
                           Instrument
                         </InputLabel>
                         <Select
                           id='id_instrument'
                           name='id_instrument'
                           onChange={handleChange}
-                          onBlur={handleBlur}
                           value={values.id_instrument}
                           className={classes.selectEmpty}
                         >
@@ -212,14 +209,11 @@ function Register(props) {
                           <MenuItem value={5}>Singer</MenuItem>
                           <MenuItem value={6}>Others</MenuItem>
                         </Select>
-                        {/* <FormHelperText>Required</FormHelperText> */}
-                      </FormControl>{' '}
+                      </FormControl>
                       {errors.id_instrument && touched.id_instrument ? (
                         <div>{errors.id_instrument}</div>
                       ) : null}
-                    </Grid>
 
-                    <Grid item xs={12}>
                       <FormControl
                         component='fieldset'
                         className={classes.formControlradio}
@@ -251,69 +245,78 @@ function Register(props) {
                           />
                         </RadioGroup>
                       </FormControl>
-                    </Grid>
 
-                    <Grid item xs={12}>
                       <TextField
                         fullWidth
-                        label='Experience (in years)'
+                        label='Experience (years)'
                         type='number'
                         name='experience'
                         id='experience'
                         onChange={handleChange}
-                        onBlur={handleBlur}
                         value={values.experience}
-                        // InputLabelProps={{
-                        //   shrink: true
-                        // }}
                       />
-                    </Grid>
 
-                    <Grid item xs={12}>
                       <TextField
                         fullWidth
                         type='url'
                         name='link_video'
                         id='link_video'
                         onChange={handleChange}
-                        onBlur={handleBlur}
                         value={values.link_video}
-                        placeholder='https://example.com'
-                        label='Link video'
+                        placeholder='www.youtube.com/watch?v=5gvofiXHbUI'
+                        label='Youtube Video URL'
+                        className='TextField'
                       />
-                    </Grid>
 
-                    <Grid item xs={12}>
                       <TextField
                         fullWidth
                         label='About'
-                        placeholder='please tell about yourself'
+                        placeholder='Tell us about yourself'
                         multiline
-                        rows='4'
+                        rows='3'
                         name='about'
                         id='about'
                         onChange={handleChange}
-                        onBlur={handleBlur}
                         value={values.about}
+                        className='TextField'
                       />
-                    </Grid>
-                  </Grid>
 
-                  <Button
-                    type='submit'
-                    fullWidth
-                    variant='contained'
-                    color='primary'
-                    className={classes.submit}
-                    disabled={props.isSubmitting}
-                  >
-                    Submit
-                  </Button>
-                </form>
-              )}
-            </Formik>
-          </div>
-        </ThemeProvider>
+                      <Button
+                        id='SubmitButton'
+                        variant='outline-info'
+                        type='submit'
+                        color='primary'
+                        className={classes.submit}
+                        disabled={props.isSubmitting}
+                      >
+                        Submit
+                      </Button>
+                    </Grid>
+                  </form>
+                )}
+              </Formik>
+              <Grid container justify='space-between' className='SignUpOption'>
+                <Grid>
+                  <Link to='/'>
+                    <p className='SignUpOptionLink'>
+                      <i class='fas fa-caret-left'></i> Go back
+                    </p>
+                  </Link>
+                </Grid>
+                <Grid>
+                  <p>
+                    Already have an account?{' '}
+                    <Link to='/login'>
+                      <span className='SignUpOptionLink'>
+                        Sign in <i class='fas fa-sign-in-alt'></i>
+                      </span>
+                    </Link>
+                  </p>
+                </Grid>
+              </Grid>
+            </div>
+          </ThemeProvider>
+        </Grid>
       </Container>
     </div>
   );
