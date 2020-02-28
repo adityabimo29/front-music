@@ -15,12 +15,13 @@
 }
 
 .WelcomeMain {
-  padding-top: 30vh;
+  padding-top: 22.5vh;
   color: white;
 }
 
 .MusicByteLogo {
   width: 35vh;
+  max-width: 18.25rem;
 }
 
 .SignContainer {

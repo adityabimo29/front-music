@@ -282,7 +282,6 @@ function Register(props) {
                       />
 
                       <Button
-                        id='SubmitButton'
                         variant='outline-info'
                         type='submit'
                         color='primary'
@@ -296,14 +295,14 @@ function Register(props) {
                 )}
               </Formik>
               <Grid container justify='space-between' className='SignUpOption'>
-                <Grid>
+                <Grid xl>
                   <Link to='/'>
                     <p className='SignUpOptionLink'>
                       <i class='fas fa-caret-left'></i> Go back
                     </p>
                   </Link>
                 </Grid>
-                <Grid>
+                <Grid xl>
                   <p>
                     Already have an account?{' '}
                     <Link to='/login'>
