@@ -9,13 +9,15 @@
 @media screen and (max-width: 768px) {
   .HomeContainer {
     background-image: url('../images/background-media.jpg');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    min-height: 100vh;
   }
 }
 
 .WelcomeMain {
-  padding-top: 27.5vh;
+  padding-top: 25vh;
   color: white;
 }
 
