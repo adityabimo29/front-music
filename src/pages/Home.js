@@ -26,12 +26,16 @@ export default function Home() {
             </Col>
             <Row>
               <Col xl className='SignButtonContainer'>
-                <Button variant='outline-info' className='SignIn'>
-                  <Link to='/login'>Sign In</Link>
-                </Button>
-                <Button variant='outline-info' className='SignUp'>
-                  <Link to='/register'>Sign Up</Link>
-                </Button>
+                <Link to='/login'>
+                  <Button variant='outline-info' className='SignIn'>
+                    Sign In
+                  </Button>
+                </Link>
+                <Link to='/register'>
+                  <Button variant='outline-info' className='SignUp'>
+                    Sign Up
+                  </Button>
+                </Link>
               </Col>
             </Row>
           </Col>

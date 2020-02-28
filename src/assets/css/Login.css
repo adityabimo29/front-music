@@ -14,7 +14,7 @@
 
 .SignFormContainer {
   background-color: rgba(17, 17, 22, 0.5);
-  padding: 2.5% 5%;
+  padding: 2.5vh;
 }
 
 .SigninContainer h1 {
@@ -27,4 +27,12 @@
 
 .SignInLoginPage {
   margin-top: 2vh !important;
+}
+
+.SignInOption {
+  margin-top: 1vh;
+}
+
+.SignInOptionLink:hover {
+  color: #15a2b8;
 }
