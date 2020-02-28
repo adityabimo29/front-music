@@ -103,7 +103,7 @@ function Register(props) {
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <div className={classes.paper}>
-            <Typography component="h1" variant="h5">
+            <Typography className="reg-title" component="h1" variant="h4">
               Sign up
             </Typography>
             <Formik

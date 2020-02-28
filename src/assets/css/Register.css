@@ -9,3 +9,16 @@
   padding-top: 50px;
   padding-bottom: 100px;
 }
+
+
+.reg-title{
+  color: white;
+  /* text-transform: uppercase; */
+  font-weight: 200;
+  font-style: Roboto Slab !important;
+}
+
+body {
+ 
+  font-family: Roboto Slab
+}
