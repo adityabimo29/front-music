@@ -15,7 +15,7 @@ export default function Home() {
               <img src={Logo} alt='Music Byte' className='MusicByteLogo' />
             </Col>
             <Col xl className='SignTitleContainer'>
-              <h1>Welcome to Music Byte!</h1>
+              <h1>Welcome, Music Lovers!</h1>
             </Col>
             <Col xl className='SignTitleContainer'>
               <p>
@@ -39,7 +39,25 @@ export default function Home() {
               </Col>
             </Row>
           </Col>
-          <p className='Copyright'>Copyright © Music Byte 2020.</p>
+          <Row>
+            <Col className='Information'>
+              <Col xl>
+                <p>
+                  Need help?{' '}
+                  <Link to='/about'>
+                    <span className='About'>
+                      <i class='far fa-play-circle'></i> Learn More
+                    </span>
+                  </Link>
+                </p>
+              </Col>
+              <Col xl>
+                <p>
+                  Copyright <i class='far fa-copyright'></i> Music Byte 2020.
+                </p>
+              </Col>
+            </Col>
+          </Row>
         </Col>
       </Container>
     </div>

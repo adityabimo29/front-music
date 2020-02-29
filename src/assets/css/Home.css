@@ -17,7 +17,7 @@
 }
 
 .WelcomeMain {
-  padding-top: 25vh;
+  padding-top: 22.5vh;
   color: white;
 }
 
@@ -25,6 +25,10 @@
   width: 35vh;
   max-width: 18.25rem;
   max-height: 6rem;
+}
+
+.About:hover {
+  color: #15a2b8;
 }
 
 .SignContainer {
@@ -54,6 +58,9 @@
   margin: 10px 20px;
 }
 
-.Copyright {
-  text-align: center;
+.Information {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5vh;
+  text-shadow: 2px 2px 5px #111116;
 }

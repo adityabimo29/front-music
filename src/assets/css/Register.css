@@ -22,17 +22,16 @@
 
 .FirstName {
   margin-top: 10px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .LastName {
   margin-top: 10px;
-  margin-left: 5px;
 }
 
 .SignUpOption {
   margin-top: 0.5vh;
-  text-shadow: 2px 2px 10px #111116;
+  text-shadow: 2px 2px 5px #111116;
 }
 
 .SignUpOptionLink:hover {

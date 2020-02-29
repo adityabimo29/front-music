@@ -304,7 +304,7 @@ function Register(props) {
                 </Grid>
                 <Grid xl>
                   <p>
-                    Already have an account?{' '}
+                    Have account?{' '}
                     <Link to='/login'>
                       <span className='SignUpOptionLink'>
                         Sign in <i class='fas fa-sign-in-alt'></i>
