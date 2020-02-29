@@ -51,11 +51,6 @@ export default function Home() {
                   </Link>
                 </p>
               </Col>
-              <Col xl>
-                <p>
-                  Copyright <i class='far fa-copyright'></i> Music Byte 2020.
-                </p>
-              </Col>
             </Col>
           </Row>
         </Col>

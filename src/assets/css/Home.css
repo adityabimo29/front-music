@@ -17,8 +17,15 @@
 }
 
 .WelcomeMain {
-  padding-top: 22.5vh;
+  padding-top: 30vh;
   color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .WelcomeMain {
+    padding-top: 20vh;
+    color: white;
+  }
 }
 
 .MusicByteLogo {
