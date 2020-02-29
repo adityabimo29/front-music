@@ -1,15 +1,16 @@
-.AboutTitle p {
-  text-align: center;
-  color: white;
-  font-size: 5vh;
-}
-
-.AboutArticle {
-  background-color: #263238;
-  color: white;
-  font-size: 2.5vh;
-}
-
-.AboutArticle p {
-  padding: 5px 0;
+.AboutContainer {
+  background-color: #17171e !important;
+  border-radius: 15px;
+  margin-top: -7.5vh;
+  margin-bottom: 10vh;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 10vh;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 10vh;
+  -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
