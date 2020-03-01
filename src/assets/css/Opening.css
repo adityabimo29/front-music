@@ -1,0 +1,36 @@
+.OpeningContainer {
+  background-image: url(../images/background-opening.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.OpeningContainer h1 {
+  color: white;
+  font-size: 5vh;
+  font-weight: 800;
+  text-align: center;
+}
+
+.OpeningArticle {
+  margin-top: 70vh;
+  display: flex;
+  justify-content: center;
+}
+
+.OpeningArticle img {
+  width: 40rem;
+  max-width: 50vh;
+  max-height: 15vh;
+}
+
+.OpeningButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.HomeButton {
+  margin-right: 10px;
+}

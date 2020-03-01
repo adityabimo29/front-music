@@ -1,101 +1,132 @@
 import React from 'react';
-import { connect } from 'react-redux';
-//Utilities
-import { login } from '../actions';
-import { withRouter } from 'react-router-dom';
-//React Bootstrap
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-//STYLE
 import '../assets/css/Login.css';
-//Utilities
+import { Container, Grid, TextField } from '@material-ui/core';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import AccountBox from '@material-ui/icons/AccountBox';
+import Key from '@material-ui/icons/VpnKey';
+import Button from 'react-bootstrap/Button';
+import { withRouter, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { login } from '../actions';
 import { Formik } from 'formik';
+
+const color = createMuiTheme({
+  palette: {
+    type: 'dark',
+    primary: {
+      main: '#15a2b8'
+    }
+  }
+});
 
 function Login(props) {
   return (
-    <div className='loginBg'>
-      <Container className='login-container'>
-        <Row>
-          <Col>
-            <h1>Login</h1>
-
-            <Formik
-              initialValues={{ email: '', password: '' }}
-              // validate={values => {
-              //   const errors = {};
-              //   if (!values.email) {
-              //     errors.email = "Required";
-              //   } else if (
-              //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-              //   ) {
-              //     errors.email = "Invalid email address";
-              //   }
-              //   return errors;
-              // }}
-              onSubmit={(values, actions) => {
-                props.login(values, props.history);
-              }}
+    <div>
+      <ThemeProvider theme={color}>
+        <Container maxWidth='xl' className='SigninContainer'>
+          <Grid xl={{ span: 6 }}>
+            <Grid
+              container
+              alignItems='center'
+              direction='column'
+              className='SignFormContainer'
             >
-              {({
-                values,
-                errors,
-                touched,
-                handleChange,
-                handleBlur,
-                handleSubmit,
-                isSubmitting
-                /* and other goodies */
-              }) => (
-                <Form onSubmit={handleSubmit}>
-                  <Form.Group controlId='formBasicEmail'>
-                    <Form.Control
+              <h1>Sign In</h1>
+              <Formik
+                initialValues={{ email: '', password: '' }}
+                onSubmit={(values, actions) => {
+                  props.login(values, props.history);
+                }}
+              >
+                {({
+                  values,
+                  errors,
+                  touched,
+                  handleChange,
+                  handleBlur,
+                  handleSubmit,
+                  isSubmitting
+                }) => (
+                  <form onSubmit={handleSubmit}>
+                    <TextField
+                      fullWidth
                       required
                       type='email'
                       name='email'
-                      placeholder='Enter email'
+                      id='standard-basic'
+                      label='Email Address'
+                      className='TextField'
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.email}
+                      InputProps={{
+                        startAdornment: (
+                          <InputAdornment position='start'>
+                            <AccountBox />
+                          </InputAdornment>
+                        )
+                      }}
                     />
                     {errors.email && touched.email && errors.email}
-                  </Form.Group>
-
-                  <Form.Group controlId='formBasicPassword'>
-                    <Form.Control
+                    <TextField
+                      fullWidth
                       required
                       type='password'
                       name='password'
-                      placeholder='Password'
+                      id='standard-basic'
+                      label='Password'
+                      className='TextField'
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.password}
+                      InputProps={{
+                        startAdornment: (
+                          <InputAdornment position='start'>
+                            <Key />
+                          </InputAdornment>
+                        )
+                      }}
                     />
                     {errors.password && touched.password && errors.password}
-                  </Form.Group>
-
-                  <Form.Group controlId='formBasicCheckbox'>
-                    <Form.Check type='checkbox' label='Check me out' />
-                  </Form.Group>
-                  <Button
-                    variant='primary'
-                    type='submit'
-                    disabled={isSubmitting}
-                  >
-                    Submit
-                  </Button>
-                </Form>
-              )}
-            </Formik>
-          </Col>
-        </Row>
-      </Container>
+                    <Button
+                      variant='outline-info'
+                      type='submit'
+                      className='SignInLoginPage'
+                      disabled={isSubmitting}
+                    >
+                      Submit
+                    </Button>
+                  </form>
+                )}
+              </Formik>
+            </Grid>
+            <Grid container justify='space-between' className='SignInOption'>
+              <Grid>
+                <Link to='/'>
+                  <p className='SignInOptionLink'>
+                    <i class='fas fa-caret-left'></i> Go back
+                  </p>
+                </Link>
+              </Grid>
+              <Grid>
+                <p>
+                  New to Music Byte?{' '}
+                  <Link to='/register'>
+                    <span className='SignInOptionLink'>
+                      Sign up <i class='fas fa-user-plus'></i>
+                    </span>
+                  </Link>
+                </p>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Container>
+      </ThemeProvider>
     </div>
   );
 }
-//butuh tambahan history supaya bisa login without refresh
+
 const mapDispatchToProps = dispatch => {
   return {
     login: (values, history) => {

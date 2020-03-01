@@ -1,0 +1,52 @@
+.SignUpContainer {
+  color: white;
+  background-image: url('../images/background-signUp.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.SignUpCOntainer h1 {
+  font-weight: 800;
+}
+
+.TextField {
+  margin-top: 5px !important;
+}
+
+.SignUpForm {
+  background-color: rgba(17, 17, 22, 0.5);
+  padding: 1rem 3rem;
+}
+
+.FirstName {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.LastName {
+  margin-top: 10px;
+}
+
+.SignUpOption {
+  margin-top: 0.5vh;
+  text-shadow: 2px 2px 5px #111116;
+}
+
+.SignUpOptionLink:hover {
+  color: #15a2b8;
+}
+
+
+.reg-title{
+  color: white;
+  /* text-transform: uppercase; */
+  font-weight: 200;
+  font-style: Roboto Slab !important;
+}
+
+body {
+ 
+  font-family: Roboto Slab
+}
