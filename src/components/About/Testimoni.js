@@ -9,8 +9,10 @@ import Image3 from '../../assets/images/image3.jpg';
 export default class SimpleSlider extends Component {
   render() {
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1
@@ -18,7 +20,7 @@ export default class SimpleSlider extends Component {
     return (
       <div>
         <Container fluid className='TestiContainer'>
-          <h2>Testimonials</h2>
+          <h3>Testimonials</h3>
           <Slider {...settings}>
             <Col xl>
               <Col className='TestiList'>
@@ -26,6 +28,7 @@ export default class SimpleSlider extends Component {
               </Col>
               <Col className='TestiArticle'>
                 <h1>John Mayer</h1>
+                <p>" Music Byte is a good place to start your career! "</p>
               </Col>
             </Col>
             <Col xl>
@@ -34,6 +37,10 @@ export default class SimpleSlider extends Component {
               </Col>
               <Col className='TestiArticle'>
                 <h1>Tom Misch</h1>
+                <p>
+                  " You can always easily find additional member for your band
+                  on emergency. Must try! "
+                </p>
               </Col>
             </Col>
             <Col xl>
@@ -42,6 +49,7 @@ export default class SimpleSlider extends Component {
               </Col>
               <Col className='TestiArticle'>
                 <h1>Calum Scott</h1>
+                <p>" Easy to use. Friendly community. It's flawless! "</p>
               </Col>
             </Col>
           </Slider>

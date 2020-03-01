@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import '../../assets/css/Introduction.css';
 import { Container, Row, Col, Carousel } from 'react-bootstrap';
-import First from '../../assets/images/icorousel1.jpeg';
-import Second from '../../assets/images/icorousel2.jpeg';
-import Third from '../../assets/images/icorousel3.jpeg';
+import First from '../../assets/images/first.jpg';
+import Second from '../../assets/images/second.jpg';
+import Third from '../../assets/images/third.jpg';
 
 export default class Introduction extends Component {
   render() {
@@ -42,7 +42,7 @@ export default class Introduction extends Component {
                     alt='First slide'
                   />
                   <Carousel.Caption>
-                    <h5>First slide label</h5>
+                    <h5>Collaborate with other Musicians</h5>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -52,7 +52,7 @@ export default class Introduction extends Component {
                     alt='Third slide'
                   />
                   <Carousel.Caption>
-                    <h5>Second slide label</h5>
+                    <h5>Form a Band and Launch Album</h5>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -63,7 +63,7 @@ export default class Introduction extends Component {
                   />
 
                   <Carousel.Caption>
-                    <h5>Third slide label</h5>
+                    <h5>Create fanbase and Live Concert</h5>
                   </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>

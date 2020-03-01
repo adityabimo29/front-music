@@ -8,7 +8,7 @@ function Statistic() {
     <div>
       <Container fluid className='StatisticContainer'>
         <Row className='StatisticRow'>
-          <Col xl>
+          <Col sm>
             <div>
               <h1>
                 <CountUp delay={1} end={45} />
@@ -17,7 +17,7 @@ function Statistic() {
               <h6>Live Concerts</h6>
             </div>
           </Col>
-          <Col xl>
+          <Col sm>
             <div>
               <h1>
                 <CountUp delay={1} end={172} />
@@ -26,7 +26,7 @@ function Statistic() {
               <h6>Album Launched</h6>
             </div>
           </Col>
-          <Col xl>
+          <Col sm>
             <div>
               <h1>
                 <CountUp delay={1} end={352} />
@@ -35,13 +35,13 @@ function Statistic() {
               <h6>Band Created</h6>
             </div>
           </Col>
-          <Col xl>
+          <Col sm>
             <div>
               <h1>
                 <CountUp delay={1} end={1893} />
               </h1>
               ---
-              <h6>Musicians Joined</h6>
+              <h6>User Joined</h6>
             </div>
           </Col>
         </Row>

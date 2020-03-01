@@ -1,8 +1,11 @@
 .TestiContainer {
   margin-top: 5vh;
   color: white;
-  font-weight: 800;
   text-align: center;
+}
+
+.TestiContainer h3 {
+  font-weight: 600;
 }
 
 .TestiList {
@@ -16,6 +19,10 @@
   justify-content: center;
   font-weight: 600;
   font-size: 2.25vh;
+}
+
+.TestiArticle p {
+  opacity: 0.5;
 }
 
 .TestiImage {
