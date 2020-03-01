@@ -1,5 +1,5 @@
 import axios from 'axios';
-import History from '../history';
+// import History from '../history';
 export const LOG_IN = 'LOG_IN';
 export const SIGN_UP = 'SIGN_UP';
 export const SET_LOGOUT = 'SET_LOGOUT';
@@ -17,13 +17,18 @@ export const setLogin = data => {
   };
 };
 
+
 // logout
 export const logout = () => {
   return {
     type: SET_LOGOUT
   };
 };
-export const login = (values, history) => (dispatch, getState) => {
+
+
+
+
+export const login = (values, history) => (dispatch) => {
   return axios({
     method: 'POST',
     url: 'https://music-byte.herokuapp.com/users/login',
@@ -54,7 +59,7 @@ export const signup = (values, history) => dispatch => {
       console.log('this is response data signup', response.data);
       dispatch(setSignup(response.data.data));
 
-      History.push('/login');
+      history.push('/login');
     })
     .catch(error => {
       console.log(error);
