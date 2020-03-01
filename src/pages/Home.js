@@ -1,68 +1,59 @@
 import React from 'react';
-import { Row, Col, Button, Container } from 'react-bootstrap';
 import '../assets/css/Home.css';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Logo from '../assets/images/logo.png';
 
 // import { Autoplay } from 'swiper/js/swiper.esm';
 export default function Home() {
   return (
-    <div className='myPage darken'>
-      <Container fluid>
-        <Row>
-          <Col xs={12} md={12}>
-            <p className='h1Home'>welcome to music Byte</p>
-            <br />
-
-            <div className='h4Home'>
-              lets coloborate to find your partner <br />
-              making famouse band music in the future
-            </div>
-            {/* <div className='divHome'> */}
-          </Col>
-        </Row>
-        <Row>
-          <Col
-            md={12}
-            xs={12}
-            style={{ display: 'flex', justifyContent: 'center' }}
-          >
-            <content style={{ paddingBottom: '100px' }}>
-              <Button
-                style={{
-                  width: '150px',
-                  borderRadius: '5%',
-                  backgroundColor: 'red',
-                  text: 'white'
-                }}
-              >
-                <Link
-                  style={{
-                    backgroundColor: 'none',
-                    text: 'white'
-                  }}
-                  to={'/login'}
-                >
-                  LOGIN
+    <div>
+      <Container fluid className='HomeContainer'>
+        <Col xl={{ span: 4, offset: 4 }} className='WelcomeMain'>
+          <Col xl className='SignContainer'>
+            <Col xl className='SignLogoContainer'>
+              <img src={Logo} alt='Music Byte' className='MusicByteLogo' />
+            </Col>
+            <Col xl className='SignTitleContainer'>
+              <h1>Welcome, Music Lovers!</h1>
+            </Col>
+            <Col xl className='SignTitleContainer'>
+              <p>
+                A social network for Musicians.
+                <br />
+                Collaborate, form a band and play music together!
+              </p>
+            </Col>
+            <Row>
+              <Col xl className='SignButtonContainer'>
+                <Link to='/login'>
+                  <Button variant='outline-info' className='SignIn'>
+                    Sign In
+                  </Button>
                 </Link>
-              </Button>
-              <span>
-                <Button
-                  style={{
-                    marginLeft: '30px',
-                    width: '150px',
-                    borderRadius: '5%',
-                    backgroundColor: 'red',
-                    color: 'white'
-                  }}
-                >
-                  <Link style={{ color: 'none' }} to={'/register'}>
-                    SIGNUP
-                  </Link>
-                </Button>
-              </span>
-            </content>
+                <Link to='/register'>
+                  <Button variant='outline-info' className='SignUp'>
+                    Sign Up
+                  </Button>
+                </Link>
+              </Col>
+            </Row>
           </Col>
-        </Row>
+          <Row>
+            <Col className='Information'>
+              <Col xl>
+                <p>
+                  Need help?{' '}
+                  <Link to='/about'>
+                    <span className='About'>
+                      <i class='far fa-play-circle'></i> Learn More
+                    </span>
+                  </Link>
+                </p>
+              </Col>
+            </Col>
+          </Row>
+        </Col>
       </Container>
     </div>
   );

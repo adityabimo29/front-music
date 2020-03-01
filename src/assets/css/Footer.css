@@ -1,0 +1,51 @@
+.Footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #333a40;
+  padding-top: 2vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.OfficeHeader,
+.TouchHeader {
+  text-align: center;
+  font-weight: bold;
+  font-size: 3vh;
+}
+
+.FooterForm {
+  display: flex;
+  justify-content: center;
+}
+
+.InputEmail::placeholder {
+  color: #15a2b8;
+}
+
+.InputEmail {
+  background: none;
+  border: none;
+  padding: 0.5rem 5rem;
+  background-color: white;
+  border: 2px solid #15a2b8;
+  border-radius: 10px;
+}
+
+.InputEmail:focus {
+  border: none;
+  border: 2px solid #15a2b8;
+}
+
+.SubscribeButton {
+  margin: 10px 5px;
+}
+
+.SubscribeButton a {
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 10px 30px;
+}

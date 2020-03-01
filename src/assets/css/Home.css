@@ -1,80 +1,72 @@
-* {
-    margin: 0px;
-    padding: 0px;
+.HomeContainer {
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
-a {
-    color: white;
-    text-decoration: none;
-    background-color: none;
-}
-
-body {
-    font-family: 'Roboto Slab';
-    padding: 0px;
-}
-
-.h1Home {
-    text-align: center;
-    margin-top: 200px;
-    color: white;
-    font-family: 'Roboto Slab';
-    font-size: 3rem;
-}
-
-.h4Home {
-    text-align: center;
-    color: grey;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Roboto Slab';
-    font-size: 1.5rem;
-}
-
-.h4Home:hover {
-    color: green;
-    font-family: 'Roboto Slab';
-}
-
-.divHome {
-    align-items: center;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Roboto Slab';
-}
-
-.btnHome {
-    background-color: red;
-    text-align: center;
-    color: 'white';
-    font-family: 'Roboto Slab';
-}
-
-/* end inline home /////////////////////////////////*/
-.myPage {
-    background-image: url('../images/imainpage.jpeg');
+@media screen and (max-width: 768px) {
+  .HomeContainer {
+    background-image: url('../images/background-media.jpg');
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    background-image: cover;
-    min-height: 100vh;
-    /* -webkit-filter: sepia(80%);
-  /* Safari 6.0 - 9.0 */
+  }
 }
 
-.darken {
-    background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.8),
-            rgba(0, 0, 0, 0.692)),
-        url('../images/imainpage.jpeg');
+.WelcomeMain {
+  padding-top: 30vh;
+  color: white;
 }
 
-.myPage_overlay {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.003);
-    z-index: 2;
+@media screen and (max-width: 768px) {
+  .WelcomeMain {
+    padding-top: 15vh;
+    color: white;
+  }
+}
+
+.MusicByteLogo {
+  width: 35vh;
+  max-width: 18.25rem;
+  max-height: 6rem;
+}
+
+.About:hover {
+  color: #15a2b8;
+}
+
+.SignContainer {
+  padding: 3vh 2vh !important;
+  background-color: rgba(17, 17, 22, 0.5);
+}
+
+.SignLogoContainer,
+.SignTitleContainer,
+.SignButtonContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.SignIn,
+.SignUp {
+  margin: 0 5px;
+}
+
+.SignIn a,
+.SignUp a {
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 10px 20px;
+}
+
+.Information {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5vh;
+  text-shadow: 2px 2px 5px #111116;
 }

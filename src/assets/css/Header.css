@@ -1,0 +1,12 @@
+.HeaderLogo {
+  width: 15vh;
+}
+
+.HeaderLink {
+  color: white !important;
+}
+
+.HeaderLink:hover {
+  color: #15a2b8 !important;
+  font-weight: 900;
+}

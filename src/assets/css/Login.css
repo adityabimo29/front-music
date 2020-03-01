@@ -1,91 +1,40 @@
-/* .login-container{
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    
-} */
-body {
-  color: 'white';
-  font-family: Roboto Slab
-}
-
-.login-container h1 {
+.SigninContainer {
   color: white;
-  text-transform: uppercase;
-  font-weight: 500;
-  
-  /* text-align: center; */
-}
-
-.loginBg {
-  margin: 0;
-  background-image: url("../images/icontactUsSame.jpg");
+  background-image: url('../images/background-signIn.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
-
-  /* padding-top: 50px;
-  padding-bottom: 100px; */
-}
-
-.login-container {
   display: flex;
-  margin: auto;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-
-  /* background: #191919; */
   text-align: center;
 }
 
-.login-container h1 {
-  color: white;
-  text-transform: uppercase;
-  font-weight: 500;
-  /* text-align: center; */
+.SignFormContainer {
+  background-color: rgba(17, 17, 22, 0.5);
+  padding: 2.5vh;
 }
 
-.login-container input[type="email"],
-.login-container input[type="password"] {
-  border: 0;
-  background: none;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #5052c5fa;
-  padding: 14px 10px;
-  width: 230px;
-  outline: none;
-  color: white;
-  border-radius: 24px;
-  transition: 0.25s;
+.SigninContainer h1 {
+  font-weight: 800;
 }
 
-.login-container input[type="email"]:focus,
-.login-container input[type="password"]:focus {
-  width: 320px;
-  border-color: #e91e63;
+.TextField {
+  margin-top: 2vh !important;
 }
 
-.login-container button[type="submit"] {
-  border: 0;
-  background: none;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 3px solid #e91e63;
-  padding: 10px 40px;
-  outline: none;
-  color: white;
-  border-radius: 24px;
-  transition: 0.25s;
-  cursor: pointer;
+.SignInLoginPage {
+  margin-top: 2vh !important;
 }
 
-.login-container button[type="submit"]:hover {
-  background: #e91e63;
+.SignInOption,
+.SignInOption p {
+  margin-top: 0.5vh;
+  text-shadow: 2px 2px 5px #111116;
+}
+
+.SignInOptionLink:hover {
+  color: #15a2b8;
 }

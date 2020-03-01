@@ -1,16 +1,23 @@
 import React from 'react';
-import AboutUs from '../components/AboutUs';
-import Elementor from '../components/Elementor';
-import Testimoni from '../components/Testimoni';
-import MeetTeam from '../components/MeetTeam';
 import '../assets/css/About.css';
+import { Jumbotron } from 'react-bootstrap';
+import Opening from '../components/About/Opening.js';
+
+import Introduction from '../components/About/Introduction';
+import Statistic from '../components/About/Statistic';
+// import Testimoni from '../components/Testimoni';
+// import MeetTeam from '../components/MeetTeam';
+
 export default function About() {
   return (
     <div>
-      <AboutUs />
-      <Elementor />
-      <Testimoni />
-      <MeetTeam />
+      <Opening />
+      <Jumbotron className='AboutContainer'>
+        <Introduction />
+        <Statistic />
+        {/* <Testimoni />
+        <MeetTeam /> */}
+      </Jumbotron>
     </div>
   );
 }
