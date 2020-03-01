@@ -6,7 +6,7 @@ import Opening from '../components/About/Opening.js';
 import Introduction from '../components/About/Introduction';
 import Statistic from '../components/About/Statistic';
 import Testimoni from '../components/About/Testimoni';
-// import Team from '../components/About/Team';
+import Team from '../components/About/Team';
 
 export default function About() {
   return (
@@ -16,7 +16,7 @@ export default function About() {
         <Introduction />
         <Statistic />
         <Testimoni />
-        {/* <Team /> */}
+        <Team />
       </Jumbotron>
     </div>
   );
