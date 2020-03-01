@@ -1,0 +1,25 @@
+.TestiContainer {
+  margin-top: 5vh;
+  color: white;
+  font-weight: 800;
+  text-align: center;
+}
+
+.TestiList {
+  display: flex;
+  justify-content: center;
+}
+
+.TestiArticle h1 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 2.25vh;
+}
+
+.TestiImage {
+  max-width: 12.5rem;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}

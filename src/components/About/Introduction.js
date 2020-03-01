@@ -52,7 +52,7 @@ export default class Introduction extends Component {
                     alt='Third slide'
                   />
                   <Carousel.Caption>
-                    <h3>Second slide label</h3>
+                    <h5>Second slide label</h5>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -63,7 +63,7 @@ export default class Introduction extends Component {
                   />
 
                   <Carousel.Caption>
-                    <h3>Third slide label</h3>
+                    <h5>Third slide label</h5>
                   </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>

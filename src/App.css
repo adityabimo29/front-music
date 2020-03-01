@@ -12,7 +12,7 @@ a {
 
 /* THE SCRIPT BELOW IS NOT EDITED YET */
 
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -65,19 +65,7 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
-  /* -webkit-filter: sepia(70%);
-  /* Safari 6.0 - 9.0 */
-  /* filter: sepia(70%); */
   padding-bottom: 20px;
-}
-
-/* Contact ////////////////////*/
-.p1Contact {
-  font-size: 50px;
-  color: white;
-  font-family: Alfa Slab One;
-  margin-top: 20px;
-  text-align: center;
 }
 
 .p2Contact {
@@ -125,12 +113,6 @@ a {
   color: white;
 }
 
-/* end footer */
-
-/* Contact Syte */
-
-/* End COntact Style */
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -139,4 +121,4 @@ a {
   to {
     transform: rotate(360deg);
   }
-}
+} */

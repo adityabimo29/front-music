@@ -5,8 +5,8 @@ import Opening from '../components/About/Opening.js';
 
 import Introduction from '../components/About/Introduction';
 import Statistic from '../components/About/Statistic';
-// import Testimoni from '../components/Testimoni';
-// import MeetTeam from '../components/MeetTeam';
+import Testimoni from '../components/About/Testimoni';
+// import Team from '../components/About/Team';
 
 export default function About() {
   return (
@@ -15,8 +15,8 @@ export default function About() {
       <Jumbotron className='AboutContainer'>
         <Introduction />
         <Statistic />
-        {/* <Testimoni />
-        <MeetTeam /> */}
+        <Testimoni />
+        {/* <Team /> */}
       </Jumbotron>
     </div>
   );
