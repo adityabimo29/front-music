@@ -105,7 +105,7 @@ function Login(props) {
               <Grid>
                 <Link to='/'>
                   <p className='SignInOptionLink'>
-                    <i class='fas fa-caret-left'></i> Go back
+                    <i className='fas fa-caret-left'></i> Go back
                   </p>
                 </Link>
               </Grid>
@@ -114,7 +114,7 @@ function Login(props) {
                   New to Music Byte?{' '}
                   <Link to='/register'>
                     <span className='SignInOptionLink'>
-                      Sign up <i class='fas fa-user-plus'></i>
+                      Sign up <i className='fas fa-user-plus'></i>
                     </span>
                   </Link>
                 </p>
