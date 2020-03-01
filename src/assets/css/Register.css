@@ -37,3 +37,16 @@
 .SignUpOptionLink:hover {
   color: #15a2b8;
 }
+
+
+.reg-title{
+  color: white;
+  /* text-transform: uppercase; */
+  font-weight: 200;
+  font-style: Roboto Slab !important;
+}
+
+body {
+ 
+  font-family: Roboto Slab
+}

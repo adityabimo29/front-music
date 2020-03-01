@@ -7,7 +7,8 @@ const initialState = token
     }
   : {
       isLogged: false,
-      signupData: []
+      signupData: [],
+      
     };
 
 export default (state = initialState, action) => {
@@ -16,10 +17,12 @@ export default (state = initialState, action) => {
       return {
         isLogged: true
       };
+  
     case SIGN_UP:
       return {
         signupData: action.payload
       };
+    
     default:
       return state;
   }
