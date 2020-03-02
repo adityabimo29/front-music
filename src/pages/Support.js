@@ -21,11 +21,8 @@ export default class Support extends Component {
                 </Button>
               </Link>
               <Link to='/about'>
-                <Button variant='outline-info' className='PolicyButton'>
-                  Return About
-                </Button>
+                <Button variant='outline-info'>Return About</Button>
               </Link>
-              <Button variant='outline-info'>Read FAQ</Button>
             </Col>
           </Row>
         </Container>
