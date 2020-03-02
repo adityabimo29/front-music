@@ -17,7 +17,6 @@ export const setLogin = data => {
   };
 };
 
-
 // logout
 export const logout = () => {
   return {
@@ -25,10 +24,7 @@ export const logout = () => {
   };
 };
 
-
-
-
-export const login = (values, history) => (dispatch) => {
+export const login = (values, history) => dispatch => {
   return axios({
     method: 'POST',
     url: 'https://music-byte.herokuapp.com/users/login',
@@ -38,9 +34,11 @@ export const login = (values, history) => (dispatch) => {
       console.log(response);
 
       if (response.status === 200) {
-        localStorage.setItem('token', response.data.token);
+        // localStorage.setItem('token', response.data.token);
+        localStorage.setItem('token', response.data.data);
         dispatch(setLogin(values));
         history.push('/profile');
+        console.log(response.data.data);
       }
     })
     .catch(error => {
