@@ -21,6 +21,7 @@ import { signup, getRoles, getGenres } from "../actions";
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
 import * as Yup from "yup";
+import ReactFilestack from "filestack-react";
 
 const styles = theme => ({
   paper: {
@@ -68,9 +69,15 @@ const SignupSchema = Yup.object().shape({
 });
 
 class Register extends Component {
+  
+
   componentDidMount = () => {
     this.props.getRoles();
     this.props.getGenres();
+  };
+
+  onErr = error => {
+    console.error("error filestack", error);
   };
 
   render() {
@@ -99,17 +106,23 @@ class Register extends Component {
                     id_genre: "",
                     experience: "",
                     link_video: "",
-                    about: ""
+                    about: "",
+                    avatar: ""
                   }}
                   validationSchema={SignupSchema}
                   onSubmit={(values, actions) => {
                     console.log("Values Register", {
                       ...values,
-                      id_genre: parseInt(values.id_genre)
+                      id_genre: parseInt(values.id_genre),
+                      
                     });
 
                     this.props.signup(
-                      { ...values, id_genre: parseInt(values.id_genre) },
+                      {
+                        ...values,
+                        id_genre: parseInt(values.id_genre),
+                        
+                      },
                       this.props.history
                     );
                   }}
@@ -120,6 +133,7 @@ class Register extends Component {
                     touched,
                     handleChange,
                     handleSubmit,
+                    setFieldValue,
                     isSubmitting
                   }) => (
                     <form
@@ -135,7 +149,6 @@ class Register extends Component {
                         className="SignUpForm"
                       >
                         <h1>Sign Up</h1>
-
                         <Grid container direction="row">
                           <Grid xl className="FirstName">
                             <TextField
@@ -169,7 +182,6 @@ class Register extends Component {
                             />
                           </Grid>
                         </Grid>
-
                         <TextField
                           required
                           fullWidth
@@ -199,7 +211,6 @@ class Register extends Component {
                         {errors.password && touched.password ? (
                           <div>{errors.password}</div>
                         ) : null}
-
                         <FormControl
                           required
                           fullWidth
@@ -231,7 +242,6 @@ class Register extends Component {
                         {errors.id_instrument && touched.id_instrument ? (
                           <div>{errors.id_instrument}</div>
                         ) : null}
-
                         <FormControl
                           component="fieldset"
                           className={classes.formControlradio}
@@ -261,7 +271,6 @@ class Register extends Component {
                               })}
                           </RadioGroup>
                         </FormControl>
-
                         <TextField
                           fullWidth
                           label="Experience (years)"
@@ -271,7 +280,6 @@ class Register extends Component {
                           onChange={handleChange}
                           value={values.experience}
                         />
-
                         <TextField
                           fullWidth
                           type="url"
@@ -295,6 +303,19 @@ class Register extends Component {
                           onChange={handleChange}
                           value={values.about}
                           className="TextField"
+                        />
+
+                        <ReactFilestack
+                          apikey={"A32nDFuC0Rn2U6N8jOR34z"}
+                          componentDisplayMode={{
+                            type: "button",
+                            customText: "Upload photo",
+                            // customClass: "classes.submit"
+                          }}
+                          onSuccess={res => {
+                            setFieldValue("avatar", res.filesUploaded[0].url);
+                          }}
+                          onError={this.onErr}
                         />
 
                         <Button
