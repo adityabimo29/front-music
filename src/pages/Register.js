@@ -250,8 +250,6 @@ class Register extends Component {
                           justify="left"
                           direction="column"
                           className={classes.uploadavatar}
-                          
-                          
                         >
                           <InputLabel fullWidth className="TextField">
                             Profile Picture
