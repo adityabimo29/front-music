@@ -21,7 +21,9 @@ export default class Opening extends Component {
                   Return Home
                 </Button>
               </Link>
-              <Button variant='outline-info'>Ask Support</Button>
+              <Link to='/support'>
+                <Button variant='outline-info'>Ask Support</Button>
+              </Link>
             </Col>
           </Row>
         </Container>
