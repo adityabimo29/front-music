@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../assets/css/Profile.css';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Picture from '../assets/images/01.jpg';
-import { fetchProfile } from '../actions';
+import { fetchProfile, sendEmail } from '../actions';
 import {withRouter} from 'react-router';
 import {connect} from 'react-redux';
 
@@ -10,6 +10,9 @@ class Profile extends Component {
 
   componentDidMount(){
     this.props.getProfile(this.props.match.params.id);
+  }
+  handleRecruit = (email) => {
+    this.props.sendMail(email,this.props.history)
   }
   render() {
     console.log(this.props.profile)
@@ -55,7 +58,7 @@ class Profile extends Component {
               </Row>
               <Row>
                 <Col className='RecruitContainer'>
-                  <button className='RecruitButton'>RECRUIT</button>
+                  <button className='RecruitButton' onClick={() => handleRecruit(email)}>RECRUIT</button>
                 </Col>
               </Row>
             </Col>
@@ -146,7 +149,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getProfile:(id_user) => dispatch(fetchProfile(id_user))
+    getProfile:(id_user) => dispatch(fetchProfile(id_user)),
+    sendMail:(email) => dispatch(sendEmail(email)) 
   }
 }
 
