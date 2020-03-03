@@ -12,7 +12,10 @@ class Profile extends Component {
     this.props.getProfile(this.props.match.params.id);
   }
   handleRecruit = (email) => {
-    this.props.sendMail(email,this.props.history)
+    let data = {
+      emailTo:email
+    }
+    this.props.sendMail(data,this.props.history)
   }
   render() {
     console.log(this.props.profile)
