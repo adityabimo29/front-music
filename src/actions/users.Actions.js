@@ -104,5 +104,5 @@ export const userLike = (data,history) => dispatch => {
   return axios.post('https://music-byte.herokuapp.com/likes/',data,{headers:{"authorization":`Bearer ${token}`}}).then(res => {
     dispatch(fetchProfile(data.id_user,history));
     history.push(`/profile/${data.id_user}`);
-  })
+  });
 }
