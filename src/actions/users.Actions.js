@@ -1,8 +1,10 @@
 import axios from 'axios';
+const token = localStorage.getItem('token');
 // import History from '../history';
 export const LOG_IN = 'LOG_IN';
 export const SIGN_UP = 'SIGN_UP';
 export const SET_LOGOUT = 'SET_LOGOUT';
+export const GET_DATA = 'GET_DATA';
 
 export const setSignup = data => {
   return {
@@ -13,6 +15,13 @@ export const setSignup = data => {
 export const setLogin = data => {
   return {
     type: LOG_IN,
+    payload: data
+  };
+};
+
+export const getData = data => {
+  return {
+    type: GET_DATA,
     payload: data
   };
 };
@@ -65,3 +74,12 @@ export const signup = (values, history) => dispatch => {
       console.log(error);
     });
 };
+
+export const fetchDataUsers = () => dispatch => {
+  const token = localStorage.getItem('token');
+
+  return axios.get('https://music-byte.herokuapp.com/users',{headers:{"authorization":`Bearer ${token}`}}).then(res =>{
+    dispatch(getData(res.data.data))
+    
+  })
+}

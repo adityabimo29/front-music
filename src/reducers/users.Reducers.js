@@ -1,14 +1,15 @@
-import { LOG_IN, SIGN_UP } from "../actions";
+import { LOG_IN, SIGN_UP, GET_DATA } from "../actions";
 
 const token = localStorage.getItem("token");
 const initialState = token
   ? {
-      isLogged: true
+      isLogged: true,
+      data:[]
     }
   : {
       isLogged: false,
       signupData: [],
-      
+      data:[]
     };
 
 export default (state = initialState, action) => {
@@ -22,6 +23,12 @@ export default (state = initialState, action) => {
       return {
         signupData: action.payload
       };
+
+    case GET_DATA:
+      return{
+        ...state,
+        data:action.payload
+      }
     
     default:
       return state;

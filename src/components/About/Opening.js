@@ -18,10 +18,10 @@ export default class Opening extends Component {
             <Col xl className='OpeningButtons'>
               <Link to='/'>
                 <Button variant='outline-info' className='HomeButton'>
-                  Return to Home
+                  Return Home
                 </Button>
               </Link>
-              <Button variant='outline-info'>Get Started</Button>
+              <Button variant='outline-info'>Ask Support</Button>
             </Col>
           </Row>
         </Container>
