@@ -10,7 +10,7 @@ export default class Team extends Component {
         <Container fluid className='TeamContainer'>
           <Row>
             <Col>
-              <h3>Music Byte Team</h3>
+              <h3>Music Byte Creator</h3>
             </Col>
           </Row>
           <Row>

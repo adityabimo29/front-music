@@ -12,14 +12,14 @@ export default class SimpleSlider extends Component {
       dots: false,
       infinite: true,
       autoplay: true,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 4000,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1
     };
     return (
       <div>
-        <Container fluid className='TestiContainer'>
+        <Container className='TestiContainer'>
           <h3>Testimonials</h3>
           <Slider {...settings}>
             <Col xl>

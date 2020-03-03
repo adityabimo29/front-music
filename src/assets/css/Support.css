@@ -1,0 +1,23 @@
+.SupportContainer {
+  color: white;
+  background-image: url('../images/background-support.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.Policy {
+  margin-top: 2.5vh;
+  text-align: center;
+  background-color: rgba(17, 17, 22, 0.5);
+  padding: 15px;
+}
+
+.Policy h1 {
+  font-weight: 800;
+}
+
+.PolicyButton {
+  margin-right: 10px;
+}

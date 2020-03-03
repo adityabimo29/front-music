@@ -1,24 +1,17 @@
-import React, { Fragment } from 'react';
-import {
-  Redirect,
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from 'react-router-dom';
-import Footer from './components/Footer';
-import Header from './components/Header';
-// import HeaderTeam from "./components/HeaderTeam";
-import About from './pages/About';
-// import Contact from './pages/Contact';
+import React from 'react';
+import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Home from './pages/Home';
-import DetailPage from './DetailPages/DetailPage';
+import About from './pages/About';
+import Support from './pages/Support';
 import Profile from './pages/Profile';
 import { connect } from 'react-redux';
 
 function App(props) {
   return (
+<<<<<<< HEAD
     <div>
       <Fragment>
         <Router>
@@ -64,6 +57,15 @@ function App(props) {
 =======
         <Route exact path='/profile'>
           <Profile />
+=======
+    <Router>
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+        <Route exact path='/about'>
+          <About />
+>>>>>>> 6e8aac0093e150bcccf497f1cb446d92dbd2f1b9
         </Route>
         <Route exact path='/login'>
           <Login />
@@ -71,8 +73,14 @@ function App(props) {
         <Route exact path='/register'>
           <Register />
         </Route>
-        <Route path='/detailPage/:id'>
-          <DetailPage />
+        <Route exact path='/profile'>
+          <Profile />
+        </Route>
+        <Route exact path='/main'>
+          <Main />
+        </Route>
+        <Route exact path='/support'>
+          <Support />
         </Route>
       </Switch>
     </Router>
