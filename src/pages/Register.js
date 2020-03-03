@@ -15,12 +15,16 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
 import Button from "react-bootstrap/Button";
+import Butt from "@material-ui/core/Button";
+import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+
 // redux
 import { Formik } from "formik";
 import { signup, getRoles, getGenres } from "../actions";
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
 import * as Yup from "yup";
+import ReactFilestack from "filestack-react";
 
 const styles = theme => ({
   paper: {
@@ -40,6 +44,9 @@ const styles = theme => ({
   },
   formControlradio: {
     margin: theme.spacing(2, 0, 0, 0)
+  },
+  uploadavatar: {
+    margin: theme.spacing(3, 0, 1, 0)
   }
 });
 
@@ -73,6 +80,10 @@ class Register extends Component {
     this.props.getGenres();
   };
 
+  onErr = error => {
+    console.error("error filestack", error);
+  };
+
   render() {
     console.log("PROPS REGISTER", this.props);
 
@@ -99,7 +110,8 @@ class Register extends Component {
                     id_genre: "",
                     experience: "",
                     link_video: "",
-                    about: ""
+                    about: "",
+                    avatar: ""
                   }}
                   validationSchema={SignupSchema}
                   onSubmit={(values, actions) => {
@@ -109,7 +121,10 @@ class Register extends Component {
                     });
 
                     this.props.signup(
-                      { ...values, id_genre: parseInt(values.id_genre) },
+                      {
+                        ...values,
+                        id_genre: parseInt(values.id_genre)
+                      },
                       this.props.history
                     );
                   }}
@@ -120,6 +135,7 @@ class Register extends Component {
                     touched,
                     handleChange,
                     handleSubmit,
+                    setFieldValue,
                     isSubmitting
                   }) => (
                     <form
@@ -135,7 +151,6 @@ class Register extends Component {
                         className="SignUpForm"
                       >
                         <h1>Sign Up</h1>
-
                         <Grid container direction="row">
                           <Grid xl className="FirstName">
                             <TextField
@@ -169,7 +184,6 @@ class Register extends Component {
                             />
                           </Grid>
                         </Grid>
-
                         <TextField
                           required
                           fullWidth
@@ -199,7 +213,6 @@ class Register extends Component {
                         {errors.password && touched.password ? (
                           <div>{errors.password}</div>
                         ) : null}
-
                         <FormControl
                           required
                           fullWidth
@@ -231,6 +244,37 @@ class Register extends Component {
                         {errors.id_instrument && touched.id_instrument ? (
                           <div>{errors.id_instrument}</div>
                         ) : null}
+
+                        <Grid
+                          container
+                          justify="left"
+                          direction="column"
+                          className={classes.uploadavatar}
+                        >
+                          <InputLabel fullWidth className="TextField">
+                            Profile Picture
+                          </InputLabel>
+                          <ReactFilestack
+                            apikey={"A32nDFuC0Rn2U6N8jOR34z"}
+                            customRender={({ onPick }) => (
+                              <div>
+                                <Butt
+                                  variant="outlined"
+                                  color="primary"
+                                  startIcon={<CloudUploadIcon />}
+                                  size="small"
+                                  onClick={onPick}
+                                >
+                                  upload
+                                </Butt>
+                              </div>
+                            )}
+                            onSuccess={res => {
+                              setFieldValue("avatar", res.filesUploaded[0].url);
+                            }}
+                            onError={this.onErr}
+                          />
+                        </Grid>
 
                         <FormControl
                           component="fieldset"
@@ -271,7 +315,6 @@ class Register extends Component {
                           onChange={handleChange}
                           value={values.experience}
                         />
-
                         <TextField
                           fullWidth
                           type="url"
