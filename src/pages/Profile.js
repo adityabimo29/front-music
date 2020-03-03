@@ -2,45 +2,55 @@ import React, { Component } from 'react';
 import '../assets/css/Profile.css';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Picture from '../assets/images/01.jpg';
+import { fetchProfile } from '../actions';
+import {withRouter} from 'react-router';
+import {connect} from 'react-redux';
 
-export default class Profile extends Component {
+class Profile extends Component {
+
+  componentDidMount(){
+    this.props.getProfile(this.props.match.params.id);
+  }
   render() {
+    console.log(this.props.profile)
+    const {first_name,genre,role,about,avatar,email,last_name,link_video,experience} = this.props.profile;
+    let gambar = avatar;
+    if(gambar === null) {
+      gambar = Picture;
+    }
     return (
       <div>
         <Container>
           <Row>
             <Col xl={{ span: 4 }} className='ProfilePictureContainer'>
-              <img src={Picture} alt='Profile' />
+              <img src={gambar} alt='Profile' />
             </Col>
             <Col xl className='Profile'>
-              <h1>John Snow</h1>
+              <h1>{first_name}</h1>
               <Row className='ProfileHeader'>
                 <h3>Experience</h3>
               </Row>
               <Row className='ProfileArticle'>
-                <p>3 Years</p>
+                <p>{experience} Years</p>
               </Row>
               <Row className='ProfileHeader'>
                 <h3>Genre</h3>
               </Row>
               <Row className='ProfileArticle'>
-                <p>Rock</p>
+                <p>{genre}</p>
               </Row>
               <Row className='ProfileHeader'>
                 <h3>Role</h3>
               </Row>
               <Row className='ProfileArticle'>
-                <p>Guitarist</p>
+                <p>{role}</p>
               </Row>
               <Row className='ProfileHeader'>
                 <h3>Biography</h3>
               </Row>
               <Row className='ProfileArticle'>
                 <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore eligendi provident sapiente officia quasi reprehenderit
-                  debitis repellendus inventore quia doloribus vero, amet, error
-                  aut delectus accusamus a omnis? Dolorum, cumque!
+                {about}
                 </p>
               </Row>
               <Row>
@@ -59,7 +69,7 @@ export default class Profile extends Component {
                     title='media-youtube'
                     width='100%'
                     height='315'
-                    src={`https://www.youtube.com/embed/vxkl0kKXnHY`}
+                    src={`https://www.youtube.com/embed/${link_video}`}
                   ></iframe>
                 </Col>
               </Row>
@@ -127,3 +137,17 @@ export default class Profile extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    profile:state.users.profile
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getProfile:(id_user) => dispatch(fetchProfile(id_user))
+  }
+}
+
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Profile))

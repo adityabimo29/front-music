@@ -1,10 +1,13 @@
 import axios from 'axios';
+import jwt from 'jwt-decode';
+
 const token = localStorage.getItem('token');
 // import History from '../history';
 export const LOG_IN = 'LOG_IN';
 export const SIGN_UP = 'SIGN_UP';
 export const SET_LOGOUT = 'SET_LOGOUT';
 export const GET_DATA = 'GET_DATA';
+export const GET_OTHER_PROFILE = 'GET_OTHER_PROFILE';
 
 export const setSignup = data => {
   return {
@@ -26,7 +29,12 @@ export const getData = data => {
   };
 };
 
-
+export const getOtherData = data => {
+  return {
+    type: GET_OTHER_PROFILE,
+    payload: data
+  };
+};
 // logout
 export const logout = () => {
   return {
@@ -48,8 +56,10 @@ export const login = (values, history) => (dispatch) => {
 
       if (response.status === 200) {
         localStorage.setItem('token', response.data.token);
-        dispatch(setLogin(values));
-        history.push('/profile');
+        
+        let decode = jwt(response.data.token);
+        dispatch(fetchProfile(decode.id_user,history));
+        history.push(`profile/${decode.id_user}`);
       }
     })
     .catch(error => {
@@ -76,10 +86,23 @@ export const signup = (values, history) => dispatch => {
 };
 
 export const fetchDataUsers = () => dispatch => {
-  const token = localStorage.getItem('token');
-
-  return axios.get('https://music-byte.herokuapp.com/users',{headers:{"authorization":`Bearer ${token}`}}).then(res =>{
+  let decode = jwt(token);
+  return axios.get(`https://music-byte.herokuapp.com/users/listMusicians/${decode.id_user}`,{headers:{"authorization":`Bearer ${token}`}}).then(res =>{
     dispatch(getData(res.data.data))
     
+  })
+}
+
+export const fetchProfile = (id_user) => dispatch => {
+  
+  return axios.get(`https://music-byte.herokuapp.com/users/profile/${id_user}`,{headers:{"authorization":`Bearer ${token}`}}).then(res =>{
+    dispatch(getOtherData(res.data.data[0]))
+  })
+}
+
+export const userLike = (data,history) => dispatch => {
+  return axios.post('https://music-byte.herokuapp.com/likes/',data,{headers:{"authorization":`Bearer ${token}`}}).then(res => {
+    dispatch(fetchProfile(data.id_user,history));
+    history.push(`/profile/${data.id_user}`);
   })
 }

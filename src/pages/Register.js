@@ -70,7 +70,7 @@ const SignupSchema = Yup.object().shape({
   password: Yup.string()
     // .min(8, "min 8 characters")
     .required("Required"),
-  id_instrument: Yup.number().required("Required"),
+  id_role: Yup.number().required("Required"),
   id_genre: Yup.number().required("Required")
 });
 
@@ -106,7 +106,7 @@ class Register extends Component {
                     last_name: "",
                     email: "",
                     password: "",
-                    id_instrument: "",
+                    id_role: "",
                     id_genre: "",
                     experience: "",
                     link_video: "",
@@ -123,7 +123,8 @@ class Register extends Component {
                     this.props.signup(
                       {
                         ...values,
-                        id_genre: parseInt(values.id_genre)
+                        id_genre: parseInt(values.id_genre),
+                        id_role:parseInt(values.id_role)
                       },
                       this.props.history
                     );
@@ -222,13 +223,13 @@ class Register extends Component {
                             id="demo-simple-select-required-label"
                             className="TextField"
                           >
-                            Instrument
+                            Role
                           </InputLabel>
                           <Select
-                            id="id_instrument"
-                            name="id_instrument"
+                            id="id_role"
+                            name="id_role"
                             onChange={handleChange}
-                            value={values.id_instrument}
+                            value={values.id_role}
                             className={classes.selectEmpty}
                           >
                             {this.props.roles !== undefined &&
@@ -241,8 +242,8 @@ class Register extends Component {
                               })}
                           </Select>
                         </FormControl>
-                        {errors.id_instrument && touched.id_instrument ? (
-                          <div>{errors.id_instrument}</div>
+                        {errors.id_role && touched.id_role ? (
+                          <div>{errors.id_role}</div>
                         ) : null}
 
                         <Grid

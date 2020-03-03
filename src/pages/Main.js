@@ -4,10 +4,10 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import Swiper from 'react-id-swiper';
 // import Logo from '../assets/images/logo.png';
 import pic1 from '../assets/images/01.jpg';
-import pic2 from '../assets/images/02.jpg';
-import pic3 from '../assets/images/03.jpg';
 import { connect } from 'react-redux';
-import { fetchDataUsers } from '../actions/users.Actions';
+import { fetchDataUsers ,userLike } from '../actions/users.Actions';
+import {withRouter} from 'react-router';
+import jwt from 'jwt-decode';
 
 class Main extends Component {
 
@@ -16,8 +16,14 @@ class Main extends Component {
     
   }
 
-  handleLike = () => {
-    alert('adsas')
+  handleLike = (id_user) => {
+    const token = localStorage.getItem('token');
+    let decode = jwt(token);
+    let data = {
+      id_user:id_user,
+      id_visitor:decode.id_user
+    }
+    this.props.addLike(data,this.props.history);
   }
   
   render() {
@@ -49,29 +55,35 @@ class Main extends Component {
           <Row>
             <Swiper {...params}>
               {this.props.datas.map(item => {
+                if(item.avatar === null) {
+                  item.avatar = pic1
+                }
                 return (
-                  <Card bg='dark' className='Cards' key={item.id_user}>
-                  <Card.Img variant='top' src={pic1} className='CardImages' />
+                  <Col lg={4} key={item.id_user}>
+                  <Card bg='dark' className='Cards' >
+                  <Card.Img variant='top' src={item.avatar} className='CardImages' />
                   <Card.Body>
                     <Card.Title className='CardName'>{item.first_name}</Card.Title>
                     <Card.Text>
-                      Music : Rock
+                      Music : {item.genre}
                       <br />
-                      Role : Guitarist
+                      Role : {item.role}
                     </Card.Text>
+                    <Row>
+                      <Col >
+                        <button className='btn btn-primary btn-block' onClick={() => this.handleLike(item.id_user)}>
+                          <i className='fa fa-thumbs-o-up fa-3x' aria-hidden='true'></i>
+                        </button>
+                      </Col>
+                    </Row>
                   </Card.Body>
                   </Card>
+                  </Col>
                 )
               })}
             </Swiper>
           </Row>
-          <Row>
-            <Col className='ButtonContainer'>
-              <button onClick={this.handleLike}>
-                <i className='fa fa-thumbs-o-up fa-3x' aria-hidden='true'></i>
-              </button>
-            </Col>
-          </Row>
+          
         </Container>
       </div>
     );
@@ -86,8 +98,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    showData:() => dispatch(fetchDataUsers())
+    showData:() => dispatch(fetchDataUsers()),
+    addLike:(data,history)=> dispatch(userLike(data,history))
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Main);
+export default withRouter( connect(mapStateToProps,mapDispatchToProps)(Main));

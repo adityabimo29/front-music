@@ -46,7 +46,7 @@ export default function Home() {
                   Need help?{' '}
                   <Link to='/about'>
                     <span className='About'>
-                      <i class='far fa-play-circle'></i> Learn More
+                      <i className='far fa-play-circle'></i> Learn More
                     </span>
                   </Link>
                 </p>

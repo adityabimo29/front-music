@@ -1,15 +1,17 @@
-import { LOG_IN, SIGN_UP, GET_DATA } from "../actions";
+import { LOG_IN, SIGN_UP, GET_DATA ,GET_OTHER_PROFILE} from "../actions";
 
 const token = localStorage.getItem("token");
 const initialState = token
   ? {
       isLogged: true,
-      data:[]
+      data:[],
+      profile:{}
     }
   : {
       isLogged: false,
       signupData: [],
-      data:[]
+      data:[],
+      profile:{}
     };
 
 export default (state = initialState, action) => {
@@ -28,7 +30,12 @@ export default (state = initialState, action) => {
       return{
         ...state,
         data:action.payload
-      }
+      };
+      case GET_OTHER_PROFILE:
+      return{
+        ...state,
+        profile:action.payload
+      };
     
     default:
       return state;
