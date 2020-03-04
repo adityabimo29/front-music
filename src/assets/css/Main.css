@@ -1,25 +1,19 @@
-body {
-  background-color: #131316 !important;
-}
-
-.MainBG {
+.MainContainer {
   background-image: url(../images/main-background.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  min-height: 100vh;
 }
-
-/* .MainContainer {
-  display: flex;
-  justify-content: space-evenly;
-} */
 
 .Cards {
   color: white;
-  margin-top: 3vh;
-  padding-bottom: 2vh;
-  width: 40vh;
+  margin-top: 15vh;
+  padding-bottom: 1vh;
+  width: 100%;
+  max-width: 50vh;
   text-align: center;
+  background: none !important;
 }
 
 .CardName {
@@ -28,7 +22,8 @@ body {
 }
 
 .CardImages {
-  height: 50vh;
+  min-height: 35vh;
+  max-height: 35vh;
 }
 
 .ButtonContainer {

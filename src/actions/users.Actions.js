@@ -41,10 +41,7 @@ export const logout = () => {
   };
 };
 
-
-
-
-export const login = (values, history) => (dispatch) => {
+export const login = (values, history) => dispatch => {
   return axios({
     method: 'POST',
     url: 'https://music-byte.herokuapp.com/users/login',
@@ -55,9 +52,9 @@ export const login = (values, history) => (dispatch) => {
 
       if (response.status === 200) {
         localStorage.setItem('token', response.data.token);
-        
+
         let decode = jwt(response.data.token);
-        dispatch(fetchProfile(decode.id_user,history));
+        dispatch(fetchProfile(decode.id_user, history));
         history.push(`profile/${decode.id_user}`);
       }
     })
@@ -87,30 +84,46 @@ export const signup = (values, history) => dispatch => {
 export const fetchDataUsers = () => dispatch => {
   const token = localStorage.getItem('token');
   let decode = jwt(token);
-  return axios.get(`https://music-byte.herokuapp.com/users/listMusicians/${decode.id_user}`,{headers:{"authorization":`Bearer ${token}`}}).then(res =>{
-    dispatch(getData(res.data.data))
-    
-  })
-}
+  return axios
+    .get(
+      `https://music-byte.herokuapp.com/users/listMusicians/${decode.id_user}`,
+      { headers: { authorization: `Bearer ${token}` } }
+    )
+    .then(res => {
+      dispatch(getData(res.data.data));
+    });
+};
 
-export const fetchProfile = (id_user) => dispatch => {
+export const fetchProfile = id_user => dispatch => {
   const token = localStorage.getItem('token');
-  return axios.get(`https://music-byte.herokuapp.com/users/profile/${id_user}`,{headers:{"authorization":`Bearer ${token}`}}).then(res =>{
-    dispatch(getOtherData(res.data.data[0]))
-  })
-}
+  return axios
+    .get(`https://music-byte.herokuapp.com/users/profile/${id_user}`, {
+      headers: { authorization: `Bearer ${token}` }
+    })
+    .then(res => {
+      dispatch(getOtherData(res.data.data[0]));
+    });
+};
 
-export const userLike = (data,history) => dispatch => {
+export const userLike = (data, history) => dispatch => {
   const token = localStorage.getItem('token');
-  return axios.post('https://music-byte.herokuapp.com/likes/',data,{headers:{"authorization":`Bearer ${token}`}}).then(res => {
-    dispatch(fetchProfile(data.id_user,history));
-    history.push(`/profile/${data.id_user}`);
-  });
-}
-export const sendEmail = (data,history) => dispatch => {
+  return axios
+    .post('https://music-byte.herokuapp.com/likes/', data, {
+      headers: { authorization: `Bearer ${token}` }
+    })
+    .then(res => {
+      dispatch(fetchProfile(data.id_user, history));
+      history.push(`/profile/${data.id_user}`);
+    });
+};
+export const sendEmail = (data, history) => dispatch => {
   const token = localStorage.getItem('token');
-  return axios.post('https://music-byte.herokuapp.com/users/recruit/',data,{headers:{"authorization":`Bearer ${token}`}}).then(res => {
-    //dispatch(fetchProfile(data.id_user,history));
-    history.push(`/main`);
-  });
-}
+  return axios
+    .post('https://music-byte.herokuapp.com/users/recruit/', data, {
+      headers: { authorization: `Bearer ${token}` }
+    })
+    .then(res => {
+      //dispatch(fetchProfile(data.id_user,history));
+      history.push(`/main`);
+    });
+};

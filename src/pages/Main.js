@@ -5,32 +5,31 @@ import Swiper from 'react-id-swiper';
 // import Logo from '../assets/images/logo.png';
 import pic1 from '../assets/images/01.jpg';
 import { connect } from 'react-redux';
-import { fetchDataUsers ,userLike } from '../actions/users.Actions';
-import {withRouter} from 'react-router';
+import { fetchDataUsers, userLike } from '../actions/users.Actions';
+import { withRouter } from 'react-router';
 import jwt from 'jwt-decode';
+import Header from '../components/Header';
 
 class Main extends Component {
-
   componentDidMount() {
     this.props.showData();
-    
   }
 
-  handleLike = (id_user) => {
+  handleLike = id_user => {
     const token = localStorage.getItem('token');
     let decode = jwt(token);
     let data = {
-      id_user:id_user,
-      id_visitor:decode.id_user
-    }
-    this.props.addLike(data,this.props.history);
-  }
-  
+      id_user: id_user,
+      id_visitor: decode.id_user
+    };
+    this.props.addLike(data, this.props.history);
+  };
+
   render() {
-    
     // VARIABLE FOR LIBRARY REACT SWIPER JS
     const params = {
       effect: 'coverflow',
+      dots: false,
       grabCursor: true,
       centeredSlides: true,
       slidesPerView: 'auto',
@@ -39,10 +38,7 @@ class Main extends Component {
         stretch: 0,
         depth: 100,
         modifier: 1,
-        slideShadows: true
-      },
-      pagination: {
-        el: '.swiper-pagination'
+        slideShadows: false
       },
       navigation: {
         nextEl: '.swiper-button-next',
@@ -51,39 +47,51 @@ class Main extends Component {
     };
     return (
       <div>
-        <Container fluid className='MainContainer MainBG'>
+        <Header />
+        <Container fluid className='MainContainer'>
           <Row>
             <Swiper {...params}>
               {this.props.datas.map(item => {
-                if(item.avatar === null) {
-                  item.avatar = pic1
+                if (item.avatar === null) {
+                  item.avatar = pic1;
                 }
                 return (
-                  <Col lg={4} key={item.id_user}>
-                  <Card bg='dark' className='Cards' >
-                  <Card.Img variant='top' src={item.avatar} className='CardImages' />
-                  <Card.Body>
-                    <Card.Title className='CardName'>{item.first_name}</Card.Title>
-                    <Card.Text>
-                      Music : {item.genre}
-                      <br />
-                      Role : {item.role}
-                    </Card.Text>
-                    <Row>
-                      <Col >
-                        <button className='btn btn-primary btn-block' onClick={() => this.handleLike(item.id_user)}>
-                          <i className='fa fa-thumbs-o-up fa-3x' aria-hidden='true'></i>
-                        </button>
-                      </Col>
-                    </Row>
-                  </Card.Body>
-                  </Card>
+                  <Col sm key={item.id_user}>
+                    <Card bg='dark' className='Cards'>
+                      <Card.Img
+                        variant='top'
+                        src={item.avatar}
+                        className='CardImages'
+                      />
+                      <Card.Body>
+                        <Card.Title className='CardName'>
+                          {item.first_name}
+                        </Card.Title>
+                        <Card.Text>
+                          Music : {item.genre}
+                          <br />
+                          Role : {item.role}
+                        </Card.Text>
+                        <Row>
+                          <Col>
+                            <button
+                              className='btn btn-primary btn-block'
+                              onClick={() => this.handleLike(item.id_user)}
+                            >
+                              <i
+                                className='fa fa-thumbs-o-up fa-3x'
+                                aria-hidden='true'
+                              ></i>
+                            </button>
+                          </Col>
+                        </Row>
+                      </Card.Body>
+                    </Card>
                   </Col>
-                )
+                );
               })}
             </Swiper>
           </Row>
-          
         </Container>
       </div>
     );
@@ -91,16 +99,16 @@ class Main extends Component {
 }
 
 const mapStateToProps = state => {
-  return{
-    datas:state.users.data
-  }
-}
+  return {
+    datas: state.users.data
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
-    showData:() => dispatch(fetchDataUsers()),
-    addLike:(data,history)=> dispatch(userLike(data,history))
-  }
-}
+    showData: () => dispatch(fetchDataUsers()),
+    addLike: (data, history) => dispatch(userLike(data, history))
+  };
+};
 
-export default withRouter( connect(mapStateToProps,mapDispatchToProps)(Main));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

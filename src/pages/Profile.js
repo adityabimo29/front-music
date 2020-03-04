@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import '../assets/css/Profile.css';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import Picture from '../assets/images/01.jpg';
+import Picture from '../assets/images/default.jpg';
 import { fetchProfile, sendEmail } from '../actions';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
+import Header from '../components/Header';
 
 class Profile extends Component {
   componentDidMount() {
@@ -30,14 +31,15 @@ class Profile extends Component {
       experience
     } = this.props.profile;
     let gambar = avatar;
-    if (gambar === null) {
+    if (gambar === undefined) {
       gambar = Picture;
     }
     return (
       <div>
-        <Container>
+        <Header />
+        <Container className='ProfileContainer'>
           <Row>
-            <Col xl={{ span: 4 }} className='ProfilePictureContainer'>
+            <Col sm className='ProfilePictureContainer'>
               <img src={gambar} alt='Profile' />
             </Col>
             <Col xl className='Profile'>
@@ -87,7 +89,7 @@ class Profile extends Component {
                     title='media-youtube'
                     width='100%'
                     height='315'
-                    src={`https://www.youtube.com/embed/${link_video}`}
+                    src={`https://www.youtube-nocookie.com/embed/${link_video}`}
                   ></iframe>
                 </Col>
               </Row>
@@ -164,10 +166,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getProfile:(id_user) => dispatch(fetchProfile(id_user)),
-    sendMail:(email,history) => dispatch(sendEmail(email,history)) 
-  }
-}
+    getProfile: id_user => dispatch(fetchProfile(id_user)),
+    sendMail: (email, history) => dispatch(sendEmail(email, history))
+  };
+};
 
 export default withRouter(
   connect(mapStateToProps, mapDispatchToProps)(Profile)

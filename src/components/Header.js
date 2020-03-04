@@ -15,6 +15,13 @@ const Header = props => {
     window.location.reload();
   };
 
+  let isLogin;
+  if (localStorage.getItem('token')) {
+    isLogin = true;
+  } else {
+    isLogin = false;
+  }
+
   return (
     <div>
       <Navbar bg='dark' variant='dark' expand='lg' fixed='top'>
@@ -24,16 +31,10 @@ const Header = props => {
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='ml-auto'>
-            <Nav.Link as={Link} to='/' className='HeaderLink'>
-              Home
-            </Nav.Link>
-            {props.isLogged ? (
+            {isLogin ? (
               <Fragment>
-                <Nav.Link as={Link} to='/about' className='HeaderLink'>
-                  About
-                </Nav.Link>
-                <Nav.Link as={Link} to='/profile' className='HeaderLink'>
-                  Profile
+                <Nav.Link as={Link} to='/main' className='HeaderLink'>
+                  Get Started
                 </Nav.Link>
                 <Nav.Link as={Link} to='/contact' className='HeaderLink'>
                   Contact
