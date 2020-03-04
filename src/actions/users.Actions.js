@@ -1,4 +1,5 @@
 import axios from 'axios';
+import jwt_decode from 'jwt-decode';
 // import History from '../history';
 export const LOG_IN = 'LOG_IN';
 export const SIGN_UP = 'SIGN_UP';
@@ -34,10 +35,14 @@ export const login = (values, history) => dispatch => {
       console.log(response);
 
       if (response.status === 200) {
-        // localStorage.setItem('token', response.data.token);
-        localStorage.setItem('token', response.data.data);
+        //  localStorage.setItem('token', response.data.token);
+        localStorage.setItem('token', response.data.token);
+        const decode = jwt_decode(response.data.token);
+        console.log(decode);
         dispatch(setLogin(values));
-        history.push('/profile');
+        // history.push('/profile');
+        //test check to testProfile
+        history.push('/oneprofile');
         console.log(response.data.data);
       }
     })

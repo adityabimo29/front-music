@@ -32,7 +32,7 @@ const Header = props => {
                 <Nav.Link as={Link} to='/about' className='HeaderLink'>
                   About
                 </Nav.Link>
-                <Nav.Link as={Link} to='/profile' className='HeaderLink'>
+                <Nav.Link as={Link} to='/oneprofile' className='HeaderLink'>
                   Profile
                 </Nav.Link>
                 <Nav.Link as={Link} to='/contact' className='HeaderLink'>

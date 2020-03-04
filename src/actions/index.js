@@ -1,3 +1,4 @@
 export * from './users.Actions';
 export * from './rolesgenreAction';
-export * from './profilesActions';
+export * from './profilesAction';
+export * from './commentAction';
