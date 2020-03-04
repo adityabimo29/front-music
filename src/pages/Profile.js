@@ -3,25 +3,34 @@ import '../assets/css/Profile.css';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Picture from '../assets/images/01.jpg';
 import { fetchProfile, sendEmail } from '../actions';
-import {withRouter} from 'react-router';
-import {connect} from 'react-redux';
+import { withRouter } from 'react-router';
+import { connect } from 'react-redux';
 
 class Profile extends Component {
-
-  componentDidMount(){
+  componentDidMount() {
     this.props.getProfile(this.props.match.params.id);
   }
-  handleRecruit = (email) => {
+  handleRecruit = email => {
     let data = {
-      emailTo:email
-    }
-    this.props.sendMail(data,this.props.history)
-  }
+      emailTo: email
+    };
+    this.props.sendMail(data, this.props.history);
+  };
   render() {
-    console.log(this.props.profile)
-    const {first_name,genre,role,about,avatar,email,last_name,link_video,experience} = this.props.profile;
+    console.log(this.props.profile);
+    const {
+      first_name,
+      genre,
+      role,
+      about,
+      avatar,
+      email,
+      last_name,
+      link_video,
+      experience
+    } = this.props.profile;
     let gambar = avatar;
-    if(gambar === null) {
+    if (gambar === null) {
       gambar = Picture;
     }
     return (
@@ -55,13 +64,16 @@ class Profile extends Component {
                 <h3>Biography</h3>
               </Row>
               <Row className='ProfileArticle'>
-                <p>
-                {about}
-                </p>
+                <p>{about}</p>
               </Row>
               <Row>
                 <Col className='RecruitContainer'>
-                  <button className='RecruitButton' onClick={() => this.handleRecruit(email)}>RECRUIT</button>
+                  <button
+                    className='RecruitButton'
+                    onClick={() => this.handleRecruit(email)}
+                  >
+                    RECRUIT
+                  </button>
                 </Col>
               </Row>
             </Col>
@@ -146,9 +158,9 @@ class Profile extends Component {
 
 const mapStateToProps = state => {
   return {
-    profile:state.users.profile
-  }
-}
+    profile: state.users.profile
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -157,4 +169,6 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Profile))
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(Profile)
+);
