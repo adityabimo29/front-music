@@ -61,7 +61,7 @@ class Profile extends Component {
               </Row>
               <Row>
                 <Col className='RecruitContainer'>
-                  <button className='RecruitButton' onClick={() => handleRecruit(email)}>RECRUIT</button>
+                  <button className='RecruitButton' onClick={() => this.handleRecruit(email)}>RECRUIT</button>
                 </Col>
               </Row>
             </Col>
@@ -153,7 +153,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getProfile:(id_user) => dispatch(fetchProfile(id_user)),
-    sendMail:(email) => dispatch(sendEmail(email)) 
+    sendMail:(email,history) => dispatch(sendEmail(email,history)) 
   }
 }
 

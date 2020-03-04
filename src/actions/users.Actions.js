@@ -1,7 +1,6 @@
 import axios from 'axios';
 import jwt from 'jwt-decode';
 
-const token = localStorage.getItem('token');
 // import History from '../history';
 export const LOG_IN = 'LOG_IN';
 export const SIGN_UP = 'SIGN_UP';
@@ -86,6 +85,7 @@ export const signup = (values, history) => dispatch => {
 };
 
 export const fetchDataUsers = () => dispatch => {
+  const token = localStorage.getItem('token');
   let decode = jwt(token);
   return axios.get(`https://music-byte.herokuapp.com/users/listMusicians/${decode.id_user}`,{headers:{"authorization":`Bearer ${token}`}}).then(res =>{
     dispatch(getData(res.data.data))
@@ -94,19 +94,21 @@ export const fetchDataUsers = () => dispatch => {
 }
 
 export const fetchProfile = (id_user) => dispatch => {
-  
+  const token = localStorage.getItem('token');
   return axios.get(`https://music-byte.herokuapp.com/users/profile/${id_user}`,{headers:{"authorization":`Bearer ${token}`}}).then(res =>{
     dispatch(getOtherData(res.data.data[0]))
   })
 }
 
 export const userLike = (data,history) => dispatch => {
+  const token = localStorage.getItem('token');
   return axios.post('https://music-byte.herokuapp.com/likes/',data,{headers:{"authorization":`Bearer ${token}`}}).then(res => {
     dispatch(fetchProfile(data.id_user,history));
     history.push(`/profile/${data.id_user}`);
   });
 }
 export const sendEmail = (data,history) => dispatch => {
+  const token = localStorage.getItem('token');
   return axios.post('https://music-byte.herokuapp.com/users/recruit/',data,{headers:{"authorization":`Bearer ${token}`}}).then(res => {
     //dispatch(fetchProfile(data.id_user,history));
     history.push(`/main`);
