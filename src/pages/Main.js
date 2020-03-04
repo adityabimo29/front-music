@@ -4,11 +4,30 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import Swiper from 'react-id-swiper';
 // import Logo from '../assets/images/logo.png';
 import pic1 from '../assets/images/01.jpg';
-import pic2 from '../assets/images/02.jpg';
-import pic3 from '../assets/images/03.jpg';
+import { connect } from 'react-redux';
+import { fetchDataUsers ,userLike } from '../actions/users.Actions';
+import {withRouter} from 'react-router';
+import jwt from 'jwt-decode';
 
-export default class Main extends Component {
+class Main extends Component {
+
+  componentDidMount() {
+    this.props.showData();
+    
+  }
+
+  handleLike = (id_user) => {
+    const token = localStorage.getItem('token');
+    let decode = jwt(token);
+    let data = {
+      id_user:id_user,
+      id_visitor:decode.id_user
+    }
+    this.props.addLike(data,this.props.history);
+  }
+  
   render() {
+    
     // VARIABLE FOR LIBRARY REACT SWIPER JS
     const params = {
       effect: 'coverflow',
@@ -30,56 +49,58 @@ export default class Main extends Component {
         prevEl: '.swiper-button-prev'
       }
     };
-
     return (
       <div>
         <Container fluid className='MainContainer MainBG'>
           <Row>
             <Swiper {...params}>
-              <Card bg='dark' className='Cards'>
-                <Card.Img variant='top' src={pic1} className='CardImages' />
-                <Card.Body>
-                  <Card.Title className='CardName'>John Snow</Card.Title>
-                  <Card.Text>
-                    Music : Rock
-                    <br />
-                    Role : Guitarist
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-              <Card bg='dark' className='Cards'>
-                <Card.Img variant='top' src={pic2} className='CardImages' />
-                <Card.Body>
-                  <Card.Title className='CardName'>Ygritte</Card.Title>
-                  <Card.Text>
-                    Music : Jazz
-                    <br />
-                    Role : Singer
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-              <Card bg='dark' className='Cards'>
-                <Card.Img variant='top' src={pic3} className='CardImages' />
-                <Card.Body>
-                  <Card.Title className='CardName'>Arya Stark</Card.Title>
-                  <Card.Text>
-                    Music : Rock
-                    <br />
-                    Role : Bassist
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+              {this.props.datas.map(item => {
+                if(item.avatar === null) {
+                  item.avatar = pic1
+                }
+                return (
+                  <Col lg={4} key={item.id_user}>
+                  <Card bg='dark' className='Cards' >
+                  <Card.Img variant='top' src={item.avatar} className='CardImages' />
+                  <Card.Body>
+                    <Card.Title className='CardName'>{item.first_name}</Card.Title>
+                    <Card.Text>
+                      Music : {item.genre}
+                      <br />
+                      Role : {item.role}
+                    </Card.Text>
+                    <Row>
+                      <Col >
+                        <button className='btn btn-primary btn-block' onClick={() => this.handleLike(item.id_user)}>
+                          <i className='fa fa-thumbs-o-up fa-3x' aria-hidden='true'></i>
+                        </button>
+                      </Col>
+                    </Row>
+                  </Card.Body>
+                  </Card>
+                  </Col>
+                )
+              })}
             </Swiper>
           </Row>
-          <Row>
-            <Col className='ButtonContainer'>
-              <button>
-                <i class='fa fa-thumbs-o-up fa-3x' aria-hidden='true'></i>
-              </button>
-            </Col>
-          </Row>
+          
         </Container>
       </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return{
+    datas:state.users.data
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    showData:() => dispatch(fetchDataUsers()),
+    addLike:(data,history)=> dispatch(userLike(data,history))
+  }
+}
+
+export default withRouter( connect(mapStateToProps,mapDispatchToProps)(Main));

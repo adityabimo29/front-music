@@ -15,9 +15,11 @@
 }
 
 .OpeningArticle {
-  margin-top: 70vh;
+  margin-top: 65vh;
   display: flex;
   justify-content: center;
+  background-color: rgba(17, 17, 22, 0.5);
+  padding-top: 3vh;
 }
 
 .OpeningArticle img {
@@ -29,6 +31,8 @@
 .OpeningButtons {
   display: flex;
   justify-content: center;
+  background-color: rgba(17, 17, 22, 0.5);
+  padding-bottom: 3vh;
 }
 
 .HomeButton {
