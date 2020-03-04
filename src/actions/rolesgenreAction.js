@@ -23,7 +23,7 @@ export const getRoles = () => dispatch => {
     url: "https://music-byte.herokuapp.com/roles"
   })
     .then(response => {
-      console.log("This is Response get Roles", response.data);
+      // console.log("This is Response get Roles", response.data);
       dispatch(setRoles(response.data.data));
     })
     .catch(error => {
@@ -37,7 +37,7 @@ export const getGenres = () => dispatch => {
       url: "https://music-byte.herokuapp.com/genres"
     })
       .then(response => {
-        console.log("This is Response get Genres", response.data);
+        // console.log("This is Response get Genres", response.data);
         dispatch(setGenres(response.data.data));
       })
       .catch(error => {
