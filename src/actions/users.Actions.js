@@ -16,6 +16,20 @@ export const setSignup = data => {
     payload: data
   };
 };
+
+export const getData = data => {
+  return {
+    type: GET_DATA,
+    payload: data
+  };
+};
+
+export const getOtherData = data => {
+  return {
+    type: GET_OTHER_PROFILE,
+    payload: data
+  };
+};
 export const setLogin = data => {
   return {
     type: LOG_IN,
@@ -42,17 +56,17 @@ export const login = (values, history) => dispatch => {
       if (response.status === 200) {
         //  localStorage.setItem('token', response.data.token);
         localStorage.setItem('token', response.data.token);
-        // const decode = jwt_decode(response.data.token);
+        const decode = jwt_decode(response.data.token);
         console.log(decode);
         dispatch(setLogin(values));
         // history.push('/profile');
         //test check to testProfile
         history.push('/oneprofile');
         console.log(response.data.data);
-
-        let decode = jwt(response.data.token);
-        dispatch(fetchProfile(decode.id_user, history));
-        history.push(`profile/${decode.id_user}`);
+        //ini bawah yg asli dari master saya tutup dulu utk test profilex
+        // let decode = jwt(response.data.token);
+        // dispatch(fetchProfile(decode.id_user, history));
+        // history.push(`profile/${decode.id_user}`);
       }
     })
     .catch(error => {

@@ -16,10 +16,12 @@ import * as yup from 'yup';
 // import moment from 'moment';
 import jwt_decode from 'jwt-decode';
 import { connect } from 'react-redux';
-import { functiongetUsers } from '../actions';
+import { functgetItem, functaddItem } from '../actions';
 
 function Comment(props) {
-  const [items, setItems] = useState([{ id: uuid(), email: '', comment: '' }]);
+  // const [items, setItems] = useState([
+  //   { id_comment: null, id_user: null, name: '', message: '' }
+  // ]);
   const { buttonLabel, className } = props;
 
   const [modal, setModal] = useState(false);
@@ -27,14 +29,15 @@ function Comment(props) {
   const toggle = () => setModal(!modal);
   const mytoken = localStorage.getItem('token');
   const decode = jwt_decode(mytoken);
-  console.log(decode);
+  console.log(props, 'props');
+
+  //ambil comment
   useEffect(() => {
-    props.getUsers();
+    props.getItems();
   }, []);
   // useEffect(() => {
   //   props.getUsers();
   // }, []);
-  console.log(items);
 
   var today = new Date().toLocaleDateString('en-GB', {
     day: 'numeric',
@@ -45,6 +48,9 @@ function Comment(props) {
   var timeday = new Date().toString().split(' ')[4];
 
   const myName = decode.first_name + ' ' + decode.last_name;
+  var myIdUser = decode.id_user;
+
+  console.log(props);
   return (
     <div>
       <Container>
@@ -69,17 +75,29 @@ function Comment(props) {
             <ModalHeader toggle={toggle}>Add Your Comment</ModalHeader>
             <ModalBody>
               <Formik
-                initialValues={{ email: myName, comment: '' }}
+                initialValues={{ name: myName, message: '', id_user: myIdUser }}
                 onSubmit={async values => {
+                  // ini utk isi di database
+                  props.addItems(values);
                   await new Promise(resolve => setTimeout(resolve, 500));
                   alert(JSON.stringify(values, null, 2));
-                  console.log(values);
 
-                  setItems([...items, { ...values, id: uuid() }]);
+                  // ini cara ini hanya utk di array
+                  // dan bukan utk di database
+                  // setItems([
+                  //   ...items,
+                  //   {
+                  //     ...values,
+                  //     id_user: myIdUser,
+                  //     name: values.myName,
+                  //     message: values.comment
+                  //   }
+                  // ]);
                 }}
                 validationSchema={yup.object().shape({
-                  youremail: yup.string(),
-                  comment: yup.string().required('Required')
+                  id_user: yup.number(),
+                  name: yup.string(),
+                  message: yup.string().required('Required')
                 })}
               >
                 {props => {
@@ -96,34 +114,43 @@ function Comment(props) {
                   } = props;
                   return (
                     <form onSubmit={handleSubmit}>
-                      <label htmlFor='comment' style={{ display: 'block' }}>
+                      <label htmlFor='name' style={{ display: 'block' }}>
                         Your Comment :
                       </label>
                       <br />
                       <input
-                        htmlFor='youremail'
+                        htmlFor='id_user'
                         style={{ display: 'block' }}
-                        name='email'
-                        type='email'
-                        value={values.email}
+                        name='id_user'
+                        type='number'
+                        value={values.id_user}
+                        disabled={true}
+                      />
+                      <input
+                        htmlFor='name'
+                        style={{ display: 'block' }}
+                        name='name'
+                        type='text'
+                        value={values.name}
                         disabled={true}
                       />
 
                       <input
-                        id='comment'
+                        id='message'
+                        name='message'
                         placeholder='type your comment'
                         type='text'
-                        value={values.comment}
+                        value={values.message}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className={
-                          errors.comment && touched.comment
+                          errors.message && touched.message
                             ? 'text-input'
                             : 'text-input error'
                         }
                       />
-                      {errors.comment && touched.comment && (
-                        <div className='input-feedback'>{errors.comment}</div>
+                      {errors.message && touched.message && (
+                        <div className='input-feedback'>{errors.message}</div>
                       )}
 
                       <Button
@@ -152,9 +179,9 @@ function Comment(props) {
           </Modal>
         </div>
 
-        <ListGroup>
-          {items.map(({ id, email, comment }) => (
-            <ListGroupItem key={id} className='lg'>
+        {/* <ListGroup>
+          {items.map(({ id_comment, name, message }) => (
+            <ListGroupItem key={id_comment} className='lg'>
               <Alert
                 style={{
                   display: 'flex',
@@ -163,13 +190,13 @@ function Comment(props) {
                 }}
                 color='primary'
               >
-                <p>{email}</p>{' '}
+                <p>{name}</p>{' '}
                 <p>
                   posted on : {today} {timeday}{' '}
                 </p>
               </Alert>
               <br />
-              <p>{comment}</p>
+              <p>{message}</p>
               <Button
                 className='remove-btn'
                 size='sm'
@@ -183,7 +210,60 @@ function Comment(props) {
                 x
               </Button>
             </ListGroupItem>
-          ))}
+          ))} */}
+        {/*  start*/}
+        <ListGroup>
+          {props.items === undefined ? (
+            <ListGroupItem>
+              <Alert
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'space-between'
+                }}
+                color='primary'
+              >
+                {' '}
+                COMMENT TO BE POSTED
+              </Alert>
+            </ListGroupItem>
+          ) : (
+            props.items.map(({ id_comment, name, message }) => (
+              <ListGroupItem key={id_comment} className='lg'>
+                <Alert
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between'
+                  }}
+                  color='primary'
+                >
+                  <p>{name}</p>{' '}
+                  <p>
+                    posted on : {today} {timeday}{' '}
+                  </p>
+                </Alert>
+                <br />
+                <p>{message}</p>
+                <Button
+                  className='remove-btn'
+                  size='sm'
+                  color='danger'
+                  onClick={() => {
+                    // setItems(state => ({
+                    //   items: state.items.filter(
+                    //     item => item.id_comment !== id_comment
+                    //   )
+                    // }));
+                  }}
+                >
+                  x
+                </Button>
+              </ListGroupItem>
+            ))
+          )}
+
+          {/*end */}
         </ListGroup>
       </Container>
     </div>
@@ -194,14 +274,18 @@ function Comment(props) {
 //m = moment('2013-03-01', 'YYYY-MM-DD')
 const mapStateToProps = state => {
   return {
-    profile: state.profile
+    items: state.items
   };
 };
 
 const mapDispatchToProps = dispatch => {
+  // console.log(functaddItem(values));
   return {
-    getUsers: () => {
-      dispatch(functiongetUsers());
+    getItems: () => {
+      dispatch(functgetItem());
+    },
+    addItems: values => {
+      dispatch(functaddItem(values));
     }
   };
 };

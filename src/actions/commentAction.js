@@ -33,17 +33,22 @@ export const functgetItem = () => dispatch => {
     });
 };
 
-export const functaddItem = () => dispatch => {
+export const functaddItem = values => dispatch => {
   return axios({
     method: 'POST',
     url: 'https://music-byte.herokuapp.com/comments',
-    headers: { Authorization: `Bearer ${token}` }
+    headers: { Authorization: `Bearer ${token}` },
+    data: values
   })
     .then(result => {
-      // console.log(result, 'hasil');
+      console.log(result, 'hasil');
       dispatch(addItems(result.data.data));
+      functgetItem();
     })
     .catch(error => {
       console.log(error);
     });
 };
+
+//utk update pake params metode put
+//ditambah

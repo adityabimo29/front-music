@@ -19,6 +19,7 @@ class Profile extends Component {
   render() {
     console.log(this.props.profile);
     const {
+      id_user,
       first_name,
       genre,
       role,

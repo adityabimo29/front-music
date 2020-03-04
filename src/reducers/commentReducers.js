@@ -1,6 +1,6 @@
 import { GET_ITEM, ADD_ITEM } from '../actions';
 
-const initialState = { items: [] };
+const initialState = [];
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
 
     case ADD_ITEM:
       return { ...state, items: state.items.concat(action.payload) };
-
+    // items:...state.items,action.payload
     default:
       return state || [];
   }

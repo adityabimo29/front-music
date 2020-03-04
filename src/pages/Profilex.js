@@ -69,6 +69,7 @@ function NewProfile(props) {
     }
     return result;
   }
+  var gambar = decode.avatar;
 
   return (
     <Container style={{ backgroundColor: 'white' }}>
@@ -89,8 +90,9 @@ function NewProfile(props) {
                 <CardBody>
                   <CardImg
                     width='100%'
-                    // src={`${mydata[0].avatar}`}
-                    src='https://images.pexels.com/photos/53453/marilyn-monroe-woman-actress-pretty-53453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+                    src={gambar}
+                    // src='https://images.pexels.com/photos/53453/marilyn-monroe-woman-actress-pretty-53453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+
                     alt='Card image cap'
                   />
                 </CardBody>
