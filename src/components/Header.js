@@ -22,13 +22,14 @@ const Header = props => {
     }).then(async (result) => {
       if (result.value) {
         Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
+          'Success',
+          'Yoppo',
           'success'
         )
-        await localStorage.clear();
-        await props.logout();
+        localStorage.clear();
+        props.logout();
         props.history.push('/login');
+       //window.location.reload();
       }
     })
 

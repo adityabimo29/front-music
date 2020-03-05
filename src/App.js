@@ -22,7 +22,7 @@ function App(props) {
           <About />
         </Route>
         <Route exact path='/login'>
-        {props.isLogin ? (<Redirect to='/main' />) : (<Login / >)}
+        <Login / >
         </Route>
         <Route exact path='/register'>
           <Register />
