@@ -36,6 +36,7 @@ export default (state = initialState, action) => {
     case GET_OTHER_PROFILE:
       return{
         ...state,
+        isLogged:true,
         profile:action.payload
       };
     case GET_COMMENTS:

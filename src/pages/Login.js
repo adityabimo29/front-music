@@ -93,7 +93,7 @@ function Login(props) {
                       variant='outline-info'
                       type='submit'
                       className='SignInLoginPage'
-                      disabled={isSubmitting}
+                      
                     >
                       Submit
                     </Button>

@@ -7,13 +7,31 @@ import { logout } from '../actions/users.Actions';
 import { withRouter } from 'react-router';
 import Logo from '../assets/images/logo.png';
 import jwt from 'jwt-decode';
+import Swal from 'sweetalert2';
 
 const Header = props => {
-  const handleLogout = () => {
-    localStorage.clear();
-    props.logout();
-    props.history.push('/login');
-    window.location.reload();
+  const handleLogout =() => {
+    
+    Swal.fire({
+      title: 'Are you sure?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yippi'
+    }).then(async (result) => {
+      if (result.value) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+        await localStorage.clear();
+        await props.logout();
+        props.history.push('/login');
+      }
+    })
+
   };
 
   let isLogin;

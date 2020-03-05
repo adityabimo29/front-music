@@ -1,5 +1,6 @@
 import axios from 'axios';
 import jwt from 'jwt-decode';
+import Swal from 'sweetalert2';
 
 // import History from '../history';
 export const LOG_IN = 'LOG_IN';
@@ -32,7 +33,8 @@ export const getData = data => {
 export const getOtherData = data => {
   return {
     type: GET_OTHER_PROFILE,
-    payload: data
+    payload: data,
+    login:true,
   };
 };
 
@@ -59,17 +61,41 @@ export const login = (values, history) => dispatch => {
     .then(response => {
       console.log(response);
 
-      if (response.status === 200) {
+      if (response.data.token !== undefined) {
         localStorage.setItem('token', response.data.token);
-
         let decode = jwt(response.data.token);
         dispatch(fetchProfile(decode.id_user, history));
         history.push(`profile/${decode.id_user}`);
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          onOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+        
+        Toast.fire({
+          icon: 'success',
+          title: 'Signed in successfully'
+        })
+      }else{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Email or Password is wrong.',
+        })
       }
     })
     .catch(error => {
-      console.log(error);
-      alert('Email or Password is wrong.');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Email Not Found.',
+      })
     });
 };
 
@@ -131,8 +157,13 @@ export const sendEmail = (data, history) => dispatch => {
     .post('https://music-byte.herokuapp.com/users/recruit/', data, {
       headers: { authorization: `Bearer ${token}` }
     })
-    .then(res => {
+    .then(async res => {
       //dispatch(fetchProfile(data.id_user,history));
+      await Swal.fire({
+        icon: 'info',
+        title: 'Sent Email',
+        text: 'Email has been send.',
+      })
       history.push(`/main`);
     });
 };
@@ -154,7 +185,12 @@ export const PostComments = (data) => dispatch => {
     .post(`https://music-byte.herokuapp.com/comments`,data, {
       headers: { authorization: `Bearer ${token}` }
     })
-    .then(res => {
+    .then(async res => {
+      await Swal.fire({
+        icon: 'success',
+        title: 'Yippi !',
+        text: 'Comment added.',
+      })
       dispatch(getComments(data.id_user));
     });
 }

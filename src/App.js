@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import {connect} from 'react-redux';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -9,11 +10,8 @@ import Support from './pages/Support';
 import Profile from './pages/Profile';
 import Main from './pages/Main';
 
-function App() {
-  let isLogin = false;
-  if(localStorage.getItem('token')){
-    isLogin = true;
-  }
+function App(props) {
+
   return (
     <Router>
       <Switch>
@@ -24,16 +22,17 @@ function App() {
           <About />
         </Route>
         <Route exact path='/login'>
-        {isLogin ? (<Redirect to='/main' />) : (<Login / >)}
+        {props.isLogin ? (<Redirect to='/main' />) : (<Login / >)}
         </Route>
         <Route exact path='/register'>
           <Register />
         </Route>
         <Route exact path='/profile/:id'>
-          {isLogin ? (<Profile />) : (<Redirect to='/' />)}
+          <Profile />
+          {/* {props.isLogin ? (<Profile />) : (<Redirect to='/' />)} */}
         </Route>
         <Route exact path='/main'>
-          {isLogin ? (<Main />) : (<Redirect to='/' />)}
+          {props.isLogin ? (<Main />) : (<Redirect to='/' />)}
         </Route>
         <Route exact path='/support'>
           <Support />
@@ -42,5 +41,9 @@ function App() {
     </Router>
   );
 }
-
-export default App;
+const mapStateToProps = state => {
+  return {
+    isLogin:state.users.isLogged
+  }
+}
+export default connect(mapStateToProps)(App);
