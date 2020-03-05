@@ -25,7 +25,7 @@ function Login(props) {
     <div>
       <ThemeProvider theme={color}>
         <Container maxWidth='xl' className='SigninContainer'>
-          <Grid xl={{ span: 6 }}>
+          <Grid xl={6}>
             <Grid
               container
               alignItems='center'
@@ -74,7 +74,7 @@ function Login(props) {
                       required
                       type='password'
                       name='password'
-                      id='standard-basic'
+                      id='standard-basic2'
                       label='Password'
                       className='TextField'
                       onChange={handleChange}

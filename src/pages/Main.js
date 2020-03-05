@@ -26,6 +26,7 @@ class Main extends Component {
   };
 
   render() {
+    
     // VARIABLE FOR LIBRARY REACT SWIPER JS
     const params = {
       effect: 'coverflow',

@@ -1,24 +1,52 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import '../assets/css/Profile.css';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Picture from '../assets/images/default.jpg';
-import { fetchProfile, sendEmail } from '../actions';
+import { fetchProfile, sendEmail , getComments , PostComments} from '../actions';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
+import jwt from 'jwt-decode';
 
 class Profile extends Component {
+
+  state = {
+    message:''
+  }
   componentDidMount() {
     this.props.getProfile(this.props.match.params.id);
+    this.props.getComments(this.props.match.params.id);
   }
+
   handleRecruit = email => {
+    const token  = localStorage.getItem('token');
+    let decode  = jwt(token);
     let data = {
-      emailTo: email
+      emailTo: email,
+      first_name:decode.first_name,
+      email:decode.email
     };
     this.props.sendMail(data, this.props.history);
-  };
+  }
+
+  handleComment = () => {
+    const token  = localStorage.getItem('token');
+    let decode  = jwt(token);
+    let data = {
+      id_user: this.props.profile.id_user,
+      id_guest:decode.id_user,
+      name:decode.first_name,
+      message:this.state.message
+    };
+    this.props.PostComments(data);
+  }
+
+  handleMessage = (e) => {
+    this.setState({message:e.target.value})
+  }
+
   render() {
-    console.log(this.props.profile);
+    
     const {
       first_name,
       genre,
@@ -43,7 +71,7 @@ class Profile extends Component {
               <img src={gambar} alt='Profile' />
             </Col>
             <Col xl className='Profile'>
-              <h1>{first_name}</h1>
+              <h1>{first_name} {last_name}</h1>
               <Row className='ProfileHeader'>
                 <h3>Experience</h3>
               </Row>
@@ -98,35 +126,17 @@ class Profile extends Component {
               <h1>Comments</h1>
               <Row>
                 <Col className='CommentSection'>
-                  <h5>Post by: Jesky</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Placeat asperiores totam enim inventore incidunt, quod
-                    necessitatibus provident pariatur molestiae consequatur,
-                    unde nam obcaecati odit reiciendis hic aspernatur tempore.
-                    Molestiae, cum.
-                  </p>
-                  <h5>Post by: Aditya</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Similique quis consectetur libero in, fugit sit delectus eos
-                    veritatis unde veniam, amet exercitationem non rem provident
-                    adipisci sed temporibus mollitia molestiae.
-                  </p>
-                  <h5>Post by: Arya Stark</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Iusto magni, modi quos, illum atque nihil praesentium
-                    quibusdam hic, sunt consectetur tempore consequuntur eum.
-                    Voluptatibus consectetur ut, ipsa beatae maxime quam.
-                  </p>
-                  <h5>Post by: Mariah Carrey</h5>
-                  <p>
-                    Jesky Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Consectetur harum laboriosam voluptas reiciendis ad
-                    rem, aut voluptatem eius, aliquam earum vel omnis laborum
-                    alias voluptatibus. Et earum modi eos animi.
-                  </p>
+                  {this.props.comments.map(item => {
+                    return (
+                        <div key={item.id_guest}>
+                        <h5>Post by: {item.name}</h5>
+                        <p>
+                          {item.message}
+                        </p>
+                        </div>
+                    )
+                  })}
+                  {this.props.comments.length <= 0 ? 'Comments Not Found' : ''}
                 </Col>
               </Row>
             </Col>
@@ -146,8 +156,8 @@ class Profile extends Component {
                       Comments are visible to all visitor on this profile page.
                     </p>
                   </Form.Label>
-                  <Form.Control as='textarea' rows='5' />
-                  <Button className='PostButton'>Submit Post</Button>
+                  <Form.Control as='textarea' rows='5' onChange={this.handleMessage} value={this.state.message} />
+                  <Button className='PostButton' onClick={this.handleComment}>Submit Post</Button>
                 </Form.Group>
               </Form>
             </Col>
@@ -160,14 +170,17 @@ class Profile extends Component {
 
 const mapStateToProps = state => {
   return {
-    profile: state.users.profile
+    profile: state.users.profile,
+    comments:state.users.comments
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     getProfile: id_user => dispatch(fetchProfile(id_user)),
-    sendMail: (email, history) => dispatch(sendEmail(email, history))
+    sendMail: (email, history) => dispatch(sendEmail(email, history)),
+    getComments:(id_user) => dispatch(getComments(id_user)),
+    PostComments:(data) => dispatch(PostComments(data))
   };
 };
 

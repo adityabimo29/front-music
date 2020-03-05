@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -10,6 +10,10 @@ import Profile from './pages/Profile';
 import Main from './pages/Main';
 
 function App() {
+  let isLogin = false;
+  if(localStorage.getItem('token')){
+    isLogin = true;
+  }
   return (
     <Router>
       <Switch>
@@ -20,16 +24,16 @@ function App() {
           <About />
         </Route>
         <Route exact path='/login'>
-          <Login />
+        {isLogin ? (<Redirect to='/main' />) : (<Login / >)}
         </Route>
         <Route exact path='/register'>
           <Register />
         </Route>
         <Route exact path='/profile/:id'>
-          <Profile />
+          {isLogin ? (<Profile />) : (<Redirect to='/' />)}
         </Route>
         <Route exact path='/main'>
-          <Main />
+          {isLogin ? (<Main />) : (<Redirect to='/' />)}
         </Route>
         <Route exact path='/support'>
           <Support />

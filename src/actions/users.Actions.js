@@ -7,6 +7,7 @@ export const SIGN_UP = 'SIGN_UP';
 export const SET_LOGOUT = 'SET_LOGOUT';
 export const GET_DATA = 'GET_DATA';
 export const GET_OTHER_PROFILE = 'GET_OTHER_PROFILE';
+export const GET_COMMENTS = 'GET_COMMENTS';
 
 export const setSignup = data => {
   return {
@@ -34,6 +35,14 @@ export const getOtherData = data => {
     payload: data
   };
 };
+
+export const getDataComments = data => {
+  return {
+    type: GET_COMMENTS,
+    payload: data
+  };
+};
+
 // logout
 export const logout = () => {
   return {
@@ -127,3 +136,25 @@ export const sendEmail = (data, history) => dispatch => {
       history.push(`/main`);
     });
 };
+
+export const getComments = (id_user) => dispatch => {
+  const token = localStorage.getItem('token');
+  return axios
+    .get(`https://music-byte.herokuapp.com/comments/${id_user}`, {
+      headers: { authorization: `Bearer ${token}` }
+    })
+    .then(res => {
+      dispatch(getDataComments(res.data.data));
+    });
+}
+
+export const PostComments = (data) => dispatch => {
+  const token = localStorage.getItem('token');
+  return axios
+    .post(`https://music-byte.herokuapp.com/comments`,data, {
+      headers: { authorization: `Bearer ${token}` }
+    })
+    .then(res => {
+      dispatch(getComments(data.id_user));
+    });
+}

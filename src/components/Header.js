@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { logout } from '../actions/users.Actions';
 import { withRouter } from 'react-router';
 import Logo from '../assets/images/logo.png';
+import jwt from 'jwt-decode';
 
 const Header = props => {
   const handleLogout = () => {
@@ -22,6 +23,17 @@ const Header = props => {
     isLogin = false;
   }
 
+  let token = localStorage.getItem('token');
+  let decode= jwt(token);
+
+  let  changeMenu = true;
+  if(props.match.path === '/main' ) {
+    changeMenu = false;
+  }else if(props.match.path === '/profile/:id'){
+    changeMenu = true;
+  }
+  
+   
   return (
     <div>
       <Navbar bg='dark' variant='dark' expand='lg' fixed='top'>
@@ -33,9 +45,16 @@ const Header = props => {
           <Nav className='ml-auto'>
             {isLogin ? (
               <Fragment>
-                <Nav.Link as={Link} to='/main' className='HeaderLink'>
-                  Get Started
-                </Nav.Link>
+                {changeMenu ? (
+                  <Nav.Link as={Link} to='/main' className='HeaderLink'>
+                    Get Started
+                  </Nav.Link>
+                ) : (
+                  <Nav.Link as={Link} to={`/profile/${decode.id_user}`} className='HeaderLink'>
+                    My Profile
+                  </Nav.Link>
+                )}
+                
                 <Nav.Link as={Link} to='/contact' className='HeaderLink'>
                   Contact
                 </Nav.Link>
