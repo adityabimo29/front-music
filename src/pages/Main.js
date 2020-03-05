@@ -3,7 +3,7 @@ import '../assets/css/Main.css';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import Swiper from 'react-id-swiper';
 // import Logo from '../assets/images/logo.png';
-import pic1 from '../assets/images/01.jpg';
+import pic1 from '../assets/images/default.png';
 import { connect } from 'react-redux';
 import { fetchDataUsers, userLike } from '../actions/users.Actions';
 import { withRouter } from 'react-router';
@@ -26,7 +26,6 @@ class Main extends Component {
   };
 
   render() {
-    
     // VARIABLE FOR LIBRARY REACT SWIPER JS
     const params = {
       effect: 'coverflow',
@@ -50,49 +49,47 @@ class Main extends Component {
       <div>
         <Header />
         <Container fluid className='MainContainer'>
-          <Row>
-            <Swiper {...params}>
-              {this.props.datas.map(item => {
-                if (item.avatar === null) {
-                  item.avatar = pic1;
-                }
-                return (
-                  <Col sm key={item.id_user}>
-                    <Card bg='dark' className='Cards'>
-                      <Card.Img
-                        variant='top'
-                        src={item.avatar}
-                        className='CardImages'
-                      />
-                      <Card.Body>
-                        <Card.Title className='CardName'>
-                          {item.first_name}
-                        </Card.Title>
-                        <Card.Text>
-                          Music : {item.genre}
-                          <br />
-                          Role : {item.role}
-                        </Card.Text>
-                        <Row>
-                          <Col>
-                            <button
-                              className='btn btn-primary btn-block'
-                              onClick={() => this.handleLike(item.id_user)}
-                            >
-                              <i
-                                className='fa fa-thumbs-o-up fa-3x'
-                                aria-hidden='true'
-                              ></i>
-                            </button>
-                          </Col>
-                        </Row>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                );
-              })}
-            </Swiper>
-          </Row>
+          <Swiper {...params}>
+            {this.props.datas.map(item => {
+              if (item.avatar === '') {
+                item.avatar = pic1;
+              }
+              return (
+                <Col sm key={item.id_user}>
+                  <Card bg='dark' className='Cards'>
+                    <Card.Img
+                      variant='top'
+                      src={item.avatar}
+                      className='CardImages'
+                    />
+                    <Card.Body>
+                      <Card.Title className='CardName'>
+                        {item.first_name}
+                      </Card.Title>
+                      <Card.Text>
+                        Music : {item.genre}
+                        <br />
+                        Role : {item.role}
+                      </Card.Text>
+                      <Row>
+                        <Col>
+                          <button
+                            className='btn btn-primary btn-block'
+                            onClick={() => this.handleLike(item.id_user)}
+                          >
+                            <i
+                              className='fa fa-thumbs-o-up fa-3x'
+                              aria-hidden='true'
+                            ></i>
+                          </button>
+                        </Col>
+                      </Row>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              );
+            })}
+          </Swiper>
         </Container>
       </div>
     );
