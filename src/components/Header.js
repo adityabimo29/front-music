@@ -10,8 +10,7 @@ import jwt from 'jwt-decode';
 import Swal from 'sweetalert2';
 
 const Header = props => {
-  const handleLogout =() => {
-    
+  const handleLogout = () => {
     Swal.fire({
       title: 'Are you sure?',
       icon: 'warning',
@@ -19,20 +18,14 @@ const Header = props => {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yippi'
-    }).then(async (result) => {
+    }).then(async result => {
       if (result.value) {
-        Swal.fire(
-          'Success',
-          'Yoppo',
-          'success'
-        )
-        localStorage.clear();
-        props.logout();
+        await localStorage.clear();
+        await props.logout();
         props.history.push('/login');
        //window.location.reload();
       }
-    })
-
+    });
   };
 
   let isLogin;
@@ -43,16 +36,15 @@ const Header = props => {
   }
 
   let token = localStorage.getItem('token');
-  let decode= jwt(token);
+  let decode = jwt(token);
 
-  let  changeMenu = true;
-  if(props.match.path === '/main' ) {
+  let changeMenu = true;
+  if (props.match.path === '/main') {
     changeMenu = false;
-  }else if(props.match.path === '/profile/:id'){
+  } else if (props.match.path === '/profile/:id') {
     changeMenu = true;
   }
-  
-   
+
   return (
     <div>
       <Navbar bg='dark' variant='dark' expand='lg' fixed='top'>
@@ -69,14 +61,14 @@ const Header = props => {
                     Get Started
                   </Nav.Link>
                 ) : (
-                  <Nav.Link as={Link} to={`/profile/${decode.id_user}`} className='HeaderLink'>
+                  <Nav.Link
+                    as={Link}
+                    to={`/profile/${decode.id_user}`}
+                    className='HeaderLink'
+                  >
                     My Profile
                   </Nav.Link>
                 )}
-                
-                <Nav.Link as={Link} to='/contact' className='HeaderLink'>
-                  Contact
-                </Nav.Link>
                 <Nav.Link onClick={handleLogout} className='HeaderLink'>
                   Logout
                 </Nav.Link>
@@ -85,9 +77,6 @@ const Header = props => {
               <Fragment>
                 <Nav.Link as={Link} to='/about' className='HeaderLink'>
                   About
-                </Nav.Link>
-                <Nav.Link as={Link} to='/contact' className='HeaderLink'>
-                  Contact
                 </Nav.Link>
                 <Nav.Link as={Link} to='/login' className='HeaderLink'>
                   Sign In

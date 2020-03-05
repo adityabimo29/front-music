@@ -9,7 +9,7 @@
 }
 
 .ProfilePictureContainer img {
-  max-width: 100%;
+  min-width: 45vh;
   max-height: 55vh;
 }
 
