@@ -108,7 +108,11 @@ export const signup = (values, history) => dispatch => {
     .then(response => {
       console.log('this is response data signup', response.data);
       dispatch(setSignup(response.data.data));
-
+      Swal.fire(
+        'Snappi snapp',
+        'Register Successfully ',
+        'success'
+      )
       history.push('/login');
     })
     .catch(error => {

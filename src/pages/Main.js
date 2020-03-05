@@ -32,7 +32,7 @@ class Main extends Component {
       dots: false,
       grabCursor: true,
       centeredSlides: true,
-      slidesPerView: 'auto',
+      slidesPerView: 3,
       coverflowEffect: {
         rotate: 50,
         stretch: 0,
@@ -43,19 +43,21 @@ class Main extends Component {
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
-      }
+      },
+      spaceBetween: 30
     };
     return (
       <div>
         <Header />
         <Container fluid className='MainContainer'>
+        <Row>
           <Swiper {...params}>
             {this.props.datas.map(item => {
               if (item.avatar === '') {
                 item.avatar = pic1;
               }
               return (
-                <Col sm key={item.id_user}>
+                <Col md={4} key={item.id_user}>
                   <Card bg='dark' className='Cards'>
                     <Card.Img
                       variant='top'
@@ -89,7 +91,9 @@ class Main extends Component {
                 </Col>
               );
             })}
+            
           </Swiper>
+          </Row>
         </Container>
       </div>
     );
