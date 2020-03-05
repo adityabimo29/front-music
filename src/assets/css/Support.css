@@ -1,10 +1,10 @@
 .SupportContainer {
   color: white;
-  background-image: url('../images/background-support.jpg');
+  background-image: url("../images/background-support.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 100vh;
+  min-height: 140vh;
 }
 
 .Policy {
@@ -20,4 +20,49 @@
 
 .PolicyButton {
   margin-right: 10px;
+}
+
+.title-contact {
+  font-weight: 800;
+}
+
+.intouch {
+  font-weight: 800;
+}
+
+.contactus {
+  
+  text-align: center;
+  /* background-color: rgba(17, 17, 22, 0.5); */
+}
+.Adress {
+  margin-top: 10.5vh;
+  text-align: center;
+  /* background-color: rgba(17, 17, 22, 0.5); */
+ 
+}
+
+.icon {
+  justify-content: center;
+  padding: 8px;
+}
+
+.icontext {
+  font-size: 14px;
+}
+
+.SupportBody {
+  background-color: #17171e !important;
+  border-radius: 15px;
+  margin-top: 2.5vh;
+  /* margin-bottom: 3vh; */
+  margin-left: 10%;
+  margin-right: 10%;
+  /* padding-top: 2vh; */
+  padding: 0;
+
+  -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
