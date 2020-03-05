@@ -27,13 +27,6 @@ import * as Yup from "yup";
 import ReactFilestack from "filestack-react";
 
 const styles = theme => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center"
-  },
-
   form: {
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(3)
@@ -85,7 +78,7 @@ class Register extends Component {
   };
 
   render() {
-    console.log("PROPS REGISTER", this.props);
+    // console.log("PROPS REGISTER", this.props);
 
     const { classes } = this.props;
 
@@ -248,11 +241,11 @@ class Register extends Component {
 
                         <Grid
                           container
-                          justify="left"
+                          justify="flex-start"
                           direction="column"
                           className={classes.uploadavatar}
                         >
-                          <InputLabel fullWidth className="TextField">
+                          <InputLabel className="TextField">
                             Profile Picture
                           </InputLabel>
                           <ReactFilestack
