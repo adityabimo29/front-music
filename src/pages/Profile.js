@@ -48,6 +48,7 @@ class Profile extends Component {
   render() {
     
     const {
+      id_user,
       first_name,
       genre,
       role,
@@ -61,6 +62,13 @@ class Profile extends Component {
     let gambar = avatar;
     if (gambar === undefined) {
       gambar = Picture;
+    }
+
+    const tokenia = localStorage.getItem('token');
+    const decodia = jwt(tokenia);
+    let rekrut    = false;
+    if(id_user !== decodia.id_user) {
+      rekrut = true;
     }
     return (
       <div>
@@ -96,16 +104,19 @@ class Profile extends Component {
               <Row className='ProfileArticle'>
                 <p>{about}</p>
               </Row>
+              {rekrut ? (
               <Row>
-                <Col className='RecruitContainer'>
-                  <button
-                    className='RecruitButton'
-                    onClick={() => this.handleRecruit(email)}
-                  >
-                    RECRUIT
-                  </button>
-                </Col>
+                  <Col className='RecruitContainer'>
+                    <button
+                      className='RecruitButton'
+                      onClick={() => this.handleRecruit(email)}
+                    >
+                      RECRUIT
+                    </button>
+                  </Col>
               </Row>
+              ) : '' }
+              
             </Col>
           </Row>
           <Row>
