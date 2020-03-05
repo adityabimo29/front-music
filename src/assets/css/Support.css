@@ -1,10 +1,10 @@
 .SupportContainer {
   color: white;
-  background-image: url("../images/background-support.jpg");
+  background-image: url('../images/background-support.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 140vh;
+  min-height: 115vh;
 }
 
 .Policy {
@@ -31,7 +31,6 @@
 }
 
 .contactus {
-  
   text-align: center;
   /* background-color: rgba(17, 17, 22, 0.5); */
 }
@@ -39,7 +38,6 @@
   margin-top: 10.5vh;
   text-align: center;
   /* background-color: rgba(17, 17, 22, 0.5); */
- 
 }
 
 .icon {
