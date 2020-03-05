@@ -20,10 +20,10 @@ const Header = props => {
       confirmButtonText: 'Yippi'
     }).then(async result => {
       if (result.value) {
-        Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
         await localStorage.clear();
         await props.logout();
         props.history.push('/login');
+       //window.location.reload();
       }
     });
   };
