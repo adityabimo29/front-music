@@ -25,7 +25,7 @@ export default class Team extends Component {
                     <p>Aditya Bimo</p>
                   </Card.Title>
                   <Card.Text>
-                    <p>Full Stack Dev</p>
+                    <p className='JobTitle'>Full Stack Dev</p>
                     <p>Our team leader who handle the Front and Back End.</p>
                   </Card.Text>
                   <Button variant='outline-info'>View Github</Button>
@@ -40,8 +40,10 @@ export default class Team extends Component {
                     <p>Frans Jesky</p>
                   </Card.Title>
                   <Card.Text>
-                    <p>Front End Dev</p>A passionate Front End dev who focussed
-                    on UI/UX designs.
+                    <p className='JobTitle'>Front End Dev</p>
+                    <p>
+                      A passionate Front End dev who focussed on UI/UX designs.
+                    </p>
                   </Card.Text>
                   <Button variant='outline-info'>View Github</Button>
                 </Card.Body>
@@ -55,8 +57,10 @@ export default class Team extends Component {
                     <p>Indra Surya</p>
                   </Card.Title>
                   <Card.Text>
-                    <p>Front End Dev</p>
-                    Our team senior with most experience as Front End dev
+                    <p className='JobTitle'>Front End Dev</p>
+                    <p>
+                      Our team senior with most experience as Front End dev.
+                    </p>
                   </Card.Text>
                   <Button variant='outline-info'>View Github</Button>
                 </Card.Body>
@@ -67,12 +71,14 @@ export default class Team extends Component {
                 <Card.Img variant='top' src={Avatar3} />
                 <Card.Body>
                   <Card.Title className='CardTitle'>
-                    <p>Elinda</p>
+                    <p>Elinda S</p>
                   </Card.Title>
                   <Card.Text>
-                    <p>Front End Dev</p>
-                    The only girl in our team with high dedication on
-                    programmnig
+                    <p className='JobTitle'>Front End Dev</p>
+                    <p>
+                      The only girl in our team with high dedication on
+                      programming.
+                    </p>
                   </Card.Text>
                   <Button variant='outline-info'>View Github</Button>
                 </Card.Body>

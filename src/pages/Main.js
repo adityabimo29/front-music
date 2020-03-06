@@ -32,7 +32,7 @@ class Main extends Component {
       dots: false,
       grabCursor: true,
       centeredSlides: true,
-      slidesPerView: 3,
+      slidesPerView: 'auto',
       coverflowEffect: {
         rotate: 50,
         stretch: 0,
@@ -43,56 +43,54 @@ class Main extends Component {
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
-      },
-      spaceBetween: 30
+      }
     };
     return (
       <div>
         <Header />
         <Container fluid className='MainContainer'>
-        <Row>
-          <Swiper {...params}>
-            {this.props.datas.map(item => {
-              if (item.avatar === '') {
-                item.avatar = pic1;
-              }
-              return (
-                <Col md={4} key={item.id_user}>
-                  <Card bg='dark' className='Cards'>
-                    <Card.Img
-                      variant='top'
-                      src={item.avatar}
-                      className='CardImages'
-                    />
-                    <Card.Body>
-                      <Card.Title className='CardName'>
-                        {item.first_name}
-                      </Card.Title>
-                      <Card.Text>
-                        Music : {item.genre}
-                        <br />
-                        Role : {item.role}
-                      </Card.Text>
-                      <Row>
-                        <Col>
-                          <button
-                            className='btn btn-primary btn-block'
-                            onClick={() => this.handleLike(item.id_user)}
-                          >
-                            <i
-                              className='fa fa-thumbs-o-up fa-3x'
-                              aria-hidden='true'
-                            ></i>
-                          </button>
-                        </Col>
-                      </Row>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              );
-            })}
-            
-          </Swiper>
+          <Row>
+            <Swiper {...params}>
+              {this.props.datas.map(item => {
+                if (item.avatar === '') {
+                  item.avatar = pic1;
+                }
+                return (
+                  <Col md={4} key={item.id_user}>
+                    <Card bg='dark' className='Cards'>
+                      <Card.Img
+                        variant='top'
+                        src={item.avatar}
+                        className='CardImages'
+                      />
+                      <Card.Body>
+                        <Card.Title className='CardName'>
+                          {`${item.first_name} ${item.last_name}`}
+                        </Card.Title>
+                        <Card.Text>
+                          Music : {item.genre}
+                          <br />
+                          Role : {item.role}
+                        </Card.Text>
+                        <Row>
+                          <Col>
+                            <button
+                              className='btn btn-primary btn-block'
+                              onClick={() => this.handleLike(item.id_user)}
+                            >
+                              <i
+                                className='fa fa-thumbs-o-up fa-3x'
+                                aria-hidden='true'
+                              ></i>
+                            </button>
+                          </Col>
+                        </Row>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                );
+              })}
+            </Swiper>
           </Row>
         </Container>
       </div>

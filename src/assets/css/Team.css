@@ -23,3 +23,7 @@
 .CardTitle {
   font-weight: 800 !important;
 }
+
+.JobTitle {
+  opacity: 0.5;
+}
