@@ -63,7 +63,7 @@ class Main extends Component {
                         src={item.avatar}
                         className='CardImages'
                       />
-                      <Card.Body>
+                      <Card.Body style={{ backgroundColor: '#343A40' }}>
                         <Card.Title className='CardName'>
                           {`${item.first_name} ${item.last_name}`}
                         </Card.Title>
